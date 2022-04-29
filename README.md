@@ -1,12 +1,12 @@
-![Hexo Logo](https://github.com/vercel/vercel/blob/main/packages/frameworks/logos/hexo.svg)
+<img src="https://pic.onlinewebfonts.com/svg/img_288128.png" alt="Hexo Logo" style="zoom: 25%;" />
 
 # Personal HomePage
 
 ​    Xin Lei - PhD of CFD
 
-- graduate from BNU
+- Graduate from BNU
 
-- work in CUGB
+- Work in CUGB
 
 ## Deploy This Page
 
