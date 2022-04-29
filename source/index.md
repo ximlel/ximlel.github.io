@@ -1,8 +1,15 @@
 ---
 title: 雷昕的个人主页
+data: 2022-04-28 19:00:00
+categories: Introduction
+tags:
+- Resume
+- Curriculum Vitae
 ---
 
 ## 雷昕的个人主页
+
+![](/images/leixin.jpg)
 
 ### 个人简介：
 
