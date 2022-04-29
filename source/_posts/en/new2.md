@@ -1,6 +1,7 @@
 ---
 title: NEW2
-data: 2022-03-28 19:00:00
+date: 2022-04-27
+updated: 2022-04-28
 categories: Introduction1
 tags:
 - Resume1
@@ -8,4 +9,8 @@ tags:
 
 ---
 
-NEW2
+NEW2 - EN
+
+<!--more-->
+
+NEW22
