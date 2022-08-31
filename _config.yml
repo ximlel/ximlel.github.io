@@ -88,5 +88,5 @@ search:
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
   type: git
-  repo: https://github.com/ximlel/HomePage.git
+  repo: https://github.com/ximlel/ximlel.github.io.git
   branch: master
