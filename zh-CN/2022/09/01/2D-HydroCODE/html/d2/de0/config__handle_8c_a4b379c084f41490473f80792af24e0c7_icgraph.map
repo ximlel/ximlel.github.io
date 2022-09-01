@@ -1,0 +1,7 @@
+<map id="config_check" name="config_check">
+<area shape="rect" id="node1" title="This function check whether the configuration data is reasonable and set the default." alt="" coords="411,31,517,57"/>
+<area shape="rect" id="node2" href="$d2/de0/config__handle_8c.html#a4b15e37e2922cce20bf5cc8bb6e80c9a" title="This function controls configuration data reading and validation." alt="" coords="267,31,363,57"/>
+<area shape="rect" id="node3" href="$dd/d92/__1_d__file__in_8c.html#ac488f20dece96d36772ef580e4de334e" title="This function reads the 1&#45;D initial data file of velocity/pressure/density." alt="" coords="108,5,219,32"/>
+<area shape="rect" id="node4" href="$d4/d75/__2_d__file__in_8c.html#a2888d943cf419875759b1f72a7723296" title="This function reads the 2&#45;D initial data file of velocity/pressure/density." alt="" coords="108,56,219,83"/>
+<area shape="rect" id="node5" href="$d2/d24/hydrocode_8c.html#a0ddf1224851353fc92bfbff6f499fa97" title="This is the main function which constructs the main structure of the Eulerian hydrocode." alt="" coords="5,56,60,83"/>
+</map>

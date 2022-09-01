@@ -1,0 +1,319 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.3"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>HydroCODE_2D: /home/leixin/Programs/HydroCODE/src/flux_calc/flux_generator_y.c 源文件</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../resize.js"></script>
+<script type="text/javascript" src="../../navtreedata.js"></script>
+<script type="text/javascript" src="../../navtree.js"></script>
+<link href="../../search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../search/searchdata.js"></script>
+<script type="text/javascript" src="../../search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+  $(document).ready(function() { init_search(); });
+/* @license-end */
+</script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="../../Logo.jpg"/></td>
+  <td id="projectalign">
+   <div id="projectname">HydroCODE_2D<span id="projectnumber">&#160;0.1</span>
+   </div>
+   <div id="projectbrief">This is a implementation of fully explict forward Euler scheme for 2-D Euler equations of motion on Eulerian coordinate</div>
+  </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="../../search/mag_sel.svg"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="搜索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="../../search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.9.3 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "../../search",'搜索','.html');
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('de/db1/flux__generator__y_8c_source.html','../../'); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">flux_generator_y.c</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="../../de/db1/flux__generator__y_8c.html">浏览该文件的文档.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span> </div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &lt;stdio.h&gt;</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &lt;math.h&gt;</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span> </div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#include &quot;../include/var_struc.h&quot;</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#include &quot;../include/flux_calc.h&quot;</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span> </div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno"><a class="line" href="../../dd/df5/flux__calc_8h.html#a964701ac9bd65f6b19c3c731e983d562">   30</a></span><span class="keywordtype">int</span> <a class="code hl_function" href="../../de/db1/flux__generator__y_8c.html#a964701ac9bd65f6b19c3c731e983d562">flux_generator_y</a>(<span class="keyword">const</span> <span class="keywordtype">int</span> m, <span class="keyword">const</span> <span class="keywordtype">int</span> n, <span class="keyword">const</span> <span class="keywordtype">int</span> nt, <span class="keyword">const</span> <span class="keywordtype">double</span> tau, <span class="keyword">struct</span> <a class="code hl_struct" href="../../da/d95/structcell__var__stru.html">cell_var_stru</a> * CV,</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>              <span class="keyword">struct</span> <a class="code hl_struct" href="../../dc/d0e/structb__f__var.html">b_f_var</a> * bfv_D, <span class="keyword">struct</span> <a class="code hl_struct" href="../../dc/d0e/structb__f__var.html">b_f_var</a> * bfv_U, <span class="keyword">const</span> _Bool Transversal)</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>{</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>  <span class="keywordtype">double</span> <span class="keyword">const</span> eps = <a class="code hl_variable" href="../../da/d1e/var__struc_8h.html#a8566b0397a3ece6fe73247288d4c3205">config</a>[4];  <span class="comment">// the largest value could be seen as zero</span></div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>  <span class="keywordtype">double</span> <span class="keyword">const</span> h_y = <a class="code hl_variable" href="../../da/d1e/var__struc_8h.html#a8566b0397a3ece6fe73247288d4c3205">config</a>[11]; <span class="comment">// the length of the initial y spatial grids</span></div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>  <span class="keyword">struct </span><a class="code hl_struct" href="../../d9/dd4/structi__f__var.html">i_f_var</a> ifv_D = {.<a class="code hl_variable" href="../../d9/dd4/structi__f__var.html#a9d4005c8de55d7d5c66fc4137fca012f">n_x</a> = 0.0, .n_y = 1.0}, ifv_U = {.n_x = 0.0, .n_y = 1.0};</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>  <span class="keywordtype">int</span> i, j, data_err;</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span> </div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span><span class="comment">//===========================</span></div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>  <span class="keywordflow">for</span>(j = 0; j &lt; m; ++j)</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>    <span class="keywordflow">for</span>(i = 0; i &lt;= n; ++i)</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>    {</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>      <span class="keywordflow">if</span>(i)</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>      {</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>          ifv_D.<a class="code hl_variable" href="../../d9/dd4/structi__f__var.html#aa2f4b0827523420ad977c915d5f62538">d_rho</a> = CV-&gt;<a class="code hl_variable" href="../../da/d95/structcell__var__stru.html#a34f0c556cb0c11c05fb50aad063c5348">t_rho</a>[j][i-1];</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>          ifv_D.<a class="code hl_variable" href="../../d9/dd4/structi__f__var.html#aa9bf355ec607888e7b62164b33f4e68b">d_u</a>   =   CV-&gt;<a class="code hl_variable" href="../../da/d95/structcell__var__stru.html#a6301d977003f5e2869858312e1f1f54d">t_u</a>[j][i-1];</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>          ifv_D.<a class="code hl_variable" href="../../d9/dd4/structi__f__var.html#ae983f6a4cc51c33357e7c5650393c09e">d_v</a>   =   CV-&gt;<a class="code hl_variable" href="../../da/d95/structcell__var__stru.html#ab64960bdbad2605632708f4f86095888">t_v</a>[j][i-1];</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>          ifv_D.<a class="code hl_variable" href="../../d9/dd4/structi__f__var.html#a4ccfb57bd4508f89d887c05406ccf205">d_p</a>   =   CV-&gt;<a class="code hl_variable" href="../../da/d95/structcell__var__stru.html#af1a9d5d1a74038f8defa7dd8765d892b">t_p</a>[j][i-1];</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>          ifv_D.<a class="code hl_variable" href="../../d9/dd4/structi__f__var.html#a3c860a618964c60dd75fae5a142007fa">RHO</a>  = CV[nt].<a class="code hl_variable" href="../../da/d95/structcell__var__stru.html#a500d7c095639b7410510faefa3ce846c">RHO</a>[j][i-1] + 0.5*h_y*CV-&gt;<a class="code hl_variable" href="../../da/d95/structcell__var__stru.html#a34f0c556cb0c11c05fb50aad063c5348">t_rho</a>[j][i-1];</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>          ifv_D.<a class="code hl_variable" href="../../d9/dd4/structi__f__var.html#a6adf77edbad3c6c9a69c0f2b7c9ab99a">U</a>    =   CV[nt].<a class="code hl_variable" href="../../da/d95/structcell__var__stru.html#a08c1214071215fdf8101c58e3aa32bb1">U</a>[j][i-1] + 0.5*h_y*  CV-&gt;<a class="code hl_variable" href="../../da/d95/structcell__var__stru.html#a6301d977003f5e2869858312e1f1f54d">t_u</a>[j][i-1];</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>          ifv_D.<a class="code hl_variable" href="../../d9/dd4/structi__f__var.html#a1e6fac1696a7d8fcf13ce87a658cfe12">V</a>    =   CV[nt].<a class="code hl_variable" href="../../da/d95/structcell__var__stru.html#ad9561b9d62141716b49a9260f8282709">V</a>[j][i-1] + 0.5*h_y*  CV-&gt;<a class="code hl_variable" href="../../da/d95/structcell__var__stru.html#ab64960bdbad2605632708f4f86095888">t_v</a>[j][i-1];</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>          ifv_D.<a class="code hl_variable" href="../../d9/dd4/structi__f__var.html#a8019aa9167c19c810aefa4cd5c0b0ab5">P</a>    =   CV[nt].<a class="code hl_variable" href="../../da/d95/structcell__var__stru.html#aec9cd0281bac1143c62b2233c3dd6862">P</a>[j][i-1] + 0.5*h_y*  CV-&gt;<a class="code hl_variable" href="../../da/d95/structcell__var__stru.html#af1a9d5d1a74038f8defa7dd8765d892b">t_p</a>[j][i-1];</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>      }</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>      <span class="keywordflow">else</span></div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>      {</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>          ifv_D.<a class="code hl_variable" href="../../d9/dd4/structi__f__var.html#aa2f4b0827523420ad977c915d5f62538">d_rho</a> = bfv_D[j].<a class="code hl_variable" href="../../dc/d0e/structb__f__var.html#a2eb8a37ffc8ae2c9365c906e3064e2c1">TRHO</a>;</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>          ifv_D.<a class="code hl_variable" href="../../d9/dd4/structi__f__var.html#aa9bf355ec607888e7b62164b33f4e68b">d_u</a>   = bfv_D[j].<a class="code hl_variable" href="../../dc/d0e/structb__f__var.html#a9f5cb7567bfc06f9ee5c4f6f1d7576a2">TU</a>;</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>          ifv_D.<a class="code hl_variable" href="../../d9/dd4/structi__f__var.html#ae983f6a4cc51c33357e7c5650393c09e">d_v</a>   = bfv_D[j].<a class="code hl_variable" href="../../dc/d0e/structb__f__var.html#a9dade02bba2f7b1b0ed1c1bd10a66e2f">TV</a>;</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>          ifv_D.<a class="code hl_variable" href="../../d9/dd4/structi__f__var.html#a4ccfb57bd4508f89d887c05406ccf205">d_p</a>   = bfv_D[j].<a class="code hl_variable" href="../../dc/d0e/structb__f__var.html#ad80abb413d63c1c24dbb98d398b63a30">TP</a>;</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>          ifv_D.<a class="code hl_variable" href="../../d9/dd4/structi__f__var.html#a3c860a618964c60dd75fae5a142007fa">RHO</a>   = bfv_D[j].<a class="code hl_variable" href="../../dc/d0e/structb__f__var.html#a3c860a618964c60dd75fae5a142007fa">RHO</a> + 0.5*h_y*bfv_D[j].<a class="code hl_variable" href="../../dc/d0e/structb__f__var.html#a2eb8a37ffc8ae2c9365c906e3064e2c1">TRHO</a>;</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>          ifv_D.<a class="code hl_variable" href="../../d9/dd4/structi__f__var.html#a6adf77edbad3c6c9a69c0f2b7c9ab99a">U</a>     = bfv_D[j].<a class="code hl_variable" href="../../dc/d0e/structb__f__var.html#a6adf77edbad3c6c9a69c0f2b7c9ab99a">U</a>   + 0.5*h_y*bfv_D[j].<a class="code hl_variable" href="../../dc/d0e/structb__f__var.html#a9f5cb7567bfc06f9ee5c4f6f1d7576a2">TU</a>;</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>          ifv_D.<a class="code hl_variable" href="../../d9/dd4/structi__f__var.html#a1e6fac1696a7d8fcf13ce87a658cfe12">V</a>     = bfv_D[j].<a class="code hl_variable" href="../../dc/d0e/structb__f__var.html#a1e6fac1696a7d8fcf13ce87a658cfe12">V</a>   + 0.5*h_y*bfv_D[j].<a class="code hl_variable" href="../../dc/d0e/structb__f__var.html#a9dade02bba2f7b1b0ed1c1bd10a66e2f">TV</a>;</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>          ifv_D.<a class="code hl_variable" href="../../d9/dd4/structi__f__var.html#a8019aa9167c19c810aefa4cd5c0b0ab5">P</a>     = bfv_D[j].<a class="code hl_variable" href="../../dc/d0e/structb__f__var.html#a8019aa9167c19c810aefa4cd5c0b0ab5">P</a>   + 0.5*h_y*bfv_D[j].<a class="code hl_variable" href="../../dc/d0e/structb__f__var.html#ad80abb413d63c1c24dbb98d398b63a30">TP</a>;</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>      }</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>      <span class="keywordflow">if</span>(i &lt; n)</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>      {</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>          ifv_U.d_rho = CV-&gt;<a class="code hl_variable" href="../../da/d95/structcell__var__stru.html#a34f0c556cb0c11c05fb50aad063c5348">t_rho</a>[j][i];</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>          ifv_U.d_u   =   CV-&gt;<a class="code hl_variable" href="../../da/d95/structcell__var__stru.html#a6301d977003f5e2869858312e1f1f54d">t_u</a>[j][i];</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>          ifv_U.d_v   =   CV-&gt;<a class="code hl_variable" href="../../da/d95/structcell__var__stru.html#ab64960bdbad2605632708f4f86095888">t_v</a>[j][i];</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>          ifv_U.d_p   =   CV-&gt;<a class="code hl_variable" href="../../da/d95/structcell__var__stru.html#af1a9d5d1a74038f8defa7dd8765d892b">t_p</a>[j][i];</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>          ifv_U.RHO  = CV[nt].<a class="code hl_variable" href="../../da/d95/structcell__var__stru.html#a500d7c095639b7410510faefa3ce846c">RHO</a>[j][i] - 0.5*h_y*CV-&gt;<a class="code hl_variable" href="../../da/d95/structcell__var__stru.html#a34f0c556cb0c11c05fb50aad063c5348">t_rho</a>[j][i];</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>          ifv_U.U    =   CV[nt].<a class="code hl_variable" href="../../da/d95/structcell__var__stru.html#a08c1214071215fdf8101c58e3aa32bb1">U</a>[j][i] - 0.5*h_y*  CV-&gt;<a class="code hl_variable" href="../../da/d95/structcell__var__stru.html#a6301d977003f5e2869858312e1f1f54d">t_u</a>[j][i];</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>          ifv_U.V    =   CV[nt].<a class="code hl_variable" href="../../da/d95/structcell__var__stru.html#ad9561b9d62141716b49a9260f8282709">V</a>[j][i] - 0.5*h_y*  CV-&gt;<a class="code hl_variable" href="../../da/d95/structcell__var__stru.html#ab64960bdbad2605632708f4f86095888">t_v</a>[j][i];</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>          ifv_U.P    =   CV[nt].<a class="code hl_variable" href="../../da/d95/structcell__var__stru.html#aec9cd0281bac1143c62b2233c3dd6862">P</a>[j][i] - 0.5*h_y*  CV-&gt;<a class="code hl_variable" href="../../da/d95/structcell__var__stru.html#af1a9d5d1a74038f8defa7dd8765d892b">t_p</a>[j][i];</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>      }</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>      <span class="keywordflow">else</span></div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>      {</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>          ifv_U.d_rho = bfv_U[j].<a class="code hl_variable" href="../../dc/d0e/structb__f__var.html#a2eb8a37ffc8ae2c9365c906e3064e2c1">TRHO</a>;</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>          ifv_U.d_u   = bfv_U[j].<a class="code hl_variable" href="../../dc/d0e/structb__f__var.html#a9f5cb7567bfc06f9ee5c4f6f1d7576a2">TU</a>;</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>          ifv_U.d_v   = bfv_U[j].<a class="code hl_variable" href="../../dc/d0e/structb__f__var.html#a9dade02bba2f7b1b0ed1c1bd10a66e2f">TV</a>;</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>          ifv_U.d_p   = bfv_U[j].<a class="code hl_variable" href="../../dc/d0e/structb__f__var.html#ad80abb413d63c1c24dbb98d398b63a30">TP</a>;</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>          ifv_U.RHO   = bfv_U[j].<a class="code hl_variable" href="../../dc/d0e/structb__f__var.html#a3c860a618964c60dd75fae5a142007fa">RHO</a> - 0.5*h_y*bfv_U[j].<a class="code hl_variable" href="../../dc/d0e/structb__f__var.html#a2eb8a37ffc8ae2c9365c906e3064e2c1">TRHO</a>;</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>          ifv_U.U     = bfv_U[j].<a class="code hl_variable" href="../../dc/d0e/structb__f__var.html#a6adf77edbad3c6c9a69c0f2b7c9ab99a">U</a>   - 0.5*h_y*bfv_U[j].<a class="code hl_variable" href="../../dc/d0e/structb__f__var.html#a9f5cb7567bfc06f9ee5c4f6f1d7576a2">TU</a>;</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>          ifv_U.V     = bfv_U[j].<a class="code hl_variable" href="../../dc/d0e/structb__f__var.html#a1e6fac1696a7d8fcf13ce87a658cfe12">V</a>   - 0.5*h_y*bfv_U[j].<a class="code hl_variable" href="../../dc/d0e/structb__f__var.html#a9dade02bba2f7b1b0ed1c1bd10a66e2f">TV</a>;</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>          ifv_U.P     = bfv_U[j].<a class="code hl_variable" href="../../dc/d0e/structb__f__var.html#a8019aa9167c19c810aefa4cd5c0b0ab5">P</a>   - 0.5*h_y*bfv_U[j].<a class="code hl_variable" href="../../dc/d0e/structb__f__var.html#ad80abb413d63c1c24dbb98d398b63a30">TP</a>;</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>      }</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>      <span class="keywordflow">if</span>(ifv_D.<a class="code hl_variable" href="../../d9/dd4/structi__f__var.html#a8019aa9167c19c810aefa4cd5c0b0ab5">P</a> &lt; eps || ifv_U.P &lt; eps || ifv_D.<a class="code hl_variable" href="../../d9/dd4/structi__f__var.html#a3c860a618964c60dd75fae5a142007fa">RHO</a> &lt; eps || ifv_U.RHO &lt; eps)</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>      {</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>          printf(<span class="stringliteral">&quot;&lt;0.0 error on [%d, %d, %d] (nt, x, y) - Reconstruction_y\n&quot;</span>, nt, j, i);</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>          <span class="keywordflow">return</span> 1;</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>      }</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>      <span class="keywordflow">if</span>(!isfinite(ifv_D.<a class="code hl_variable" href="../../d9/dd4/structi__f__var.html#a4ccfb57bd4508f89d887c05406ccf205">d_p</a>)|| !isfinite(ifv_U.d_p)|| !isfinite(ifv_D.<a class="code hl_variable" href="../../d9/dd4/structi__f__var.html#aa9bf355ec607888e7b62164b33f4e68b">d_u</a>)|| !isfinite(ifv_U.d_u)|| !isfinite(ifv_D.<a class="code hl_variable" href="../../d9/dd4/structi__f__var.html#ae983f6a4cc51c33357e7c5650393c09e">d_v</a>)|| !isfinite(ifv_U.d_v)|| !isfinite(ifv_D.<a class="code hl_variable" href="../../d9/dd4/structi__f__var.html#aa2f4b0827523420ad977c915d5f62538">d_rho</a>)|| !isfinite(ifv_U.d_rho))</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>      {</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>          printf(<span class="stringliteral">&quot;NAN or INFinite error on [%d, %d, %d] (nt, x, y) - d_Slope_y\n&quot;</span>, nt, j, i); </div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>          <span class="keywordflow">return</span> 1;</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>      }</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span> </div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span><span class="comment">//===========================</span></div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>      <span class="keywordflow">if</span> (Transversal)</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>      {</div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>          <span class="keywordflow">if</span>(i)</div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>          {</div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>              ifv_D.<a class="code hl_variable" href="../../d9/dd4/structi__f__var.html#a03ba434199d4c3d887569ab455c7e633">t_rho</a> = -CV-&gt;<a class="code hl_variable" href="../../da/d95/structcell__var__stru.html#a49841a9742165f638011c2a0994d75df">s_rho</a>[j][i-1];</div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>              ifv_D.<a class="code hl_variable" href="../../d9/dd4/structi__f__var.html#aae73c5ff8068d4ccbe37fbb02a0de06c">t_u</a>   = -  CV-&gt;<a class="code hl_variable" href="../../da/d95/structcell__var__stru.html#a5ea9a4ad9750e912256a039a7182827c">s_u</a>[j][i-1];</div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>              ifv_D.<a class="code hl_variable" href="../../d9/dd4/structi__f__var.html#a49c8cabb20106adba94bea6fdf655f1b">t_v</a>   = -  CV-&gt;<a class="code hl_variable" href="../../da/d95/structcell__var__stru.html#ab630726d608fcb1e7441525c954cf24c">s_v</a>[j][i-1];</div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>              ifv_D.<a class="code hl_variable" href="../../d9/dd4/structi__f__var.html#a6d7def9bc3200ab1dcb2824850d730cb">t_p</a>   = -  CV-&gt;<a class="code hl_variable" href="../../da/d95/structcell__var__stru.html#ae29507f45a2a5d66e250d1f59564293d">s_p</a>[j][i-1];</div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>          }</div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>          <span class="keywordflow">else</span></div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>          {</div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>              ifv_D.<a class="code hl_variable" href="../../d9/dd4/structi__f__var.html#a03ba434199d4c3d887569ab455c7e633">t_rho</a> = -bfv_D[j].<a class="code hl_variable" href="../../dc/d0e/structb__f__var.html#a01d52bc9d9acd4c1a48f9c35ba8b80cd">SRHO</a>;</div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>              ifv_D.<a class="code hl_variable" href="../../d9/dd4/structi__f__var.html#aae73c5ff8068d4ccbe37fbb02a0de06c">t_u</a>   = -bfv_D[j].<a class="code hl_variable" href="../../dc/d0e/structb__f__var.html#a8e8a98e44ae34a718d50f1f6365dd462">SU</a>;</div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>              ifv_D.<a class="code hl_variable" href="../../d9/dd4/structi__f__var.html#a49c8cabb20106adba94bea6fdf655f1b">t_v</a>   = -bfv_D[j].<a class="code hl_variable" href="../../dc/d0e/structb__f__var.html#a23874fa243d362e22b11037c76bed2aa">SV</a>;</div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>              ifv_D.<a class="code hl_variable" href="../../d9/dd4/structi__f__var.html#a6d7def9bc3200ab1dcb2824850d730cb">t_p</a>   = -bfv_D[j].<a class="code hl_variable" href="../../dc/d0e/structb__f__var.html#a917b485d72b64539f4d9fc151074237f">SP</a>;</div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>          }</div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>          <span class="keywordflow">if</span>(i &lt; n)</div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>          {</div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>              ifv_U.t_rho = -CV-&gt;<a class="code hl_variable" href="../../da/d95/structcell__var__stru.html#a49841a9742165f638011c2a0994d75df">s_rho</a>[j][i];</div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>              ifv_U.t_u   = -  CV-&gt;<a class="code hl_variable" href="../../da/d95/structcell__var__stru.html#a5ea9a4ad9750e912256a039a7182827c">s_u</a>[j][i];</div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>              ifv_U.t_v   = -  CV-&gt;<a class="code hl_variable" href="../../da/d95/structcell__var__stru.html#ab630726d608fcb1e7441525c954cf24c">s_v</a>[j][i];</div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>              ifv_U.t_p   = -  CV-&gt;<a class="code hl_variable" href="../../da/d95/structcell__var__stru.html#ae29507f45a2a5d66e250d1f59564293d">s_p</a>[j][i];</div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>          }</div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>          <span class="keywordflow">else</span></div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>          {</div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>              ifv_U.t_rho = -bfv_U[j].<a class="code hl_variable" href="../../dc/d0e/structb__f__var.html#a01d52bc9d9acd4c1a48f9c35ba8b80cd">SRHO</a>;</div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>              ifv_U.t_u   = -bfv_U[j].<a class="code hl_variable" href="../../dc/d0e/structb__f__var.html#a8e8a98e44ae34a718d50f1f6365dd462">SU</a>;</div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>              ifv_U.t_v   = -bfv_U[j].<a class="code hl_variable" href="../../dc/d0e/structb__f__var.html#a23874fa243d362e22b11037c76bed2aa">SV</a>;</div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>              ifv_U.t_p   = -bfv_U[j].<a class="code hl_variable" href="../../dc/d0e/structb__f__var.html#a917b485d72b64539f4d9fc151074237f">SP</a>;</div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>          }</div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>          <span class="keywordflow">if</span>(!isfinite(ifv_D.<a class="code hl_variable" href="../../d9/dd4/structi__f__var.html#a6d7def9bc3200ab1dcb2824850d730cb">t_p</a>)|| !isfinite(ifv_U.t_p)|| !isfinite(ifv_D.<a class="code hl_variable" href="../../d9/dd4/structi__f__var.html#aae73c5ff8068d4ccbe37fbb02a0de06c">t_u</a>)|| !isfinite(ifv_U.t_u)|| !isfinite(ifv_D.<a class="code hl_variable" href="../../d9/dd4/structi__f__var.html#a49c8cabb20106adba94bea6fdf655f1b">t_v</a>)|| !isfinite(ifv_U.t_v)|| !isfinite(ifv_D.<a class="code hl_variable" href="../../d9/dd4/structi__f__var.html#a03ba434199d4c3d887569ab455c7e633">t_rho</a>)|| !isfinite(ifv_U.t_rho))</div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>          {</div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span>              printf(<span class="stringliteral">&quot;NAN or INFinite error on [%d, %d, %d] (nt, x, y) - t_Slope_y\n&quot;</span>, nt, j, i); </div>
+<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span>              <span class="keywordflow">return</span> 1;</div>
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span>          }</div>
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span>      }</div>
+<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span>      <span class="keywordflow">else</span></div>
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span>      {</div>
+<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span>          ifv_D.<a class="code hl_variable" href="../../d9/dd4/structi__f__var.html#a03ba434199d4c3d887569ab455c7e633">t_rho</a> = -0.0;</div>
+<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span>          ifv_D.<a class="code hl_variable" href="../../d9/dd4/structi__f__var.html#aae73c5ff8068d4ccbe37fbb02a0de06c">t_u</a>   = -0.0;</div>
+<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span>          ifv_D.<a class="code hl_variable" href="../../d9/dd4/structi__f__var.html#a49c8cabb20106adba94bea6fdf655f1b">t_v</a>   = -0.0;</div>
+<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span>          ifv_D.<a class="code hl_variable" href="../../d9/dd4/structi__f__var.html#a6d7def9bc3200ab1dcb2824850d730cb">t_p</a>   = -0.0;</div>
+<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span>          ifv_U.t_rho = -0.0;</div>
+<div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span>          ifv_U.t_u   = -0.0;</div>
+<div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span>          ifv_U.t_v   = -0.0;</div>
+<div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span>          ifv_U.t_p   = -0.0;</div>
+<div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span>      }</div>
+<div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span><span class="comment">//===========================</span></div>
+<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span> </div>
+<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span>      data_err = <a class="code hl_function" href="../../dd/df5/flux__calc_8h.html#a49938584f813ee4c3756f8aba45325de">GRP_2D_flux</a>(&amp;ifv_D, &amp;ifv_U, tau);</div>
+<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span>      <span class="keywordflow">switch</span> (data_err)</div>
+<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span>      {</div>
+<div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span>      <span class="keywordflow">case</span> 1:</div>
+<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span>          printf(<span class="stringliteral">&quot;&lt;0.0 error on [%d, %d, %d] (nt, x, y) - STAR_y\n&quot;</span>, nt, j, i);</div>
+<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span>          <span class="keywordflow">return</span> 2;</div>
+<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span>      <span class="keywordflow">case</span> 2:</div>
+<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span>          printf(<span class="stringliteral">&quot;NAN or INFinite error on [%d, %d, %d] (nt, x, y) - STAR_y\n&quot;</span>, nt, j, i); </div>
+<div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span>          <span class="keywordflow">return</span> 2;</div>
+<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span>      <span class="keywordflow">case</span> 3:</div>
+<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span>          printf(<span class="stringliteral">&quot;NAN or INFinite error on [%d, %d, %d] (nt, x, y) - DIRE_y\n&quot;</span>, nt, j, i); </div>
+<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span>          <span class="keywordflow">return</span> 2;</div>
+<div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span>      }</div>
+<div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span> </div>
+<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span>      CV-&gt;<a class="code hl_variable" href="../../da/d95/structcell__var__stru.html#a00b51ea2075d49493561553808be380d">G_rho</a>[j][i] = ifv_D.<a class="code hl_variable" href="../../d9/dd4/structi__f__var.html#a8d0de666a8606044a25cb263599f2e20">F_rho</a>;</div>
+<div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span>      CV-&gt;<a class="code hl_variable" href="../../da/d95/structcell__var__stru.html#abc99433cfde659b308528d22e435a3c4">G_u</a>[j][i]   = ifv_D.<a class="code hl_variable" href="../../d9/dd4/structi__f__var.html#ac457be2f251fb7324b7dde5e30f97790">F_u</a>;</div>
+<div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span>      CV-&gt;<a class="code hl_variable" href="../../da/d95/structcell__var__stru.html#a64c4d150bf4320ba2cdb94bcbf3e88fc">G_v</a>[j][i]   = ifv_D.<a class="code hl_variable" href="../../d9/dd4/structi__f__var.html#acd3883225f0324b53f722374f08a04dd">F_v</a>;</div>
+<div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span>      CV-&gt;<a class="code hl_variable" href="../../da/d95/structcell__var__stru.html#a882e1cbb7025ee72f1995e6c5f71b55f">G_e</a>[j][i]   = ifv_D.<a class="code hl_variable" href="../../d9/dd4/structi__f__var.html#aa31baab270a0a3a76037d2cd854496b4">F_e</a>;</div>
+<div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span> </div>
+<div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span>      CV-&gt;<a class="code hl_variable" href="../../da/d95/structcell__var__stru.html#a2397f3c5034719c3b142d01197b578a9">rhoIy</a>[j][i] = ifv_D.<a class="code hl_variable" href="../../d9/dd4/structi__f__var.html#a9669f6fdf39ecfadb03b5b4faad9e973">RHO_int</a>;</div>
+<div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span>      CV-&gt;<a class="code hl_variable" href="../../da/d95/structcell__var__stru.html#ac838144c59cb343c9798c4cc46531907">uIy</a>[j][i]   = ifv_D.<a class="code hl_variable" href="../../d9/dd4/structi__f__var.html#a585c19e315078f8139382271a727f8ea">U_int</a>;</div>
+<div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span>      CV-&gt;<a class="code hl_variable" href="../../da/d95/structcell__var__stru.html#a560d94afc74c7b02b4fe5b29c5626dca">vIy</a>[j][i]   = ifv_D.<a class="code hl_variable" href="../../d9/dd4/structi__f__var.html#a217bf9660dd9e5f62039d90542fbe6d5">V_int</a>;</div>
+<div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span>      CV-&gt;<a class="code hl_variable" href="../../da/d95/structcell__var__stru.html#aec3b8631a81fe4607741c9f66a539a6c">pIy</a>[j][i]   = ifv_D.<a class="code hl_variable" href="../../d9/dd4/structi__f__var.html#aea3c6dbaea2d7e28e8d47c0f308f641d">P_int</a>;</div>
+<div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span>    }</div>
+<div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span>  <span class="keywordflow">return</span> 0;</div>
+<div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span>}</div>
+<div class="ttc" id="aflux__calc_8h_html_a49938584f813ee4c3756f8aba45325de"><div class="ttname"><a href="../../dd/df5/flux__calc_8h.html#a49938584f813ee4c3756f8aba45325de">GRP_2D_flux</a></div><div class="ttdeci">int GRP_2D_flux(struct i_f_var *ifv, struct i_f_var *ifv_R, const double tau)</div><div class="ttdoc">This function calculate Eulerian fluxes of 2-D Euler equations by 2-D GRP solver.</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d55/flux__solver_8c_source.html#l00024">flux_solver.c:24</a></div></div>
+<div class="ttc" id="aflux__generator__y_8c_html_a964701ac9bd65f6b19c3c731e983d562"><div class="ttname"><a href="../../de/db1/flux__generator__y_8c.html#a964701ac9bd65f6b19c3c731e983d562">flux_generator_y</a></div><div class="ttdeci">int flux_generator_y(const int m, const int n, const int nt, const double tau, struct cell_var_stru *CV, struct b_f_var *bfv_D, struct b_f_var *bfv_U, const _Bool Transversal)</div><div class="ttdoc">This function calculate Eulerian fluxes of 2-D Euler equations in y-direction by 2-D GRP solver.</div><div class="ttdef"><b>Definition:</b> <a href="../../de/db1/flux__generator__y_8c_source.html#l00030">flux_generator_y.c:30</a></div></div>
+<div class="ttc" id="astructb__f__var_html"><div class="ttname"><a href="../../dc/d0e/structb__f__var.html">b_f_var</a></div><div class="ttdoc">Fluid VARiables at Boundary.</div><div class="ttdef"><b>Definition:</b> <a href="../../da/d1e/var__struc_8h_source.html#l00063">var_struc.h:63</a></div></div>
+<div class="ttc" id="astructb__f__var_html_a01d52bc9d9acd4c1a48f9c35ba8b80cd"><div class="ttname"><a href="../../dc/d0e/structb__f__var.html#a01d52bc9d9acd4c1a48f9c35ba8b80cd">b_f_var::SRHO</a></div><div class="ttdeci">double SRHO</div><div class="ttdef"><b>Definition:</b> <a href="../../da/d1e/var__struc_8h_source.html#l00065">var_struc.h:65</a></div></div>
+<div class="ttc" id="astructb__f__var_html_a1e6fac1696a7d8fcf13ce87a658cfe12"><div class="ttname"><a href="../../dc/d0e/structb__f__var.html#a1e6fac1696a7d8fcf13ce87a658cfe12">b_f_var::V</a></div><div class="ttdeci">double V</div><div class="ttdef"><b>Definition:</b> <a href="../../da/d1e/var__struc_8h_source.html#l00064">var_struc.h:64</a></div></div>
+<div class="ttc" id="astructb__f__var_html_a23874fa243d362e22b11037c76bed2aa"><div class="ttname"><a href="../../dc/d0e/structb__f__var.html#a23874fa243d362e22b11037c76bed2aa">b_f_var::SV</a></div><div class="ttdeci">double SV</div><div class="ttdoc">spatial derivatives in coordinate x (slopes).</div><div class="ttdef"><b>Definition:</b> <a href="../../da/d1e/var__struc_8h_source.html#l00065">var_struc.h:65</a></div></div>
+<div class="ttc" id="astructb__f__var_html_a2eb8a37ffc8ae2c9365c906e3064e2c1"><div class="ttname"><a href="../../dc/d0e/structb__f__var.html#a2eb8a37ffc8ae2c9365c906e3064e2c1">b_f_var::TRHO</a></div><div class="ttdeci">double TRHO</div><div class="ttdef"><b>Definition:</b> <a href="../../da/d1e/var__struc_8h_source.html#l00066">var_struc.h:66</a></div></div>
+<div class="ttc" id="astructb__f__var_html_a3c860a618964c60dd75fae5a142007fa"><div class="ttname"><a href="../../dc/d0e/structb__f__var.html#a3c860a618964c60dd75fae5a142007fa">b_f_var::RHO</a></div><div class="ttdeci">double RHO</div><div class="ttdef"><b>Definition:</b> <a href="../../da/d1e/var__struc_8h_source.html#l00064">var_struc.h:64</a></div></div>
+<div class="ttc" id="astructb__f__var_html_a6adf77edbad3c6c9a69c0f2b7c9ab99a"><div class="ttname"><a href="../../dc/d0e/structb__f__var.html#a6adf77edbad3c6c9a69c0f2b7c9ab99a">b_f_var::U</a></div><div class="ttdeci">double U</div><div class="ttdef"><b>Definition:</b> <a href="../../da/d1e/var__struc_8h_source.html#l00064">var_struc.h:64</a></div></div>
+<div class="ttc" id="astructb__f__var_html_a8019aa9167c19c810aefa4cd5c0b0ab5"><div class="ttname"><a href="../../dc/d0e/structb__f__var.html#a8019aa9167c19c810aefa4cd5c0b0ab5">b_f_var::P</a></div><div class="ttdeci">double P</div><div class="ttdef"><b>Definition:</b> <a href="../../da/d1e/var__struc_8h_source.html#l00064">var_struc.h:64</a></div></div>
+<div class="ttc" id="astructb__f__var_html_a8e8a98e44ae34a718d50f1f6365dd462"><div class="ttname"><a href="../../dc/d0e/structb__f__var.html#a8e8a98e44ae34a718d50f1f6365dd462">b_f_var::SU</a></div><div class="ttdeci">double SU</div><div class="ttdef"><b>Definition:</b> <a href="../../da/d1e/var__struc_8h_source.html#l00065">var_struc.h:65</a></div></div>
+<div class="ttc" id="astructb__f__var_html_a917b485d72b64539f4d9fc151074237f"><div class="ttname"><a href="../../dc/d0e/structb__f__var.html#a917b485d72b64539f4d9fc151074237f">b_f_var::SP</a></div><div class="ttdeci">double SP</div><div class="ttdef"><b>Definition:</b> <a href="../../da/d1e/var__struc_8h_source.html#l00065">var_struc.h:65</a></div></div>
+<div class="ttc" id="astructb__f__var_html_a9dade02bba2f7b1b0ed1c1bd10a66e2f"><div class="ttname"><a href="../../dc/d0e/structb__f__var.html#a9dade02bba2f7b1b0ed1c1bd10a66e2f">b_f_var::TV</a></div><div class="ttdeci">double TV</div><div class="ttdoc">spatial derivatives in coordinate y (slopes).</div><div class="ttdef"><b>Definition:</b> <a href="../../da/d1e/var__struc_8h_source.html#l00066">var_struc.h:66</a></div></div>
+<div class="ttc" id="astructb__f__var_html_a9f5cb7567bfc06f9ee5c4f6f1d7576a2"><div class="ttname"><a href="../../dc/d0e/structb__f__var.html#a9f5cb7567bfc06f9ee5c4f6f1d7576a2">b_f_var::TU</a></div><div class="ttdeci">double TU</div><div class="ttdef"><b>Definition:</b> <a href="../../da/d1e/var__struc_8h_source.html#l00066">var_struc.h:66</a></div></div>
+<div class="ttc" id="astructb__f__var_html_ad80abb413d63c1c24dbb98d398b63a30"><div class="ttname"><a href="../../dc/d0e/structb__f__var.html#ad80abb413d63c1c24dbb98d398b63a30">b_f_var::TP</a></div><div class="ttdeci">double TP</div><div class="ttdef"><b>Definition:</b> <a href="../../da/d1e/var__struc_8h_source.html#l00066">var_struc.h:66</a></div></div>
+<div class="ttc" id="astructcell__var__stru_html"><div class="ttname"><a href="../../da/d95/structcell__var__stru.html">cell_var_stru</a></div><div class="ttdoc">pointer structure of VARiables on STRUctural computational grid CELLs.</div><div class="ttdef"><b>Definition:</b> <a href="../../da/d1e/var__struc_8h_source.html#l00035">var_struc.h:35</a></div></div>
+<div class="ttc" id="astructcell__var__stru_html_a00b51ea2075d49493561553808be380d"><div class="ttname"><a href="../../da/d95/structcell__var__stru.html#a00b51ea2075d49493561553808be380d">cell_var_stru::G_rho</a></div><div class="ttdeci">double ** G_rho</div><div class="ttdef"><b>Definition:</b> <a href="../../da/d1e/var__struc_8h_source.html#l00043">var_struc.h:43</a></div></div>
+<div class="ttc" id="astructcell__var__stru_html_a08c1214071215fdf8101c58e3aa32bb1"><div class="ttname"><a href="../../da/d95/structcell__var__stru.html#a08c1214071215fdf8101c58e3aa32bb1">cell_var_stru::U</a></div><div class="ttdeci">double ** U</div><div class="ttdef"><b>Definition:</b> <a href="../../da/d1e/var__struc_8h_source.html#l00036">var_struc.h:36</a></div></div>
+<div class="ttc" id="astructcell__var__stru_html_a2397f3c5034719c3b142d01197b578a9"><div class="ttname"><a href="../../da/d95/structcell__var__stru.html#a2397f3c5034719c3b142d01197b578a9">cell_var_stru::rhoIy</a></div><div class="ttdeci">double ** rhoIy</div><div class="ttdef"><b>Definition:</b> <a href="../../da/d1e/var__struc_8h_source.html#l00041">var_struc.h:41</a></div></div>
+<div class="ttc" id="astructcell__var__stru_html_a34f0c556cb0c11c05fb50aad063c5348"><div class="ttname"><a href="../../da/d95/structcell__var__stru.html#a34f0c556cb0c11c05fb50aad063c5348">cell_var_stru::t_rho</a></div><div class="ttdeci">double ** t_rho</div><div class="ttdef"><b>Definition:</b> <a href="../../da/d1e/var__struc_8h_source.html#l00039">var_struc.h:39</a></div></div>
+<div class="ttc" id="astructcell__var__stru_html_a49841a9742165f638011c2a0994d75df"><div class="ttname"><a href="../../da/d95/structcell__var__stru.html#a49841a9742165f638011c2a0994d75df">cell_var_stru::s_rho</a></div><div class="ttdeci">double ** s_rho</div><div class="ttdef"><b>Definition:</b> <a href="../../da/d1e/var__struc_8h_source.html#l00038">var_struc.h:38</a></div></div>
+<div class="ttc" id="astructcell__var__stru_html_a500d7c095639b7410510faefa3ce846c"><div class="ttname"><a href="../../da/d95/structcell__var__stru.html#a500d7c095639b7410510faefa3ce846c">cell_var_stru::RHO</a></div><div class="ttdeci">double ** RHO</div><div class="ttdef"><b>Definition:</b> <a href="../../da/d1e/var__struc_8h_source.html#l00036">var_struc.h:36</a></div></div>
+<div class="ttc" id="astructcell__var__stru_html_a560d94afc74c7b02b4fe5b29c5626dca"><div class="ttname"><a href="../../da/d95/structcell__var__stru.html#a560d94afc74c7b02b4fe5b29c5626dca">cell_var_stru::vIy</a></div><div class="ttdeci">double ** vIy</div><div class="ttdef"><b>Definition:</b> <a href="../../da/d1e/var__struc_8h_source.html#l00041">var_struc.h:41</a></div></div>
+<div class="ttc" id="astructcell__var__stru_html_a5ea9a4ad9750e912256a039a7182827c"><div class="ttname"><a href="../../da/d95/structcell__var__stru.html#a5ea9a4ad9750e912256a039a7182827c">cell_var_stru::s_u</a></div><div class="ttdeci">double ** s_u</div><div class="ttdef"><b>Definition:</b> <a href="../../da/d1e/var__struc_8h_source.html#l00038">var_struc.h:38</a></div></div>
+<div class="ttc" id="astructcell__var__stru_html_a6301d977003f5e2869858312e1f1f54d"><div class="ttname"><a href="../../da/d95/structcell__var__stru.html#a6301d977003f5e2869858312e1f1f54d">cell_var_stru::t_u</a></div><div class="ttdeci">double ** t_u</div><div class="ttdef"><b>Definition:</b> <a href="../../da/d1e/var__struc_8h_source.html#l00039">var_struc.h:39</a></div></div>
+<div class="ttc" id="astructcell__var__stru_html_a64c4d150bf4320ba2cdb94bcbf3e88fc"><div class="ttname"><a href="../../da/d95/structcell__var__stru.html#a64c4d150bf4320ba2cdb94bcbf3e88fc">cell_var_stru::G_v</a></div><div class="ttdeci">double ** G_v</div><div class="ttdoc">numerical fluxes at (y_{j-1/2}, t_{n}).</div><div class="ttdef"><b>Definition:</b> <a href="../../da/d1e/var__struc_8h_source.html#l00043">var_struc.h:43</a></div></div>
+<div class="ttc" id="astructcell__var__stru_html_a882e1cbb7025ee72f1995e6c5f71b55f"><div class="ttname"><a href="../../da/d95/structcell__var__stru.html#a882e1cbb7025ee72f1995e6c5f71b55f">cell_var_stru::G_e</a></div><div class="ttdeci">double ** G_e</div><div class="ttdef"><b>Definition:</b> <a href="../../da/d1e/var__struc_8h_source.html#l00043">var_struc.h:43</a></div></div>
+<div class="ttc" id="astructcell__var__stru_html_ab630726d608fcb1e7441525c954cf24c"><div class="ttname"><a href="../../da/d95/structcell__var__stru.html#ab630726d608fcb1e7441525c954cf24c">cell_var_stru::s_v</a></div><div class="ttdeci">double ** s_v</div><div class="ttdef"><b>Definition:</b> <a href="../../da/d1e/var__struc_8h_source.html#l00038">var_struc.h:38</a></div></div>
+<div class="ttc" id="astructcell__var__stru_html_ab64960bdbad2605632708f4f86095888"><div class="ttname"><a href="../../da/d95/structcell__var__stru.html#ab64960bdbad2605632708f4f86095888">cell_var_stru::t_v</a></div><div class="ttdeci">double ** t_v</div><div class="ttdef"><b>Definition:</b> <a href="../../da/d1e/var__struc_8h_source.html#l00039">var_struc.h:39</a></div></div>
+<div class="ttc" id="astructcell__var__stru_html_abc99433cfde659b308528d22e435a3c4"><div class="ttname"><a href="../../da/d95/structcell__var__stru.html#abc99433cfde659b308528d22e435a3c4">cell_var_stru::G_u</a></div><div class="ttdeci">double ** G_u</div><div class="ttdef"><b>Definition:</b> <a href="../../da/d1e/var__struc_8h_source.html#l00043">var_struc.h:43</a></div></div>
+<div class="ttc" id="astructcell__var__stru_html_ac838144c59cb343c9798c4cc46531907"><div class="ttname"><a href="../../da/d95/structcell__var__stru.html#ac838144c59cb343c9798c4cc46531907">cell_var_stru::uIy</a></div><div class="ttdeci">double ** uIy</div><div class="ttdef"><b>Definition:</b> <a href="../../da/d1e/var__struc_8h_source.html#l00041">var_struc.h:41</a></div></div>
+<div class="ttc" id="astructcell__var__stru_html_ad9561b9d62141716b49a9260f8282709"><div class="ttname"><a href="../../da/d95/structcell__var__stru.html#ad9561b9d62141716b49a9260f8282709">cell_var_stru::V</a></div><div class="ttdeci">double ** V</div><div class="ttdef"><b>Definition:</b> <a href="../../da/d1e/var__struc_8h_source.html#l00036">var_struc.h:36</a></div></div>
+<div class="ttc" id="astructcell__var__stru_html_ae29507f45a2a5d66e250d1f59564293d"><div class="ttname"><a href="../../da/d95/structcell__var__stru.html#ae29507f45a2a5d66e250d1f59564293d">cell_var_stru::s_p</a></div><div class="ttdeci">double ** s_p</div><div class="ttdoc">spatial derivatives in coordinate x (slopes).</div><div class="ttdef"><b>Definition:</b> <a href="../../da/d1e/var__struc_8h_source.html#l00038">var_struc.h:38</a></div></div>
+<div class="ttc" id="astructcell__var__stru_html_aec3b8631a81fe4607741c9f66a539a6c"><div class="ttname"><a href="../../da/d95/structcell__var__stru.html#aec3b8631a81fe4607741c9f66a539a6c">cell_var_stru::pIy</a></div><div class="ttdeci">double ** pIy</div><div class="ttdoc">interfacial variable values in coordinate y at t_{n+1}.</div><div class="ttdef"><b>Definition:</b> <a href="../../da/d1e/var__struc_8h_source.html#l00041">var_struc.h:41</a></div></div>
+<div class="ttc" id="astructcell__var__stru_html_aec9cd0281bac1143c62b2233c3dd6862"><div class="ttname"><a href="../../da/d95/structcell__var__stru.html#aec9cd0281bac1143c62b2233c3dd6862">cell_var_stru::P</a></div><div class="ttdeci">double ** P</div><div class="ttdef"><b>Definition:</b> <a href="../../da/d1e/var__struc_8h_source.html#l00036">var_struc.h:36</a></div></div>
+<div class="ttc" id="astructcell__var__stru_html_af1a9d5d1a74038f8defa7dd8765d892b"><div class="ttname"><a href="../../da/d95/structcell__var__stru.html#af1a9d5d1a74038f8defa7dd8765d892b">cell_var_stru::t_p</a></div><div class="ttdeci">double ** t_p</div><div class="ttdoc">spatial derivatives in coordinate y (slopes).</div><div class="ttdef"><b>Definition:</b> <a href="../../da/d1e/var__struc_8h_source.html#l00039">var_struc.h:39</a></div></div>
+<div class="ttc" id="astructi__f__var_html"><div class="ttname"><a href="../../d9/dd4/structi__f__var.html">i_f_var</a></div><div class="ttdoc">Interfacial Fluid VARiables.</div><div class="ttdef"><b>Definition:</b> <a href="../../da/d1e/var__struc_8h_source.html#l00047">var_struc.h:47</a></div></div>
+<div class="ttc" id="astructi__f__var_html_a03ba434199d4c3d887569ab455c7e633"><div class="ttname"><a href="../../d9/dd4/structi__f__var.html#a03ba434199d4c3d887569ab455c7e633">i_f_var::t_rho</a></div><div class="ttdeci">double t_rho</div><div class="ttdef"><b>Definition:</b> <a href="../../da/d1e/var__struc_8h_source.html#l00053">var_struc.h:53</a></div></div>
+<div class="ttc" id="astructi__f__var_html_a1e6fac1696a7d8fcf13ce87a658cfe12"><div class="ttname"><a href="../../d9/dd4/structi__f__var.html#a1e6fac1696a7d8fcf13ce87a658cfe12">i_f_var::V</a></div><div class="ttdeci">double V</div><div class="ttdoc">variable values at t_{n}.</div><div class="ttdef"><b>Definition:</b> <a href="../../da/d1e/var__struc_8h_source.html#l00049">var_struc.h:49</a></div></div>
+<div class="ttc" id="astructi__f__var_html_a217bf9660dd9e5f62039d90542fbe6d5"><div class="ttname"><a href="../../d9/dd4/structi__f__var.html#a217bf9660dd9e5f62039d90542fbe6d5">i_f_var::V_int</a></div><div class="ttdeci">double V_int</div><div class="ttdoc">interfacial variables at t_{n+1}.</div><div class="ttdef"><b>Definition:</b> <a href="../../da/d1e/var__struc_8h_source.html#l00050">var_struc.h:50</a></div></div>
+<div class="ttc" id="astructi__f__var_html_a3c860a618964c60dd75fae5a142007fa"><div class="ttname"><a href="../../d9/dd4/structi__f__var.html#a3c860a618964c60dd75fae5a142007fa">i_f_var::RHO</a></div><div class="ttdeci">double RHO</div><div class="ttdef"><b>Definition:</b> <a href="../../da/d1e/var__struc_8h_source.html#l00049">var_struc.h:49</a></div></div>
+<div class="ttc" id="astructi__f__var_html_a49c8cabb20106adba94bea6fdf655f1b"><div class="ttname"><a href="../../d9/dd4/structi__f__var.html#a49c8cabb20106adba94bea6fdf655f1b">i_f_var::t_v</a></div><div class="ttdeci">double t_v</div><div class="ttdoc">tangential spatial derivatives OR spatial derivatives in Lagrangian coordinate ξ</div><div class="ttdef"><b>Definition:</b> <a href="../../da/d1e/var__struc_8h_source.html#l00053">var_struc.h:53</a></div></div>
+<div class="ttc" id="astructi__f__var_html_a4ccfb57bd4508f89d887c05406ccf205"><div class="ttname"><a href="../../d9/dd4/structi__f__var.html#a4ccfb57bd4508f89d887c05406ccf205">i_f_var::d_p</a></div><div class="ttdeci">double d_p</div><div class="ttdef"><b>Definition:</b> <a href="../../da/d1e/var__struc_8h_source.html#l00052">var_struc.h:52</a></div></div>
+<div class="ttc" id="astructi__f__var_html_a585c19e315078f8139382271a727f8ea"><div class="ttname"><a href="../../d9/dd4/structi__f__var.html#a585c19e315078f8139382271a727f8ea">i_f_var::U_int</a></div><div class="ttdeci">double U_int</div><div class="ttdef"><b>Definition:</b> <a href="../../da/d1e/var__struc_8h_source.html#l00050">var_struc.h:50</a></div></div>
+<div class="ttc" id="astructi__f__var_html_a6adf77edbad3c6c9a69c0f2b7c9ab99a"><div class="ttname"><a href="../../d9/dd4/structi__f__var.html#a6adf77edbad3c6c9a69c0f2b7c9ab99a">i_f_var::U</a></div><div class="ttdeci">double U</div><div class="ttdef"><b>Definition:</b> <a href="../../da/d1e/var__struc_8h_source.html#l00049">var_struc.h:49</a></div></div>
+<div class="ttc" id="astructi__f__var_html_a6d7def9bc3200ab1dcb2824850d730cb"><div class="ttname"><a href="../../d9/dd4/structi__f__var.html#a6d7def9bc3200ab1dcb2824850d730cb">i_f_var::t_p</a></div><div class="ttdeci">double t_p</div><div class="ttdef"><b>Definition:</b> <a href="../../da/d1e/var__struc_8h_source.html#l00053">var_struc.h:53</a></div></div>
+<div class="ttc" id="astructi__f__var_html_a8019aa9167c19c810aefa4cd5c0b0ab5"><div class="ttname"><a href="../../d9/dd4/structi__f__var.html#a8019aa9167c19c810aefa4cd5c0b0ab5">i_f_var::P</a></div><div class="ttdeci">double P</div><div class="ttdef"><b>Definition:</b> <a href="../../da/d1e/var__struc_8h_source.html#l00049">var_struc.h:49</a></div></div>
+<div class="ttc" id="astructi__f__var_html_a8d0de666a8606044a25cb263599f2e20"><div class="ttname"><a href="../../d9/dd4/structi__f__var.html#a8d0de666a8606044a25cb263599f2e20">i_f_var::F_rho</a></div><div class="ttdeci">double F_rho</div><div class="ttdef"><b>Definition:</b> <a href="../../da/d1e/var__struc_8h_source.html#l00051">var_struc.h:51</a></div></div>
+<div class="ttc" id="astructi__f__var_html_a9669f6fdf39ecfadb03b5b4faad9e973"><div class="ttname"><a href="../../d9/dd4/structi__f__var.html#a9669f6fdf39ecfadb03b5b4faad9e973">i_f_var::RHO_int</a></div><div class="ttdeci">double RHO_int</div><div class="ttdef"><b>Definition:</b> <a href="../../da/d1e/var__struc_8h_source.html#l00050">var_struc.h:50</a></div></div>
+<div class="ttc" id="astructi__f__var_html_a9d4005c8de55d7d5c66fc4137fca012f"><div class="ttname"><a href="../../d9/dd4/structi__f__var.html#a9d4005c8de55d7d5c66fc4137fca012f">i_f_var::n_x</a></div><div class="ttdeci">double n_x</div><div class="ttdef"><b>Definition:</b> <a href="../../da/d1e/var__struc_8h_source.html#l00048">var_struc.h:48</a></div></div>
+<div class="ttc" id="astructi__f__var_html_aa2f4b0827523420ad977c915d5f62538"><div class="ttname"><a href="../../d9/dd4/structi__f__var.html#aa2f4b0827523420ad977c915d5f62538">i_f_var::d_rho</a></div><div class="ttdeci">double d_rho</div><div class="ttdef"><b>Definition:</b> <a href="../../da/d1e/var__struc_8h_source.html#l00052">var_struc.h:52</a></div></div>
+<div class="ttc" id="astructi__f__var_html_aa31baab270a0a3a76037d2cd854496b4"><div class="ttname"><a href="../../d9/dd4/structi__f__var.html#aa31baab270a0a3a76037d2cd854496b4">i_f_var::F_e</a></div><div class="ttdeci">double F_e</div><div class="ttdef"><b>Definition:</b> <a href="../../da/d1e/var__struc_8h_source.html#l00051">var_struc.h:51</a></div></div>
+<div class="ttc" id="astructi__f__var_html_aa9bf355ec607888e7b62164b33f4e68b"><div class="ttname"><a href="../../d9/dd4/structi__f__var.html#aa9bf355ec607888e7b62164b33f4e68b">i_f_var::d_u</a></div><div class="ttdeci">double d_u</div><div class="ttdef"><b>Definition:</b> <a href="../../da/d1e/var__struc_8h_source.html#l00052">var_struc.h:52</a></div></div>
+<div class="ttc" id="astructi__f__var_html_aae73c5ff8068d4ccbe37fbb02a0de06c"><div class="ttname"><a href="../../d9/dd4/structi__f__var.html#aae73c5ff8068d4ccbe37fbb02a0de06c">i_f_var::t_u</a></div><div class="ttdeci">double t_u</div><div class="ttdef"><b>Definition:</b> <a href="../../da/d1e/var__struc_8h_source.html#l00053">var_struc.h:53</a></div></div>
+<div class="ttc" id="astructi__f__var_html_ac457be2f251fb7324b7dde5e30f97790"><div class="ttname"><a href="../../d9/dd4/structi__f__var.html#ac457be2f251fb7324b7dde5e30f97790">i_f_var::F_u</a></div><div class="ttdeci">double F_u</div><div class="ttdef"><b>Definition:</b> <a href="../../da/d1e/var__struc_8h_source.html#l00051">var_struc.h:51</a></div></div>
+<div class="ttc" id="astructi__f__var_html_acd3883225f0324b53f722374f08a04dd"><div class="ttname"><a href="../../d9/dd4/structi__f__var.html#acd3883225f0324b53f722374f08a04dd">i_f_var::F_v</a></div><div class="ttdeci">double F_v</div><div class="ttdoc">interfacial fluxes at t_{n+1/2}.</div><div class="ttdef"><b>Definition:</b> <a href="../../da/d1e/var__struc_8h_source.html#l00051">var_struc.h:51</a></div></div>
+<div class="ttc" id="astructi__f__var_html_ae983f6a4cc51c33357e7c5650393c09e"><div class="ttname"><a href="../../d9/dd4/structi__f__var.html#ae983f6a4cc51c33357e7c5650393c09e">i_f_var::d_v</a></div><div class="ttdeci">double d_v</div><div class="ttdoc">normal spatial derivatives.</div><div class="ttdef"><b>Definition:</b> <a href="../../da/d1e/var__struc_8h_source.html#l00052">var_struc.h:52</a></div></div>
+<div class="ttc" id="astructi__f__var_html_aea3c6dbaea2d7e28e8d47c0f308f641d"><div class="ttname"><a href="../../d9/dd4/structi__f__var.html#aea3c6dbaea2d7e28e8d47c0f308f641d">i_f_var::P_int</a></div><div class="ttdeci">double P_int</div><div class="ttdef"><b>Definition:</b> <a href="../../da/d1e/var__struc_8h_source.html#l00050">var_struc.h:50</a></div></div>
+<div class="ttc" id="avar__struc_8h_html_a8566b0397a3ece6fe73247288d4c3205"><div class="ttname"><a href="../../da/d1e/var__struc_8h.html#a8566b0397a3ece6fe73247288d4c3205">config</a></div><div class="ttdeci">double config[]</div><div class="ttdoc">Initial configuration data array.</div><div class="ttdef"><b>Definition:</b> <a href="../../d2/d24/hydrocode_8c_source.html#l00115">hydrocode.c:115</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="../../dir_b8d1c37d19eecacce1bb588c338fb665.html">flux_calc</a></li><li class="navelem"><a class="el" href="../../de/db1/flux__generator__y_8c.html">flux_generator_y.c</a></li>
+    <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
+  </ul>
+</div>
+</body>
+</html>

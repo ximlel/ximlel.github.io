@@ -1,0 +1,6 @@
+<map id="config_write" name="config_write">
+<area shape="rect" id="node1" title=" " alt="" coords="200,56,303,83"/>
+<area shape="rect" id="node2" href="$db/db6/__1_d__file__out_8c.html#ac8a02f83676d1a92835bb46c4eb0bcbc" title="This function write the 1&#45;D solution into output .dat files." alt="" coords="21,5,136,32"/>
+<area shape="rect" id="node3" href="$d8/d32/__2_d__file__out_8c.html#a2af47b5ca07b0ab40a1bc384565ab2a0" title="This function write the 2&#45;D solution into output .dat files." alt="" coords="21,56,136,83"/>
+<area shape="rect" id="node4" href="$d8/d32/__2_d__file__out_8c.html#aec541405a9b5172445c0cd309a723c7d" title="This function write the 2&#45;D solution into Tecplot output files." alt="" coords="5,107,152,133"/>
+</map>

@@ -33,19 +33,47 @@
       </tags>
   </entry>
   <entry>
-    <title>新2</title>
-    <url>/zh-CN/2022/04/27/new2/</url>
-    <content><![CDATA[<p>新2</p>
+    <title>1D HydroCODE</title>
+    <url>/zh-CN/2022/09/01/1D-HydroCODE/</url>
+    <content><![CDATA[<p>新1</p>
 <span id="more"></span>
 
-<p>新22</p>
+<a href="/zh-CN/2022/09/01/1D-HydroCODE/html2/index.html" title="代码文档网页">代码文档网页</a>
+
+<a href="/zh-CN/2022/09/01/1D-HydroCODE/refman2.pdf" title="代码文档PDF">代码文档PDF</a>
+
+<a href="/zh-CN/2022/09/01/1D-HydroCODE/Specification.pdf" title="程序说明PDF">程序说明PDF</a>
+
+
+
+<p>新11</p>
 ]]></content>
       <categories>
-        <category>Introduction1</category>
+        <category>HydroCODE</category>
       </categories>
       <tags>
-        <tag>Resume1</tag>
-        <tag>Curriculum Vitae2</tag>
+        <tag>CFD program</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>2D HydroCODE</title>
+    <url>/zh-CN/2022/09/01/2D-HydroCODE/</url>
+    <content><![CDATA[<p>新1</p>
+<span id="more"></span>
+
+<a href="/zh-CN/2022/09/01/2D-HydroCODE/html/index.html" title="代码文档网页">代码文档网页</a>
+
+<a href="/zh-CN/2022/09/01/2D-HydroCODE/refman.pdf" title="代码文档PDF">代码文档PDF</a>
+
+
+
+<p>新11</p>
+]]></content>
+      <categories>
+        <category>HydroCODE</category>
+      </categories>
+      <tags>
+        <tag>CFD program</tag>
       </tags>
   </entry>
   <entry>
@@ -62,6 +90,22 @@
       <tags>
         <tag>Resume1</tag>
         <tag>Curriculum Vitae1</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>新2</title>
+    <url>/zh-CN/2022/04/27/new2/</url>
+    <content><![CDATA[<p>新2</p>
+<span id="more"></span>
+
+<p>新22</p>
+]]></content>
+      <categories>
+        <category>Introduction1</category>
+      </categories>
+      <tags>
+        <tag>Resume1</tag>
+        <tag>Curriculum Vitae2</tag>
       </tags>
   </entry>
 </search>
