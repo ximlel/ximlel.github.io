@@ -1,8 +1,8 @@
-<img src="https://pic.onlinewebfonts.com/svg/img_288128.png" alt="Hexo Logo" style="zoom: 25%;" />
+<img src="https://pic.onlinewebfonts.com/svg/img_288128.png" alt="Hexo Logo" style="zoom: 10%;" />
 
 # Personal HomePage
 
-​    Xin Lei - PhD of CFD
+  Xin Lei - PhD of CFD
 
 - Graduate from BNU
 
@@ -10,10 +10,6 @@
 
 ## Deploy This Page
 
-This is a blog built with [Hexo](https://hexo.io/) and deployed with [Vercel](https://vercel.com/dashboard/).
+This is a blog built with [Hexo](https://hexo.io/) and deployed on GitHub Pages [GitHub Pages](https://pages.github.com/)
 
-Deploy this Hexo project with Vercel.
-
-[![Deploy with Vercel](https://vercel.com/button)](https://home-page-xinlei.vercel.app)
-
-_Live Example: https://hexo-template.vercel.app_
+Deploy with [hexo-deployer-git](https://github.com/hexojs/hexo-deployer-git).
