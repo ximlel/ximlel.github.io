@@ -1,0 +1,203 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.3"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>HydroCODE_1D: /run/media/leixin/软件盘/雷昕整理后的重要文件/程序/My-CFD/HydroCODE/src/file_io/_2D_file_in.c 文件参考</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../resize.js"></script>
+<script type="text/javascript" src="../../navtreedata.js"></script>
+<script type="text/javascript" src="../../navtree.js"></script>
+<link href="../../search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../search/searchdata.js"></script>
+<script type="text/javascript" src="../../search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+  $(document).ready(function() { init_search(); });
+/* @license-end */
+</script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="../../Logo.jpg"/></td>
+  <td id="projectalign">
+   <div id="projectname">HydroCODE_1D<span id="projectnumber">&#160;0.1</span>
+   </div>
+   <div id="projectbrief">This is a implementation of fully explict forward Euler scheme for 1-D Euler equations of motion on Lagrangian/Eulerian coordinate</div>
+  </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="../../search/mag_sel.svg"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="搜索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="../../search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.9.3 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "../../search",'搜索','.html');
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('d4/d75/__2_d__file__in_8c.html','../../'); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#define-members">宏定义</a> &#124;
+<a href="#func-members">函数</a>  </div>
+  <div class="headertitle"><div class="title">_2D_file_in.c 文件参考</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>This is a set of functions which control the read-in of two-dimensional data.  
+<a href="#details">更多...</a></p>
+<div class="textblock"><code>#include &lt;math.h&gt;</code><br />
+<code>#include &lt;string.h&gt;</code><br />
+<code>#include &lt;stdio.h&gt;</code><br />
+<code>#include &lt;stdlib.h&gt;</code><br />
+<code>#include &quot;<a class="el" href="../../da/d1e/var__struc_8h_source.html">../include/var_struc.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="../../db/db8/file__io_8h_source.html">../include/file_io.h</a>&quot;</code><br />
+</div><div class="textblock"><div class="dynheader">
+_2D_file_in.c 的引用(Include)关系图:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../df/d9a/__2_d__file__in_8c__incl.svg" width="704" height="156"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</div>
+<p><a href="../../d4/d75/__2_d__file__in_8c_source.html">浏览源代码.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
+宏定义</h2></td></tr>
+<tr class="memitem:ab0f6e01cf1eb4d625e7377de7256d268"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d75/__2_d__file__in_8c.html#ab0f6e01cf1eb4d625e7377de7256d268">STR_FLU_INI</a>(sfv)</td></tr>
+<tr class="memdesc:ab0f6e01cf1eb4d625e7377de7256d268"><td class="mdescLeft">&#160;</td><td class="mdescRight">Count out and read in 2-D data of the initial fluid variable 'sfv'.  <a href="../../d4/d75/__2_d__file__in_8c.html#ab0f6e01cf1eb4d625e7377de7256d268">更多...</a><br /></td></tr>
+<tr class="separator:ab0f6e01cf1eb4d625e7377de7256d268"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+函数</h2></td></tr>
+<tr class="memitem:a2888d943cf419875759b1f72a7723296"><td class="memItemLeft" align="right" valign="top">struct <a class="el" href="../../d2/d24/structflu__var.html">flu_var</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d75/__2_d__file__in_8c.html#a2888d943cf419875759b1f72a7723296">_2D_initialize</a> (const char *name)</td></tr>
+<tr class="memdesc:a2888d943cf419875759b1f72a7723296"><td class="mdescLeft">&#160;</td><td class="mdescRight">This function reads the 2-D initial data file of velocity/pressure/density.  <a href="../../d4/d75/__2_d__file__in_8c.html#a2888d943cf419875759b1f72a7723296">更多...</a><br /></td></tr>
+<tr class="separator:a2888d943cf419875759b1f72a7723296"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
+<div class="textblock"><p >This is a set of functions which control the read-in of two-dimensional data. </p>
+
+<p class="definition">在文件 <a class="el" href="../../d4/d75/__2_d__file__in_8c_source.html">_2D_file_in.c</a> 中定义.</p>
+</div><h2 class="groupheader">宏定义说明</h2>
+<a id="ab0f6e01cf1eb4d625e7377de7256d268" name="ab0f6e01cf1eb4d625e7377de7256d268"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab0f6e01cf1eb4d625e7377de7256d268">&#9670;&nbsp;</a></span>STR_FLU_INI</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define STR_FLU_INI</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">sfv</td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Count out and read in 2-D data of the initial fluid variable 'sfv'. </p>
+
+<p class="definition">在文件 <a class="el" href="../../d4/d75/__2_d__file__in_8c_source.html">_2D_file_in.c</a> 第 <a class="el" href="../../d4/d75/__2_d__file__in_8c_source.html#l00018">18</a> 行定义.</p>
+
+</div>
+</div>
+<h2 class="groupheader">函数说明</h2>
+<a id="a2888d943cf419875759b1f72a7723296" name="a2888d943cf419875759b1f72a7723296"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2888d943cf419875759b1f72a7723296">&#9670;&nbsp;</a></span>_2D_initialize()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">struct <a class="el" href="../../d2/d24/structflu__var.html">flu_var</a> _2D_initialize </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>name</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>This function reads the 2-D initial data file of velocity/pressure/density. </p>
+<p >The function initialize the extern pointer FV0.RHO/U/V/P pointing to the position of a block of memory consisting (line*column+2) variables* of type double. The value of first of these variables is (line) number; The value of second of these variables is (column) number; The following (line*column) variables are the initial value. </p><dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">name</td><td>Name of the test example. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd><b>FV0:</b> Structure of initial data array pointer. </dd></dl>
+
+<p class="definition">在文件 <a class="el" href="../../d4/d75/__2_d__file__in_8c_source.html">_2D_file_in.c</a> 第 <a class="el" href="../../d4/d75/__2_d__file__in_8c_source.html#l00079">79</a> 行定义.</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../d4/d75/__2_d__file__in_8c_a2888d943cf419875759b1f72a7723296_cgraph.svg" width="423" height="139"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="../../dir_0ce636e8c1612c01b4adc36e9f99479e.html">file_io</a></li><li class="navelem"><a class="el" href="../../d4/d75/__2_d__file__in_8c.html">_2D_file_in.c</a></li>
+    <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
+  </ul>
+</div>
+</body>
+</html>

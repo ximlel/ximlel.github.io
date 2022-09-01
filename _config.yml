@@ -15,7 +15,7 @@ timezone: Asia/Shanghai
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: https://home-page-xinlei.vercel.app/
+url: https://ximlel.github.io/
 root: /
 permalink: :lang/:year/:month/:day/:title/
 permalink_defaults:
@@ -28,7 +28,9 @@ archive_dir: archives
 category_dir: categories
 code_dir: downloads/code
 i18n_dir: :lang
-skip_render:
+skip_render: 
+    - "_posts/zh-CN/1D-HydroCODE/**/*"
+    - "_posts/zh-CN/2D-HydroCODE/**/*"
 
 # Writing
 new_post_name: :lang/:title.md # File name of new posts
@@ -37,7 +39,7 @@ titlecase: false # Transform title into titlecase
 external_link: true # Open external links in new tab
 filename_case: 0
 render_drafts: false
-post_asset_folder: false
+post_asset_folder: true
 relative_link: false
 future: true
 highlight:

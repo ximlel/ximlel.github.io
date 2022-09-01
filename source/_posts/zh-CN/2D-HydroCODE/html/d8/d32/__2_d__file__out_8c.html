@@ -1,0 +1,402 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.3"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>HydroCODE_2D: /home/leixin/Programs/HydroCODE/src/file_io/_2D_file_out.c 文件参考</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../resize.js"></script>
+<script type="text/javascript" src="../../navtreedata.js"></script>
+<script type="text/javascript" src="../../navtree.js"></script>
+<link href="../../search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../search/searchdata.js"></script>
+<script type="text/javascript" src="../../search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+  $(document).ready(function() { init_search(); });
+/* @license-end */
+</script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="../../Logo.jpg"/></td>
+  <td id="projectalign">
+   <div id="projectname">HydroCODE_2D<span id="projectnumber">&#160;0.1</span>
+   </div>
+   <div id="projectbrief">This is a implementation of fully explict forward Euler scheme for 2-D Euler equations of motion on Eulerian coordinate</div>
+  </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="../../search/mag_sel.svg"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="搜索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="../../search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.9.3 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "../../search",'搜索','.html');
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('d8/d32/__2_d__file__out_8c.html','../../'); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#define-members">宏定义</a> &#124;
+<a href="#func-members">函数</a>  </div>
+  <div class="headertitle"><div class="title">_2D_file_out.c 文件参考</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>This is a set of functions which control the readout of two-dimensional data.  
+<a href="#details">更多...</a></p>
+<div class="textblock"><code>#include &lt;math.h&gt;</code><br />
+<code>#include &lt;string.h&gt;</code><br />
+<code>#include &lt;stdio.h&gt;</code><br />
+<code>#include &lt;stdlib.h&gt;</code><br />
+<code>#include &lt;time.h&gt;</code><br />
+<code>#include &quot;<a class="el" href="../../da/d1e/var__struc_8h_source.html">../include/var_struc.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="../../db/db8/file__io_8h_source.html">../include/file_io.h</a>&quot;</code><br />
+</div><div class="textblock"><div class="dynheader">
+_2D_file_out.c 的引用(Include)关系图:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../d8/d23/__2_d__file__out_8c__incl.svg" width="792" height="142"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</div>
+<p><a href="../../d8/d32/__2_d__file__out_8c_source.html">浏览源代码.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
+宏定义</h2></td></tr>
+<tr class="memitem:a8863a1106f5ffe02341f92c1696d6c59"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d32/__2_d__file__out_8c.html#a8863a1106f5ffe02341f92c1696d6c59">PRINT_NC</a>(v,  v_print)</td></tr>
+<tr class="memdesc:a8863a1106f5ffe02341f92c1696d6c59"><td class="mdescLeft">&#160;</td><td class="mdescRight">Print out fluid variable 'v' with array data element 'v_print'.  <a href="../../d8/d32/__2_d__file__out_8c.html#a8863a1106f5ffe02341f92c1696d6c59">更多...</a><br /></td></tr>
+<tr class="separator:a8863a1106f5ffe02341f92c1696d6c59"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+函数</h2></td></tr>
+<tr class="memitem:a2af47b5ca07b0ab40a1bc384565ab2a0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d32/__2_d__file__out_8c.html#a2af47b5ca07b0ab40a1bc384565ab2a0">_2D_file_write</a> (const int n_x, const int n_y, const int N, const struct <a class="el" href="../../da/d95/structcell__var__stru.html">cell_var_stru</a> CV[], double **X, double **Y, const double *cpu_time, const char *name, const double *time_plot)</td></tr>
+<tr class="memdesc:a2af47b5ca07b0ab40a1bc384565ab2a0"><td class="mdescLeft">&#160;</td><td class="mdescRight">This function write the 2-D solution into output .dat files.  <a href="../../d8/d32/__2_d__file__out_8c.html#a2af47b5ca07b0ab40a1bc384565ab2a0">更多...</a><br /></td></tr>
+<tr class="separator:a2af47b5ca07b0ab40a1bc384565ab2a0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aec541405a9b5172445c0cd309a723c7d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d32/__2_d__file__out_8c.html#aec541405a9b5172445c0cd309a723c7d">_2D_TEC_file_write</a> (const int n_x, const int n_y, const int N, const struct <a class="el" href="../../da/d95/structcell__var__stru.html">cell_var_stru</a> CV[], double **X, double **Y, const double *cpu_time, const char *problem, const double *time_plot)</td></tr>
+<tr class="memdesc:aec541405a9b5172445c0cd309a723c7d"><td class="mdescLeft">&#160;</td><td class="mdescRight">This function write the 2-D solution into Tecplot output files.  <a href="../../d8/d32/__2_d__file__out_8c.html#aec541405a9b5172445c0cd309a723c7d">更多...</a><br /></td></tr>
+<tr class="separator:aec541405a9b5172445c0cd309a723c7d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
+<div class="textblock"><p >This is a set of functions which control the readout of two-dimensional data. </p>
+
+<p class="definition">在文件 <a class="el" href="../../d8/d32/__2_d__file__out_8c_source.html">_2D_file_out.c</a> 中定义.</p>
+</div><h2 class="groupheader">宏定义说明</h2>
+<a id="a8863a1106f5ffe02341f92c1696d6c59" name="a8863a1106f5ffe02341f92c1696d6c59"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8863a1106f5ffe02341f92c1696d6c59">&#9670;&nbsp;</a></span>PRINT_NC</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define PRINT_NC</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">v, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">v_print&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>值:</b><div class="fragment"><div class="line">    <span class="keywordflow">do</span> {                                \</div>
+<div class="line">    strcpy(file_data, add_out);                     \</div>
+<div class="line">    strcat(file_data, <span class="stringliteral">&quot;/&quot;</span>);                     \</div>
+<div class="line">    strcat(file_data, #v);                      \</div>
+<div class="line">    strcat(file_data, <span class="stringliteral">&quot;.dat&quot;</span>);                      \</div>
+<div class="line">    if((fp_write = fopen(file_data, <span class="stringliteral">&quot;w&quot;</span>)) == NULL)          \</div>
+<div class="line">    {                               \</div>
+<div class="line">        printf(<span class="stringliteral">&quot;Cannot open solution output file: %s!\n&quot;</span>, #v);  \</div>
+<div class="line">        exit(1);                            \</div>
+<div class="line">    }                               \</div>
+<div class="line">    for(k = 0; k &lt; N; ++k)                      \</div>
+<div class="line">    {                               \</div>
+<div class="line">        for(i = 0; i &lt; n_y; ++i)                    \</div>
+<div class="line">        {                           \</div>
+<div class="line">            for(j = 0; j &lt; n_x; ++j)                \</div>
+<div class="line">            fprintf(fp_write, <span class="stringliteral">&quot;%.10g\t&quot;</span>, (v_print));    \</div>
+<div class="line">            fprintf(fp_write, <span class="stringliteral">&quot;\n&quot;</span>);                \</div>
+<div class="line">        }                           \</div>
+<div class="line">        fprintf(fp_write, <span class="stringliteral">&quot;\n\n&quot;</span>);                  \</div>
+<div class="line">    }                               \</div>
+<div class="line">    fclose(fp_write);                           \</div>
+<div class="line">    } <span class="keywordflow">while</span> (0)</div>
+</div><!-- fragment -->
+<p>Print out fluid variable 'v' with array data element 'v_print'. </p>
+
+<p class="definition">在文件 <a class="el" href="../../d8/d32/__2_d__file__out_8c_source.html">_2D_file_out.c</a> 第 <a class="el" href="../../d8/d32/__2_d__file__out_8c_source.html#l00019">19</a> 行定义.</p>
+
+</div>
+</div>
+<h2 class="groupheader">函数说明</h2>
+<a id="a2af47b5ca07b0ab40a1bc384565ab2a0" name="a2af47b5ca07b0ab40a1bc384565ab2a0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2af47b5ca07b0ab40a1bc384565ab2a0">&#9670;&nbsp;</a></span>_2D_file_write()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void _2D_file_write </td>
+          <td>(</td>
+          <td class="paramtype">const int&#160;</td>
+          <td class="paramname"><em>n_x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int&#160;</td>
+          <td class="paramname"><em>n_y</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int&#160;</td>
+          <td class="paramname"><em>N</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const struct <a class="el" href="../../da/d95/structcell__var__stru.html">cell_var_stru</a>&#160;</td>
+          <td class="paramname"><em>CV</em>[], </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double **&#160;</td>
+          <td class="paramname"><em>X</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double **&#160;</td>
+          <td class="paramname"><em>Y</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const double *&#160;</td>
+          <td class="paramname"><em>cpu_time</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const double *&#160;</td>
+          <td class="paramname"><em>time_plot</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>This function write the 2-D solution into output .dat files. </p>
+<dl class="section note"><dt>注解</dt><dd>It is quite simple so there will be no more comments. </dd></dl>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">n_x</td><td>The number of x-spatial points in the output data. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">n_y</td><td>The number of y-spatial points in the output data. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">N</td><td>The number of time steps in the output data. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">CV</td><td>Structure of grid variable data. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">X</td><td>Array of the x-coordinate data. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">Y</td><td>Array of the y-coordinate data. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">cpu_time</td><td>Array of the CPU time recording. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">name</td><td>Name of the numerical results. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">time_plot</td><td>Array of the plotting time recording. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">在文件 <a class="el" href="../../d8/d32/__2_d__file__out_8c_source.html">_2D_file_out.c</a> 第 <a class="el" href="../../d8/d32/__2_d__file__out_8c_source.html#l00056">56</a> 行定义.</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../d8/d32/__2_d__file__out_8c_a2af47b5ca07b0ab40a1bc384565ab2a0_cgraph.svg" width="408" height="88"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../d8/d32/__2_d__file__out_8c_a2af47b5ca07b0ab40a1bc384565ab2a0_icgraph.svg" width="228" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+
+</div>
+</div>
+<a id="aec541405a9b5172445c0cd309a723c7d" name="aec541405a9b5172445c0cd309a723c7d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aec541405a9b5172445c0cd309a723c7d">&#9670;&nbsp;</a></span>_2D_TEC_file_write()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void _2D_TEC_file_write </td>
+          <td>(</td>
+          <td class="paramtype">const int&#160;</td>
+          <td class="paramname"><em>n_x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int&#160;</td>
+          <td class="paramname"><em>n_y</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int&#160;</td>
+          <td class="paramname"><em>N</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const struct <a class="el" href="../../da/d95/structcell__var__stru.html">cell_var_stru</a>&#160;</td>
+          <td class="paramname"><em>CV</em>[], </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double **&#160;</td>
+          <td class="paramname"><em>X</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double **&#160;</td>
+          <td class="paramname"><em>Y</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const double *&#160;</td>
+          <td class="paramname"><em>cpu_time</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>problem</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const double *&#160;</td>
+          <td class="paramname"><em>time_plot</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>This function write the 2-D solution into Tecplot output files. </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">n_x</td><td>The number of x-spatial points in the output data. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">n_y</td><td>The number of y-spatial points in the output data. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">N</td><td>The number of time steps in the output data. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">CV</td><td>Structure of grid variable data. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">X</td><td>Array of the x-coordinate data. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">Y</td><td>Array of the y-coordinate data. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">cpu_time</td><td>Array of the CPU time recording. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">problem</td><td>Name of the numerical results. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">time_plot</td><td>Array of the plotting time recording. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">在文件 <a class="el" href="../../d8/d32/__2_d__file__out_8c_source.html">_2D_file_out.c</a> 第 <a class="el" href="../../d8/d32/__2_d__file__out_8c_source.html#l00104">104</a> 行定义.</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../d8/d32/__2_d__file__out_8c_aec541405a9b5172445c0cd309a723c7d_cgraph.svg" width="440" height="88"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../d8/d32/__2_d__file__out_8c_aec541405a9b5172445c0cd309a723c7d_icgraph.svg" width="260" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="../../dir_0ce636e8c1612c01b4adc36e9f99479e.html">file_io</a></li><li class="navelem"><a class="el" href="../../d8/d32/__2_d__file__out_8c.html">_2D_file_out.c</a></li>
+    <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
+  </ul>
+</div>
+</body>
+</html>

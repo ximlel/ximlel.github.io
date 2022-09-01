@@ -1,0 +1,135 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.3"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>HydroCODE_2D: /home/leixin/Programs/HydroCODE/src/include/finite_volume.h 源文件</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../resize.js"></script>
+<script type="text/javascript" src="../../navtreedata.js"></script>
+<script type="text/javascript" src="../../navtree.js"></script>
+<link href="../../search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../search/searchdata.js"></script>
+<script type="text/javascript" src="../../search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+  $(document).ready(function() { init_search(); });
+/* @license-end */
+</script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="../../Logo.jpg"/></td>
+  <td id="projectalign">
+   <div id="projectname">HydroCODE_2D<span id="projectnumber">&#160;0.1</span>
+   </div>
+   <div id="projectbrief">This is a implementation of fully explict forward Euler scheme for 2-D Euler equations of motion on Eulerian coordinate</div>
+  </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="../../search/mag_sel.svg"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="搜索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="../../search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.9.3 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "../../search",'搜索','.html');
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('d8/da8/finite__volume_8h_source.html','../../'); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">finite_volume.h</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="../../d8/da8/finite__volume_8h.html">浏览该文件的文档.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span> </div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#ifndef FINITEVOLUME_H</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#define FINITEVOLUME_H</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span> </div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#include &quot;../include/var_struc.h&quot;</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span> </div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="comment">// 1-D Godunov/GRP scheme (Lagrangian, single-component flow)</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="keywordtype">void</span> <a class="code hl_function" href="../../d8/da8/finite__volume_8h.html#af53e1e238ac8b31268d438a76de7f7c2">Godunov_solver_LAG_source</a>(<span class="keyword">const</span> <span class="keywordtype">int</span> m, <span class="keyword">struct</span> <a class="code hl_struct" href="../../da/d95/structcell__var__stru.html">cell_var_stru</a> CV, <span class="keywordtype">double</span> * X[], <span class="keywordtype">double</span> * cpu_time, <span class="keywordtype">double</span> * time_plot);</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="keywordtype">void</span> <a class="code hl_function" href="../../d8/da8/finite__volume_8h.html#a803248d0d521f8306a2850012b6d994c">GRP_solver_LAG_source</a>(<span class="keyword">const</span> <span class="keywordtype">int</span> m, <span class="keyword">struct</span> <a class="code hl_struct" href="../../da/d95/structcell__var__stru.html">cell_var_stru</a> CV, <span class="keywordtype">double</span> * X[], <span class="keywordtype">double</span> * cpu_time, <span class="keywordtype">double</span> * time_plot);</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span> </div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="comment">// 1-D Godunov/GRP scheme (Eulerian, single-component flow)</span></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="keywordtype">void</span> <a class="code hl_function" href="../../d8/da8/finite__volume_8h.html#a8704e7d4489848cbe30f53b305782711">Godunov_solver_EUL_source</a>(<span class="keyword">const</span> <span class="keywordtype">int</span> m, <span class="keyword">struct</span> <a class="code hl_struct" href="../../da/d95/structcell__var__stru.html">cell_var_stru</a> CV, <span class="keywordtype">double</span> * cpu_time, <span class="keywordtype">double</span> * time_plot);</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="keywordtype">void</span> <a class="code hl_function" href="../../d8/da8/finite__volume_8h.html#ad5d51b342d61692dd1d241c7ebb42fa0">GRP_solver_EUL_source</a>(<span class="keyword">const</span> <span class="keywordtype">int</span> m, <span class="keyword">struct</span> <a class="code hl_struct" href="../../da/d95/structcell__var__stru.html">cell_var_stru</a> CV, <span class="keywordtype">double</span> * cpu_time, <span class="keywordtype">double</span> * time_plot);</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span> </div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="comment">// 2-D Godunov/GRP scheme (Eulerian, single-component flow)</span></div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="keywordtype">void</span> <a class="code hl_function" href="../../d8/da8/finite__volume_8h.html#ad2ed8a0ffbf2c3b9eb692984e9fbc6f2">GRP_solver_2D_EUL_source</a>(<span class="keyword">const</span> <span class="keywordtype">int</span> m, <span class="keyword">const</span> <span class="keywordtype">int</span> n, <span class="keyword">struct</span> <a class="code hl_struct" href="../../da/d95/structcell__var__stru.html">cell_var_stru</a> * CV, <span class="keywordtype">double</span> * cpu_time, <span class="keywordtype">double</span> * time_plot);</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="keywordtype">void</span> <a class="code hl_function" href="../../d8/da8/finite__volume_8h.html#a196c7b4e4415c20bbdfc3dd294653b66">GRP_solver_2D_split_EUL_source</a>(<span class="keyword">const</span> <span class="keywordtype">int</span> m, <span class="keyword">const</span> <span class="keywordtype">int</span> n, <span class="keyword">struct</span> <a class="code hl_struct" href="../../da/d95/structcell__var__stru.html">cell_var_stru</a> * CV, <span class="keywordtype">double</span> * cpu_time, <span class="keywordtype">double</span> * time_plot);</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span> </div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span><span class="preprocessor">#endif</span></div>
+<div class="ttc" id="afinite__volume_8h_html_a196c7b4e4415c20bbdfc3dd294653b66"><div class="ttname"><a href="../../d8/da8/finite__volume_8h.html#a196c7b4e4415c20bbdfc3dd294653b66">GRP_solver_2D_split_EUL_source</a></div><div class="ttdeci">void GRP_solver_2D_split_EUL_source(const int m, const int n, struct cell_var_stru *CV, double *cpu_time, double *time_plot)</div><div class="ttdoc">This function use GRP scheme to solve 2-D Euler equations of motion on Eulerian coordinate with dimen...</div><div class="ttdef"><b>Definition:</b> <a href="../../dc/d9e/_g_r_p__solver__2_d__split___e_u_l__source_8c_source.html#l00063">GRP_solver_2D_split_EUL_source.c:63</a></div></div>
+<div class="ttc" id="afinite__volume_8h_html_a803248d0d521f8306a2850012b6d994c"><div class="ttname"><a href="../../d8/da8/finite__volume_8h.html#a803248d0d521f8306a2850012b6d994c">GRP_solver_LAG_source</a></div><div class="ttdeci">void GRP_solver_LAG_source(const int m, struct cell_var_stru CV, double *X[], double *cpu_time, double *time_plot)</div><div class="ttdoc">This function use GRP scheme to solve 1-D Euler equations of motion on Lagrangian coordinate.</div><div class="ttdef"><b>Definition:</b> <a href="../../dd/dd7/_g_r_p__solver___l_a_g__source_8c_source.html#l00027">GRP_solver_LAG_source.c:27</a></div></div>
+<div class="ttc" id="afinite__volume_8h_html_a8704e7d4489848cbe30f53b305782711"><div class="ttname"><a href="../../d8/da8/finite__volume_8h.html#a8704e7d4489848cbe30f53b305782711">Godunov_solver_EUL_source</a></div><div class="ttdeci">void Godunov_solver_EUL_source(const int m, struct cell_var_stru CV, double *cpu_time, double *time_plot)</div><div class="ttdoc">This function use Godunov scheme to solve 1-D Euler equations of motion on Eulerian coordinate.</div><div class="ttdef"><b>Definition:</b> <a href="../../de/dd9/_godunov__solver___e_u_l__source_8c_source.html#l00026">Godunov_solver_EUL_source.c:26</a></div></div>
+<div class="ttc" id="afinite__volume_8h_html_ad2ed8a0ffbf2c3b9eb692984e9fbc6f2"><div class="ttname"><a href="../../d8/da8/finite__volume_8h.html#ad2ed8a0ffbf2c3b9eb692984e9fbc6f2">GRP_solver_2D_EUL_source</a></div><div class="ttdeci">void GRP_solver_2D_EUL_source(const int m, const int n, struct cell_var_stru *CV, double *cpu_time, double *time_plot)</div><div class="ttdoc">This function use GRP scheme to solve 2-D Euler equations of motion on Eulerian coordinate without di...</div><div class="ttdef"><b>Definition:</b> <a href="../../d6/d0f/_g_r_p__solver__2_d___e_u_l__source_8c_source.html#l00063">GRP_solver_2D_EUL_source.c:63</a></div></div>
+<div class="ttc" id="afinite__volume_8h_html_ad5d51b342d61692dd1d241c7ebb42fa0"><div class="ttname"><a href="../../d8/da8/finite__volume_8h.html#ad5d51b342d61692dd1d241c7ebb42fa0">GRP_solver_EUL_source</a></div><div class="ttdeci">void GRP_solver_EUL_source(const int m, struct cell_var_stru CV, double *cpu_time, double *time_plot)</div><div class="ttdoc">This function use GRP scheme to solve 1-D Euler equations of motion on Eulerian coordinate.</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d10/_g_r_p__solver___e_u_l__source_8c_source.html#l00026">GRP_solver_EUL_source.c:26</a></div></div>
+<div class="ttc" id="afinite__volume_8h_html_af53e1e238ac8b31268d438a76de7f7c2"><div class="ttname"><a href="../../d8/da8/finite__volume_8h.html#af53e1e238ac8b31268d438a76de7f7c2">Godunov_solver_LAG_source</a></div><div class="ttdeci">void Godunov_solver_LAG_source(const int m, struct cell_var_stru CV, double *X[], double *cpu_time, double *time_plot)</div><div class="ttdoc">This function use Godunov scheme to solve 1-D Euler equations of motion on Lagrangian coordinate.</div><div class="ttdef"><b>Definition:</b> <a href="../../dd/d30/_godunov__solver___l_a_g__source_8c_source.html#l00027">Godunov_solver_LAG_source.c:27</a></div></div>
+<div class="ttc" id="astructcell__var__stru_html"><div class="ttname"><a href="../../da/d95/structcell__var__stru.html">cell_var_stru</a></div><div class="ttdoc">pointer structure of VARiables on STRUctural computational grid CELLs.</div><div class="ttdef"><b>Definition:</b> <a href="../../da/d1e/var__struc_8h_source.html#l00035">var_struc.h:35</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="../../dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a class="el" href="../../d8/da8/finite__volume_8h.html">finite_volume.h</a></li>
+    <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
+  </ul>
+</div>
+</body>
+</html>

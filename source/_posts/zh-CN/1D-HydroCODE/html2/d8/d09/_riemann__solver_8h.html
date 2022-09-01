@@ -1,0 +1,955 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.3"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>HydroCODE_1D: /run/media/leixin/软件盘/雷昕整理后的重要文件/程序/My-CFD/HydroCODE/src/include/Riemann_solver.h 文件参考</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../resize.js"></script>
+<script type="text/javascript" src="../../navtreedata.js"></script>
+<script type="text/javascript" src="../../navtree.js"></script>
+<link href="../../search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../search/searchdata.js"></script>
+<script type="text/javascript" src="../../search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+  $(document).ready(function() { init_search(); });
+/* @license-end */
+</script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="../../Logo.jpg"/></td>
+  <td id="projectalign">
+   <div id="projectname">HydroCODE_1D<span id="projectnumber">&#160;0.1</span>
+   </div>
+   <div id="projectbrief">This is a implementation of fully explict forward Euler scheme for 1-D Euler equations of motion on Lagrangian/Eulerian coordinate</div>
+  </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="../../search/mag_sel.svg"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="搜索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="../../search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.9.3 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "../../search",'搜索','.html');
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('d8/d09/_riemann__solver_8h.html','../../'); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#define-members">宏定义</a> &#124;
+<a href="#func-members">函数</a>  </div>
+  <div class="headertitle"><div class="title">Riemann_solver.h 文件参考</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>This file is the header file of several Riemann solvers and GRP solvers.  
+<a href="#details">更多...</a></p>
+<div class="textblock"><code>#include &quot;<a class="el" href="../../da/d1e/var__struc_8h_source.html">../include/var_struc.h</a>&quot;</code><br />
+</div><div class="textblock"><div class="dynheader">
+Riemann_solver.h 的引用(Include)关系图:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../de/d73/_riemann__solver_8h__incl.svg" width="222" height="156"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</div><div class="textblock"><div class="dynheader">
+此图展示该文件直接或间接的被哪些文件引用了:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../d1/da8/_riemann__solver_8h__dep__incl.svg" width="3483" height="215"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</div>
+<p><a href="../../d8/d09/_riemann__solver_8h_source.html">浏览源代码.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
+宏定义</h2></td></tr>
+<tr class="memitem:a02d8fc802a4a89921a0e82c6b037352d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d09/_riemann__solver_8h.html#a02d8fc802a4a89921a0e82c6b037352d">Riemann_solver_exact_single</a>&#160;&#160;&#160;<a class="el" href="../../d3/d54/_riemann__solver__exact___ben_8c.html#a10d98fcaa1dd08b65795e981082deeff">Riemann_solver_exact_Ben</a></td></tr>
+<tr class="memdesc:a02d8fc802a4a89921a0e82c6b037352d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Which solver is chosen as the exact Riemann solver for single-component flow.  <a href="../../d8/d09/_riemann__solver_8h.html#a02d8fc802a4a89921a0e82c6b037352d">更多...</a><br /></td></tr>
+<tr class="separator:a02d8fc802a4a89921a0e82c6b037352d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+函数</h2></td></tr>
+<tr class="memitem:a45cd4fa0e00d9dd433f18f918988b49e"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d09/_riemann__solver_8h.html#a45cd4fa0e00d9dd433f18f918988b49e">Riemann_solver_exact</a> (double *U_star, double *P_star, const double gammaL, const double gammaR, const double u_L, const double u_R, const double p_L, const double p_R, const double c_L, const double c_R, _Bool *CRW, const double eps, const double tol, int N)</td></tr>
+<tr class="memdesc:a45cd4fa0e00d9dd433f18f918988b49e"><td class="mdescLeft">&#160;</td><td class="mdescRight">EXACT RIEMANN SOLVER FOR Two-Component γ-Law Gas  <a href="../../d8/d09/_riemann__solver_8h.html#a45cd4fa0e00d9dd433f18f918988b49e">更多...</a><br /></td></tr>
+<tr class="separator:a45cd4fa0e00d9dd433f18f918988b49e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a10d98fcaa1dd08b65795e981082deeff"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d09/_riemann__solver_8h.html#a10d98fcaa1dd08b65795e981082deeff">Riemann_solver_exact_Ben</a> (double *U_star, double *P_star, const double gamma, const double u_L, const double u_R, const double p_L, const double p_R, const double c_L, const double c_R, _Bool *CRW, const double eps, const double tol, const int N)</td></tr>
+<tr class="memdesc:a10d98fcaa1dd08b65795e981082deeff"><td class="mdescLeft">&#160;</td><td class="mdescRight">EXACT RIEMANN SOLVER FOR A γ-Law Gas  <a href="../../d8/d09/_riemann__solver_8h.html#a10d98fcaa1dd08b65795e981082deeff">更多...</a><br /></td></tr>
+<tr class="separator:a10d98fcaa1dd08b65795e981082deeff"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af870894216711132d5d8aeaf5f2d0010"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d09/_riemann__solver_8h.html#af870894216711132d5d8aeaf5f2d0010">Riemann_solver_exact_Toro</a> (double *U_star, double *P_star, const double gamma, const double U_l, const double U_r, const double P_l, const double P_r, const double c_l, const double c_r, _Bool *CRW, const double eps, const double tol, const int N)</td></tr>
+<tr class="memdesc:af870894216711132d5d8aeaf5f2d0010"><td class="mdescLeft">&#160;</td><td class="mdescRight">EXACT RIEMANN SOLVER FOR THE EULER EQUATIONS  <a href="../../d8/d09/_riemann__solver_8h.html#af870894216711132d5d8aeaf5f2d0010">更多...</a><br /></td></tr>
+<tr class="separator:af870894216711132d5d8aeaf5f2d0010"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6567802e291121380cc9765c6f46a1fb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d09/_riemann__solver_8h.html#a6567802e291121380cc9765c6f46a1fb">linear_GRP_solver_LAG</a> (double *D, double *U, const struct <a class="el" href="../../d9/dd4/structi__f__var.html">i_f_var</a> ifv_L, const struct <a class="el" href="../../d9/dd4/structi__f__var.html">i_f_var</a> ifv_R, const double eps, const double atc)</td></tr>
+<tr class="memdesc:a6567802e291121380cc9765c6f46a1fb"><td class="mdescLeft">&#160;</td><td class="mdescRight">A Lagrangian GRP solver for unsteady compressible inviscid two-component flow in one space dimension.  <a href="../../d8/d09/_riemann__solver_8h.html#a6567802e291121380cc9765c6f46a1fb">更多...</a><br /></td></tr>
+<tr class="separator:a6567802e291121380cc9765c6f46a1fb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae1ab028f093a0dcda02b4f7ae5a23ce2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d09/_riemann__solver_8h.html#ae1ab028f093a0dcda02b4f7ae5a23ce2">linear_GRP_solver_Edir</a> (double *D, double *U, const struct <a class="el" href="../../d9/dd4/structi__f__var.html">i_f_var</a> ifv_L, const struct <a class="el" href="../../d9/dd4/structi__f__var.html">i_f_var</a> ifv_R, const double eps, const double atc)</td></tr>
+<tr class="memdesc:ae1ab028f093a0dcda02b4f7ae5a23ce2"><td class="mdescLeft">&#160;</td><td class="mdescRight">A direct Eulerian GRP solver for unsteady compressible inviscid flow in one space dimension.  <a href="../../d8/d09/_riemann__solver_8h.html#ae1ab028f093a0dcda02b4f7ae5a23ce2">更多...</a><br /></td></tr>
+<tr class="separator:ae1ab028f093a0dcda02b4f7ae5a23ce2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2d9faf2079b8b005ff0154c65f8d41f2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d09/_riemann__solver_8h.html#a2d9faf2079b8b005ff0154c65f8d41f2">linear_GRP_solver_Edir_Q1D</a> (double *wave_speed, double *D, double *U, double *U_star, const struct <a class="el" href="../../d9/dd4/structi__f__var.html">i_f_var</a> ifv_L, const struct <a class="el" href="../../d9/dd4/structi__f__var.html">i_f_var</a> ifv_R, const double eps, const double atc)</td></tr>
+<tr class="memdesc:a2d9faf2079b8b005ff0154c65f8d41f2"><td class="mdescLeft">&#160;</td><td class="mdescRight">A Quasi-1D direct Eulerian GRP solver for unsteady compressible inviscid two-component flow in two space dimension.  <a href="../../d8/d09/_riemann__solver_8h.html#a2d9faf2079b8b005ff0154c65f8d41f2">更多...</a><br /></td></tr>
+<tr class="separator:a2d9faf2079b8b005ff0154c65f8d41f2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aff686a52210d82c346d2537c0c704ef3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d09/_riemann__solver_8h.html#aff686a52210d82c346d2537c0c704ef3">linear_GRP_solver_Edir_G2D</a> (double *wave_speed, double *D, double *U, double *U_star, const struct <a class="el" href="../../d9/dd4/structi__f__var.html">i_f_var</a> ifv_L, const struct <a class="el" href="../../d9/dd4/structi__f__var.html">i_f_var</a> ifv_R, const double eps, const double atc)</td></tr>
+<tr class="memdesc:aff686a52210d82c346d2537c0c704ef3"><td class="mdescLeft">&#160;</td><td class="mdescRight">A Genuinely-2D direct Eulerian GRP solver for unsteady compressible inviscid two-component flow in two space dimension.  <a href="../../d8/d09/_riemann__solver_8h.html#aff686a52210d82c346d2537c0c704ef3">更多...</a><br /></td></tr>
+<tr class="separator:aff686a52210d82c346d2537c0c704ef3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
+<div class="textblock"><p >This file is the header file of several Riemann solvers and GRP solvers. </p>
+<p >This header file declares functions in the folder 'Riemann_solver'. </p>
+
+<p class="definition">在文件 <a class="el" href="../../d8/d09/_riemann__solver_8h_source.html">Riemann_solver.h</a> 中定义.</p>
+</div><h2 class="groupheader">宏定义说明</h2>
+<a id="a02d8fc802a4a89921a0e82c6b037352d" name="a02d8fc802a4a89921a0e82c6b037352d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a02d8fc802a4a89921a0e82c6b037352d">&#9670;&nbsp;</a></span>Riemann_solver_exact_single</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define Riemann_solver_exact_single&#160;&#160;&#160;<a class="el" href="../../d3/d54/_riemann__solver__exact___ben_8c.html#a10d98fcaa1dd08b65795e981082deeff">Riemann_solver_exact_Ben</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Which solver is chosen as the exact Riemann solver for single-component flow. </p>
+
+<p class="definition">在文件 <a class="el" href="../../d8/d09/_riemann__solver_8h_source.html">Riemann_solver.h</a> 第 <a class="el" href="../../d8/d09/_riemann__solver_8h_source.html#l00042">42</a> 行定义.</p>
+
+</div>
+</div>
+<h2 class="groupheader">函数说明</h2>
+<a id="ae1ab028f093a0dcda02b4f7ae5a23ce2" name="ae1ab028f093a0dcda02b4f7ae5a23ce2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae1ab028f093a0dcda02b4f7ae5a23ce2">&#9670;&nbsp;</a></span>linear_GRP_solver_Edir()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void linear_GRP_solver_Edir </td>
+          <td>(</td>
+          <td class="paramtype">double *&#160;</td>
+          <td class="paramname"><em>D</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double *&#160;</td>
+          <td class="paramname"><em>U</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const struct <a class="el" href="../../d9/dd4/structi__f__var.html">i_f_var</a>&#160;</td>
+          <td class="paramname"><em>ifv_L</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const struct <a class="el" href="../../d9/dd4/structi__f__var.html">i_f_var</a>&#160;</td>
+          <td class="paramname"><em>ifv_R</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const double&#160;</td>
+          <td class="paramname"><em>eps</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const double&#160;</td>
+          <td class="paramname"><em>atc</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>A direct Eulerian GRP solver for unsteady compressible inviscid flow in one space dimension. </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[out]</td><td class="paramname">D</td><td>the temporal derivative of fluid variables. <br  />
+ [rho, u, p]_t </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">U</td><td>the intermediate Riemann solutions at t-axis. <br  />
+ [rho_mid, u_mid, p_mid] </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">ifv_L</td><td>Left States (rho_L, u_L, p_L, s_rho_L, s_u_L, s_p_L, gamma). </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">ifv_R</td><td>Right States (rho_R, u_R, p_R, s_rho_R, s_u_R, s_p_R).<ul>
+<li>s_rho, s_u, s_p: x-spatial derivatives.</li>
+<li>gamma: the constant of the perfect gas. </li>
+</ul>
+</td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">eps</td><td>the largest value could be seen as zero. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">atc</td><td>Parameter that determines the solver type.<ul>
+<li>INFINITY: acoustic approximation<ul>
+<li>ifv_.s_ = -0.0: exact Riemann solver</li>
+</ul>
+</li>
+<li>eps: 1D GRP solver(nonlinear + acoustic case)</li>
+<li>-0.0: 1D GRP solver(only nonlinear case) </li>
+</ul>
+</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section user"><dt>Reference</dt><dd>Theory is found in Reference [1]. <br  />
+ [1] M. Ben-Artzi, J. Li &amp; G. Warnecke, A direct Eulerian GRP scheme for compressible fluid flows, Journal of Computational Physics, 218.1: 19-43, 2006. </dd></dl>
+
+<p class="definition">在文件 <a class="el" href="../../dc/d70/linear___g_r_p__solver___edir_8c_source.html">linear_GRP_solver_Edir.c</a> 第 <a class="el" href="../../dc/d70/linear___g_r_p__solver___edir_8c_source.html#l00034">34</a> 行定义.</p>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../d8/d09/_riemann__solver_8h_ae1ab028f093a0dcda02b4f7ae5a23ce2_icgraph.svg" width="410" height="235"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+
+</div>
+</div>
+<a id="aff686a52210d82c346d2537c0c704ef3" name="aff686a52210d82c346d2537c0c704ef3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aff686a52210d82c346d2537c0c704ef3">&#9670;&nbsp;</a></span>linear_GRP_solver_Edir_G2D()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void linear_GRP_solver_Edir_G2D </td>
+          <td>(</td>
+          <td class="paramtype">double *&#160;</td>
+          <td class="paramname"><em>wave_speed</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double *&#160;</td>
+          <td class="paramname"><em>D</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double *&#160;</td>
+          <td class="paramname"><em>U</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double *&#160;</td>
+          <td class="paramname"><em>U_star</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const struct <a class="el" href="../../d9/dd4/structi__f__var.html">i_f_var</a>&#160;</td>
+          <td class="paramname"><em>ifv_L</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const struct <a class="el" href="../../d9/dd4/structi__f__var.html">i_f_var</a>&#160;</td>
+          <td class="paramname"><em>ifv_R</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const double&#160;</td>
+          <td class="paramname"><em>eps</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const double&#160;</td>
+          <td class="paramname"><em>atc</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>A Genuinely-2D direct Eulerian GRP solver for unsteady compressible inviscid two-component flow in two space dimension. </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[out]</td><td class="paramname">wave_speed</td><td>the velocity of left and right waves. </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">D</td><td>the temporal derivative of fluid variables. <br  />
+ [rho, u, v, p, phi, z_a]_t </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">U</td><td>the intermediate Riemann solutions at t-axis. <br  />
+ [rho_mid, u_mid, v_mid, p_mid, phi_mid, z_a_mid] </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">U_star</td><td>the Riemann solutions in star region. <br  />
+ [rho_star_L, u_star, rho_star_R, p_star, c_star_L, c_star_R] </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">ifv_L</td><td>Left States (rho/u/v/p/phi/z, d_, t_, gammaL). </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">ifv_R</td><td>Right States (rho/u/v/p/phi/z, d_, t_, gammaR).<ul>
+<li>s_: normal derivatives.</li>
+<li>t_: tangential derivatives.</li>
+<li>gamma: the constant of the perfect gas. </li>
+</ul>
+</td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">eps</td><td>the largest value could be seen as zero. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">atc</td><td>Parameter that determines the solver type.<ul>
+<li>INFINITY: acoustic approximation<ul>
+<li>ifv_.s_, ifv_.t_ = -0.0: exact Riemann solver</li>
+</ul>
+</li>
+<li>eps: Genuinely-2D GRP solver(nonlinear + acoustic case)<ul>
+<li>ifv_.t_ = -0.0: Planar-1D GRP solver</li>
+</ul>
+</li>
+<li>-0.0: Genuinely-2D GRP solver(only nonlinear case)<ul>
+<li>ifv_.t_ = -0.0: Planar-1D GRP solver </li>
+</ul>
+</li>
+</ul>
+</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section remark"><dt>备注</dt><dd>macro definition <b>EXACT_TANGENT_DERIVATIVE:</b> <br  />
+ Switch whether the tangential derivatives are accurately computed. </dd></dl>
+<dl class="section user"><dt>Reference</dt><dd>Theory is found in Reference [1]. <br  />
+ [1] 齐进, 二维欧拉方程广义黎曼问题数值建模及其应用, Ph.D Thesis, Beijing Normal University, 2017. </dd></dl>
+
+<p class="definition">在文件 <a class="el" href="../../d3/da7/linear___g_r_p__solver___edir___g2_d_8c_source.html">linear_GRP_solver_Edir_G2D.c</a> 第 <a class="el" href="../../d3/da7/linear___g_r_p__solver___edir___g2_d_8c_source.html#l00049">49</a> 行定义.</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../d8/d09/_riemann__solver_8h_aff686a52210d82c346d2537c0c704ef3_cgraph.svg" width="691" height="63"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+
+</div>
+</div>
+<a id="a2d9faf2079b8b005ff0154c65f8d41f2" name="a2d9faf2079b8b005ff0154c65f8d41f2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2d9faf2079b8b005ff0154c65f8d41f2">&#9670;&nbsp;</a></span>linear_GRP_solver_Edir_Q1D()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void linear_GRP_solver_Edir_Q1D </td>
+          <td>(</td>
+          <td class="paramtype">double *&#160;</td>
+          <td class="paramname"><em>wave_speed</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double *&#160;</td>
+          <td class="paramname"><em>D</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double *&#160;</td>
+          <td class="paramname"><em>U</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double *&#160;</td>
+          <td class="paramname"><em>U_star</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const struct <a class="el" href="../../d9/dd4/structi__f__var.html">i_f_var</a>&#160;</td>
+          <td class="paramname"><em>ifv_L</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const struct <a class="el" href="../../d9/dd4/structi__f__var.html">i_f_var</a>&#160;</td>
+          <td class="paramname"><em>ifv_R</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const double&#160;</td>
+          <td class="paramname"><em>eps</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const double&#160;</td>
+          <td class="paramname"><em>atc</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>A Quasi-1D direct Eulerian GRP solver for unsteady compressible inviscid two-component flow in two space dimension. </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[out]</td><td class="paramname">wave_speed</td><td>the velocity of left and right waves. </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">D</td><td>the temporal derivative of fluid variables. <br  />
+ [rho, u, v, p, phi, z_a]_t </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">U</td><td>the intermediate Riemann solutions at t-axis. <br  />
+ [rho_mid, u_mid, v_mid, p_mid, phi_mid, z_a_mid] </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">U_star</td><td>the Riemann solutions in star region. <br  />
+ [rho_star_L, u_star, rho_star_R, p_star, c_star_L, c_star_R] </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">ifv_L</td><td>Left States (rho/u/v/p/phi/z, d_, t_, gammaL). </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">ifv_R</td><td>Right States (rho/u/v/p/phi/z, d_, t_, gammaR).<ul>
+<li>s_: normal derivatives.</li>
+<li>t_: tangential derivatives.</li>
+<li>gamma: the constant of the perfect gas. </li>
+</ul>
+</td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">eps</td><td>the largest value could be seen as zero. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">atc</td><td>Parameter that determines the solver type.<ul>
+<li>INFINITY: acoustic approximation<ul>
+<li>ifv_.s_, ifv_.t_ = -0.0: exact Riemann solver</li>
+</ul>
+</li>
+<li>eps: Quasi-1D GRP solver(nonlinear + acoustic case)<ul>
+<li>ifv_.t_ = -0.0: Planar-1D GRP solver</li>
+</ul>
+</li>
+<li>-0.0: Quasi-1D GRP solver(only nonlinear case)<ul>
+<li>ifv_.t_ = -0.0: Planar-1D GRP solver </li>
+</ul>
+</li>
+</ul>
+</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section user"><dt>Reference</dt><dd>Theory is found in Reference [1]. <br  />
+ [1] M. Ben-Artzi, J. Li &amp; G. Warnecke, A direct Eulerian GRP scheme for compressible fluid flows, Journal of Computational Physics, 218.1: 19-43, 2006. </dd></dl>
+
+<p class="definition">在文件 <a class="el" href="../../d5/dea/linear___g_r_p__solver___edir___q1_d_8c_source.html">linear_GRP_solver_Edir_Q1D.c</a> 第 <a class="el" href="../../d5/dea/linear___g_r_p__solver___edir___q1_d_8c_source.html#l00039">39</a> 行定义.</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../d8/d09/_riemann__solver_8h_a2d9faf2079b8b005ff0154c65f8d41f2_cgraph.svg" width="436" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../d8/d09/_riemann__solver_8h_a2d9faf2079b8b005ff0154c65f8d41f2_icgraph.svg" width="472" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+
+</div>
+</div>
+<a id="a6567802e291121380cc9765c6f46a1fb" name="a6567802e291121380cc9765c6f46a1fb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6567802e291121380cc9765c6f46a1fb">&#9670;&nbsp;</a></span>linear_GRP_solver_LAG()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void linear_GRP_solver_LAG </td>
+          <td>(</td>
+          <td class="paramtype">double *&#160;</td>
+          <td class="paramname"><em>D</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double *&#160;</td>
+          <td class="paramname"><em>U</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const struct <a class="el" href="../../d9/dd4/structi__f__var.html">i_f_var</a>&#160;</td>
+          <td class="paramname"><em>ifv_L</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const struct <a class="el" href="../../d9/dd4/structi__f__var.html">i_f_var</a>&#160;</td>
+          <td class="paramname"><em>ifv_R</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const double&#160;</td>
+          <td class="paramname"><em>eps</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const double&#160;</td>
+          <td class="paramname"><em>atc</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>A Lagrangian GRP solver for unsteady compressible inviscid two-component flow in one space dimension. </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[out]</td><td class="paramname">D</td><td>the temporal derivative of fluid variables. <br  />
+ [rho_L, u, p, rho_R]_t </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">U</td><td>the Riemann solutions. <br  />
+ [rho_star_L, u_star, p_star, rho_star_R] </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">ifv_L</td><td>Left States (rho_L, u_L, p_L, s_rho_L, s_u_L, s_p_L, gammaL). </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">ifv_R</td><td>Right States (rho_R, u_R, p_R, s_rho_R, s_u_R, s_p_R, gammaR).<ul>
+<li>s_rho, s_u, s_p: ξ-Lagrangian spatial derivatives.</li>
+<li>gamma: the constant of the perfect gas. </li>
+</ul>
+</td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">eps</td><td>the largest value could be seen as zero. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">atc</td><td>Parameter that determines the solver type.<ul>
+<li>INFINITY: acoustic approximation</li>
+<li>eps: GRP solver(nonlinear + acoustic case)</li>
+<li>-0.0: GRP solver(only nonlinear case) </li>
+</ul>
+</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section user"><dt>Reference</dt><dd>Theory is found in Reference [1]. <br  />
+ [1] M. Ben-Artzi &amp; J. Falcovitz, A second-order Godunov-type scheme for compressible fluid dynamics, Journal of Computational Physics, 55.1: 1-32, 1984 </dd></dl>
+
+<p class="definition">在文件 <a class="el" href="../../de/d81/linear___g_r_p__solver___l_a_g_8c_source.html">linear_GRP_solver_LAG.c</a> 第 <a class="el" href="../../de/d81/linear___g_r_p__solver___l_a_g_8c_source.html#l00033">33</a> 行定义.</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../d8/d09/_riemann__solver_8h_a6567802e291121380cc9765c6f46a1fb_cgraph.svg" width="404" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../d8/d09/_riemann__solver_8h_a6567802e291121380cc9765c6f46a1fb_icgraph.svg" width="414" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+
+</div>
+</div>
+<a id="a45cd4fa0e00d9dd433f18f918988b49e" name="a45cd4fa0e00d9dd433f18f918988b49e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a45cd4fa0e00d9dd433f18f918988b49e">&#9670;&nbsp;</a></span>Riemann_solver_exact()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double Riemann_solver_exact </td>
+          <td>(</td>
+          <td class="paramtype">double *&#160;</td>
+          <td class="paramname"><em>U_star</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double *&#160;</td>
+          <td class="paramname"><em>P_star</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const double&#160;</td>
+          <td class="paramname"><em>gammaL</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const double&#160;</td>
+          <td class="paramname"><em>gammaR</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const double&#160;</td>
+          <td class="paramname"><em>u_L</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const double&#160;</td>
+          <td class="paramname"><em>u_R</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const double&#160;</td>
+          <td class="paramname"><em>p_L</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const double&#160;</td>
+          <td class="paramname"><em>p_R</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const double&#160;</td>
+          <td class="paramname"><em>c_L</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const double&#160;</td>
+          <td class="paramname"><em>c_R</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">_Bool *&#160;</td>
+          <td class="paramname"><em>CRW</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const double&#160;</td>
+          <td class="paramname"><em>eps</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const double&#160;</td>
+          <td class="paramname"><em>tol</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int&#160;</td>
+          <td class="paramname"><em>N</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>EXACT RIEMANN SOLVER FOR Two-Component γ-Law Gas </p>
+<p >The purpose of this function is to solve the Riemann problem exactly, for the time dependent one dimensional Euler equations for two-component γ-law gas. </p><dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[out]</td><td class="paramname">U_star,P_star</td><td>Velocity/Pressure in star region. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">u_L,p_L,c_L</td><td>Initial Velocity/Pressure/sound_speed on left state. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">u_R,p_R,c_R</td><td>Initial Velocity/Pressure/sound_speed on right state. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">gammaL,gammaR</td><td>Ratio of specific heats. </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">CRW</td><td>Centred Rarefaction Wave (CRW) Indicator of left and right waves.<ul>
+<li>true: CRW</li>
+<li>false: Shock wave </li>
+</ul>
+</td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">eps</td><td>The largest value can be seen as zero. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">tol</td><td>Condition value of 'gap' at the end of the iteration. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">N</td><td>Maximum iteration step. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd><b>gap:</b> Relative pressure change after the last iteration. </dd></dl>
+
+<p class="definition">在文件 <a class="el" href="../../d3/d54/_riemann__solver__exact___ben_8c_source.html">Riemann_solver_exact_Ben.c</a> 第 <a class="el" href="../../d3/d54/_riemann__solver__exact___ben_8c_source.html#l00031">31</a> 行定义.</p>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../d8/d09/_riemann__solver_8h_a45cd4fa0e00d9dd433f18f918988b49e_icgraph.svg" width="691" height="114"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+
+</div>
+</div>
+<a id="a10d98fcaa1dd08b65795e981082deeff" name="a10d98fcaa1dd08b65795e981082deeff"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a10d98fcaa1dd08b65795e981082deeff">&#9670;&nbsp;</a></span>Riemann_solver_exact_Ben()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double Riemann_solver_exact_Ben </td>
+          <td>(</td>
+          <td class="paramtype">double *&#160;</td>
+          <td class="paramname"><em>U_star</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double *&#160;</td>
+          <td class="paramname"><em>P_star</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const double&#160;</td>
+          <td class="paramname"><em>gamma</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const double&#160;</td>
+          <td class="paramname"><em>u_L</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const double&#160;</td>
+          <td class="paramname"><em>u_R</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const double&#160;</td>
+          <td class="paramname"><em>p_L</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const double&#160;</td>
+          <td class="paramname"><em>p_R</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const double&#160;</td>
+          <td class="paramname"><em>c_L</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const double&#160;</td>
+          <td class="paramname"><em>c_R</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">_Bool *&#160;</td>
+          <td class="paramname"><em>CRW</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const double&#160;</td>
+          <td class="paramname"><em>eps</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const double&#160;</td>
+          <td class="paramname"><em>tol</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int&#160;</td>
+          <td class="paramname"><em>N</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>EXACT RIEMANN SOLVER FOR A γ-Law Gas </p>
+<p >The purpose of this function is to solve the Riemann problem exactly, for the time dependent one dimensional Euler equations for a γ-law gas. </p><dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[out]</td><td class="paramname">U_star,P_star</td><td>Velocity/Pressure in star region. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">u_L,p_L,c_L</td><td>Initial Velocity/Pressure/sound_speed on left state. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">u_R,p_R,c_R</td><td>Initial Velocity/Pressure/sound_speed on right state. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">gamma</td><td>Ratio of specific heats. </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">CRW</td><td>Centred Rarefaction Wave (CRW) Indicator of left and right waves.<ul>
+<li>true: CRW</li>
+<li>false: Shock wave </li>
+</ul>
+</td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">eps</td><td>The largest value can be seen as zero. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">tol</td><td>Condition value of 'gap' at the end of the iteration. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">N</td><td>Maximum iteration step. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd><b>gap:</b> Relative pressure change after the last iteration. </dd></dl>
+
+<p class="definition">在文件 <a class="el" href="../../d3/d54/_riemann__solver__exact___ben_8c_source.html">Riemann_solver_exact_Ben.c</a> 第 <a class="el" href="../../d3/d54/_riemann__solver__exact___ben_8c_source.html#l00231">231</a> 行定义.</p>
+
+</div>
+</div>
+<a id="af870894216711132d5d8aeaf5f2d0010" name="af870894216711132d5d8aeaf5f2d0010"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af870894216711132d5d8aeaf5f2d0010">&#9670;&nbsp;</a></span>Riemann_solver_exact_Toro()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double Riemann_solver_exact_Toro </td>
+          <td>(</td>
+          <td class="paramtype">double *&#160;</td>
+          <td class="paramname"><em>U_star</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double *&#160;</td>
+          <td class="paramname"><em>P_star</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const double&#160;</td>
+          <td class="paramname"><em>gamma</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const double&#160;</td>
+          <td class="paramname"><em>U_l</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const double&#160;</td>
+          <td class="paramname"><em>U_r</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const double&#160;</td>
+          <td class="paramname"><em>P_l</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const double&#160;</td>
+          <td class="paramname"><em>P_r</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const double&#160;</td>
+          <td class="paramname"><em>c_l</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const double&#160;</td>
+          <td class="paramname"><em>c_r</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">_Bool *&#160;</td>
+          <td class="paramname"><em>CRW</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const double&#160;</td>
+          <td class="paramname"><em>eps</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const double&#160;</td>
+          <td class="paramname"><em>tol</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int&#160;</td>
+          <td class="paramname"><em>N</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>EXACT RIEMANN SOLVER FOR THE EULER EQUATIONS </p>
+<p >The purpose of this function is to solve the Riemann problem exactly, for the time dependent one dimensional Euler equations for an ideal gas. </p><dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[out]</td><td class="paramname">U_star,P_star</td><td>Velocity/Pressure in star region. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">U_l,P_l,c_l</td><td>Initial Velocity/Pressure/sound_speed on left state. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">U_r,P_r,c_r</td><td>Initial Velocity/Pressure/sound_speed on right state. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">gamma</td><td>Ratio of specific heats. </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">CRW</td><td>Centred Rarefaction Wave (CRW) Indicator of left and right waves.<ul>
+<li>true: CRW</li>
+<li>false: Shock wave </li>
+</ul>
+</td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">eps</td><td>The largest value can be seen as zero. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">tol</td><td>Condition value of 'gap' at the end of the iteration. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">N</td><td>Maximum iteration step. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd><b>gap:</b> Relative pressure change after the last iteration. </dd></dl>
+<dl class="section author"><dt>作者</dt><dd>E. F. Toro </dd></dl>
+<dl class="section date"><dt>日期</dt><dd>February 1st 1999 </dd></dl>
+<dl class="section user"><dt>Reference</dt><dd>Theory is found in Chapter 4 of Reference [1]. <br  />
+ [1] Toro, E. F., "Riemann Solvers and Numerical Methods for Fluid Dynamics", Springer-Verlag, Second Edition, 1999 </dd></dl>
+<dl class="section copyright"><dt>版权所有</dt><dd>This program is part of NUMERICA —— <br  />
+ A Library of Source Codes for Teaching, Research and Applications, by E. F. Toro <br  />
+ Published by NUMERITEK LTD </dd></dl>
+
+<p class="definition">在文件 <a class="el" href="../../d2/d35/_riemann__solver__exact___toro_8c_source.html">Riemann_solver_exact_Toro.c</a> 第 <a class="el" href="../../d2/d35/_riemann__solver__exact___toro_8c_source.html#l00036">36</a> 行定义.</p>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="../../dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a class="el" href="../../d8/d09/_riemann__solver_8h.html">Riemann_solver.h</a></li>
+    <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
+  </ul>
+</div>
+</body>
+</html>

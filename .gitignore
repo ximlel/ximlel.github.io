@@ -1,5 +1,4 @@
-.DS_Store
-Thumbs.db
+# Hexo
 db.json
 *.log
 node_modules/
@@ -8,3 +7,21 @@ public/
 .env
 .env.build
 .vercel
+
+# Hidden files
+.fuse_hidden*
+
+# Windows:
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Mac:
+.DS_Store
+
+# Text Backup
+.~*
+*.*~
+*.#*
+*#
+*.kate-swp

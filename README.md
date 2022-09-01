@@ -10,6 +10,6 @@
 
 ## Deploy This Page
 
-This is a blog built with [Hexo](https://hexo.io/) and deployed on GitHub Pages [GitHub Pages](https://pages.github.com/)
+This is a blog built with [Hexo](https://hexo.io/) and deployed on GitHub Pages [GitHub Pages](https://pages.github.com/).
 
 Deploy with [hexo-deployer-git](https://github.com/hexojs/hexo-deployer-git).

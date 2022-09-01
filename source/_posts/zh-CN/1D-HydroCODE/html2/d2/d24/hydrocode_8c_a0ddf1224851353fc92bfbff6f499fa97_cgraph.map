@@ -1,0 +1,9 @@
+<map id="main" name="main">
+<area shape="rect" id="node1" title="This is the main function which constructs the main structure of the Lagrangian/Eulerian hydrocode." alt="" coords="5,81,60,108"/>
+<area shape="rect" id="node2" href="$dd/d92/__1_d__file__in_8c.html#ac488f20dece96d36772ef580e4de334e" title="This function reads the 1&#45;D initial data file of velocity/pressure/density." alt="" coords="108,81,219,108"/>
+<area shape="rect" id="node3" href="$d2/de0/config__handle_8c.html#a4b15e37e2922cce20bf5cc8bb6e80c9a" title="This function controls configuration data reading and validation." alt="" coords="268,56,364,83"/>
+<area shape="rect" id="node6" href="$d4/de5/io__control_8c.html#a7e039d23ca87a439fbe9c9d336447887" title="This function produces folder path for data input or output." alt="" coords="267,107,365,133"/>
+<area shape="rect" id="node4" href="$d2/de0/config__handle_8c.html#a4b379c084f41490473f80792af24e0c7" title="This function check whether the configuration data is reasonable and set the default." alt="" coords="413,5,520,32"/>
+<area shape="rect" id="node5" href="$d2/de0/config__handle_8c.html#a482404d20045a8a5f48b5ee425a04259" title="This function read the configuration data file, and store the configuration data in the array &quot;config..." alt="" coords="417,56,516,83"/>
+<area shape="rect" id="node7" href="$d4/ddd/sys__pro_8c.html#a40a5faeb19b1fd9aec2c5c10a87faeb4" title="This is a function that recursively creates folders." alt="" coords="425,107,509,133"/>
+</map>

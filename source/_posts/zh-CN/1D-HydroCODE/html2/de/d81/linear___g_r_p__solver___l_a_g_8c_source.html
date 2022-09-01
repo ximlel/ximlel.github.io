@@ -1,0 +1,250 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.3"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>HydroCODE_1D: /run/media/leixin/软件盘/雷昕整理后的重要文件/程序/My-CFD/HydroCODE/src/Riemann_solver/linear_GRP_solver_LAG.c 源文件</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../resize.js"></script>
+<script type="text/javascript" src="../../navtreedata.js"></script>
+<script type="text/javascript" src="../../navtree.js"></script>
+<link href="../../search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../search/searchdata.js"></script>
+<script type="text/javascript" src="../../search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+  $(document).ready(function() { init_search(); });
+/* @license-end */
+</script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="../../Logo.jpg"/></td>
+  <td id="projectalign">
+   <div id="projectname">HydroCODE_1D<span id="projectnumber">&#160;0.1</span>
+   </div>
+   <div id="projectbrief">This is a implementation of fully explict forward Euler scheme for 1-D Euler equations of motion on Lagrangian/Eulerian coordinate</div>
+  </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="../../search/mag_sel.svg"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="搜索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="../../search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.9.3 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "../../search",'搜索','.html');
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('de/d81/linear___g_r_p__solver___l_a_g_8c_source.html','../../'); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">linear_GRP_solver_LAG.c</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="../../de/d81/linear___g_r_p__solver___l_a_g_8c.html">浏览该文件的文档.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span> </div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &lt;math.h&gt;</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &lt;stdio.h&gt;</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span> </div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#include &quot;../include/var_struc.h&quot;</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#include &quot;../include/Riemann_solver.h&quot;</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span> </div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno"><a class="line" href="../../d8/d09/_riemann__solver_8h.html#a6567802e291121380cc9765c6f46a1fb">   33</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="../../de/d81/linear___g_r_p__solver___l_a_g_8c.html#a6567802e291121380cc9765c6f46a1fb">linear_GRP_solver_LAG</a>(<span class="keywordtype">double</span> * D, <span class="keywordtype">double</span> * U, <span class="keyword">const</span> <span class="keyword">struct</span> <a class="code hl_struct" href="../../d9/dd4/structi__f__var.html">i_f_var</a> ifv_L, <span class="keyword">const</span> <span class="keyword">struct</span> <a class="code hl_struct" href="../../d9/dd4/structi__f__var.html">i_f_var</a> ifv_R, <span class="keyword">const</span> <span class="keywordtype">double</span> eps, <span class="keyword">const</span> <span class="keywordtype">double</span>  atc)</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>{</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>  <span class="keyword">const</span> <span class="keywordtype">double</span>   rho_L = ifv_L.<a class="code hl_variable" href="../../d9/dd4/structi__f__var.html#a3c860a618964c60dd75fae5a142007fa">RHO</a>,     rho_R = ifv_R.<a class="code hl_variable" href="../../d9/dd4/structi__f__var.html#a3c860a618964c60dd75fae5a142007fa">RHO</a>;</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>  <span class="keyword">const</span> <span class="keywordtype">double</span> s_rho_L = ifv_L.<a class="code hl_variable" href="../../d9/dd4/structi__f__var.html#a03ba434199d4c3d887569ab455c7e633">t_rho</a>, s_rho_R = ifv_R.<a class="code hl_variable" href="../../d9/dd4/structi__f__var.html#a03ba434199d4c3d887569ab455c7e633">t_rho</a>;</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>  <span class="keyword">const</span> <span class="keywordtype">double</span>     u_L = ifv_L.<a class="code hl_variable" href="../../d9/dd4/structi__f__var.html#a6adf77edbad3c6c9a69c0f2b7c9ab99a">U</a>,         u_R = ifv_R.<a class="code hl_variable" href="../../d9/dd4/structi__f__var.html#a6adf77edbad3c6c9a69c0f2b7c9ab99a">U</a>;</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>  <span class="keyword">const</span> <span class="keywordtype">double</span>   s_u_L = ifv_L.<a class="code hl_variable" href="../../d9/dd4/structi__f__var.html#aae73c5ff8068d4ccbe37fbb02a0de06c">t_u</a>,     s_u_R = ifv_R.<a class="code hl_variable" href="../../d9/dd4/structi__f__var.html#aae73c5ff8068d4ccbe37fbb02a0de06c">t_u</a>;</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>  <span class="keyword">const</span> <span class="keywordtype">double</span>     p_L = ifv_L.<a class="code hl_variable" href="../../d9/dd4/structi__f__var.html#a8019aa9167c19c810aefa4cd5c0b0ab5">P</a>,         p_R = ifv_R.<a class="code hl_variable" href="../../d9/dd4/structi__f__var.html#a8019aa9167c19c810aefa4cd5c0b0ab5">P</a>;</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>  <span class="keyword">const</span> <span class="keywordtype">double</span>   s_p_L = ifv_L.<a class="code hl_variable" href="../../d9/dd4/structi__f__var.html#a6d7def9bc3200ab1dcb2824850d730cb">t_p</a>,     s_p_R = ifv_R.<a class="code hl_variable" href="../../d9/dd4/structi__f__var.html#a6d7def9bc3200ab1dcb2824850d730cb">t_p</a>;</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>  <span class="keyword">const</span> <span class="keywordtype">double</span>  gammaL = ifv_L.<a class="code hl_variable" href="../../d9/dd4/structi__f__var.html#a72f9e01745b3a8203067ab84aefc9aea">gamma</a>,  gammaR = ifv_R.<a class="code hl_variable" href="../../d9/dd4/structi__f__var.html#a72f9e01745b3a8203067ab84aefc9aea">gamma</a>;</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span> </div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>  <span class="keyword">const</span> <span class="keywordtype">double</span> zetaL = (gammaL-1.0)/(gammaL+1.0);</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>  <span class="keyword">const</span> <span class="keywordtype">double</span> zetaR = (gammaR-1.0)/(gammaR+1.0);</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span> </div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>  <span class="keywordtype">double</span> dist; <span class="comment">// Euclidean distance</span></div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>  _Bool CRW[2];  <span class="comment">// Centred Rarefaction Wave (CRW) Indicator</span></div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span> </div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>  <span class="keywordtype">double</span> c_L, c_R, g_L, g_R; <span class="comment">// g = rho * c</span></div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>  c_L = sqrt(gammaL * p_L / rho_L);</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>  c_R = sqrt(gammaR * p_R / rho_R);</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>  g_L = rho_L*c_L;</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>  g_R = rho_R*c_R;</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>  <span class="keywordtype">double</span> W_L, W_R; <span class="comment">// Wave speed</span></div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>  <span class="keywordtype">double</span> c_star_L, c_star_R, g_star_L, g_star_R;</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>  <span class="keywordtype">double</span> u_star, p_star, rho_star_L, rho_star_R;</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>  <span class="keywordtype">double</span> beta_star;</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span> </div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>  <span class="keywordtype">double</span> a_L, b_L, d_L, a_R, b_R, d_R, L_rho, L_u, L_p, A, B;</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span> </div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>  <a class="code hl_function" href="../../d8/d09/_riemann__solver_8h.html#a45cd4fa0e00d9dd433f18f918988b49e">Riemann_solver_exact</a>(&amp;u_star, &amp;p_star, gammaL, gammaR, u_L, u_R, p_L, p_R, c_L, c_R, CRW, eps, eps, 500);</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span> </div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>  <span class="keywordflow">if</span>(CRW[0])</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>      {</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>      rho_star_L = rho_L*pow(p_star/p_L, 1.0/gammaL);</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>      c_star_L = c_L*pow(p_star/p_L, 0.5*(gammaL-1.0)/gammaL);</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>      W_L = u_L - c_L;</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>      }</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>  <span class="keywordflow">else</span></div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>      {</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>      rho_star_L = rho_L*(p_star+zetaL*p_L)/(p_L+zetaL*p_star);</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>      c_star_L = sqrt(gammaL * p_star / rho_star_L);</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>      W_L = u_L - c_L*sqrt(0.5*((gammaL+1.0)*(p_star/p_L) + (gammaL-1.0))/gammaL);</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>      }</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>  <span class="keywordflow">if</span>(CRW[1])</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>      {</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>      rho_star_R = rho_R*pow(p_star/p_R,1.0/gammaR);</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>      c_star_R = c_R*pow(p_star/p_R, 0.5*(gammaR-1.0)/gammaR);</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>      W_R = u_R + c_R;</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>      }</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>  <span class="keywordflow">else</span></div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>      {</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>      rho_star_R = rho_R*(p_star+zetaR*p_R)/(p_R+zetaR*p_star);</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>      c_star_R = sqrt(gammaR * p_star / rho_star_R);</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>      W_R = u_R + c_R*sqrt(0.5*((gammaR+1.0)*(p_star/p_R) + (gammaR-1.0))/gammaR);</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>      }</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>  g_star_R = rho_star_R*c_star_R;</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>  g_star_L = rho_star_L*c_star_L;</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span> </div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>  dist = sqrt((u_L-u_R)*(u_L-u_R) + (p_L-p_R)*(p_L-p_R));</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>  <span class="keywordflow">if</span>(dist &lt; atc) <span class="comment">// acoustic Case</span></div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>      {</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>      a_L =  1.0;</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>      b_L =  1.0 / g_star_L;</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>      d_L = - g_L*s_u_L - s_p_L;</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>    </div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>      a_R = -1.0;</div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>      b_R =  1.0 / g_star_R;</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>      d_R = - g_R*s_u_R + s_p_R;           </div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>      }</div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>  <span class="keywordflow">else</span> <span class="comment">// nonlinear case</span></div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>      {</div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>      <span class="comment">//determine a_L, b_L and d_L</span></div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>      <span class="keywordflow">if</span>(CRW[0]) <span class="comment">//the 1-wave is a CRW</span></div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>          {</div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>          beta_star = g_star_L/g_L;</div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>          a_L = 1.0;</div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>          b_L = 1.0 / g_star_L;</div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>          d_L = (s_u_L+s_p_L/g_L) + 1.0/g_L/(3.0*gammaL-1.0)*(c_L*c_L*s_rho_L-s_p_L)*(pow(beta_star,(3.0*gammaL-1.0)/2.0/(gammaL+1.0))-1.0); </div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>          d_L = - 1.0 * sqrt(g_L*g_star_L)*d_L;</div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>          }</div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>      <span class="keywordflow">else</span> <span class="comment">//the 1-wave is a shock</span></div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>          {</div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>          W_L = (p_star-p_L) / (u_star-u_L);</div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>          A   = - 0.5/(p_star + zetaL * p_L);</div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>          a_L = 2.0 + A * (p_star-p_L);</div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>          b_L = - W_L/g_star_L/g_star_L - (a_L - 1.0)/W_L;</div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>          L_rho = (p_star-p_L)/2.0/rho_L;</div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>          B = 1.0/(p_star-p_L) - zetaL * A;</div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>          L_u = rho_L * (u_star-u_L) * (gammaL*p_L*B + 0.5) + W_L;</div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>          L_p = 1.0 + B * (p_star-p_L);</div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>          d_L = L_u*s_u_L - L_p*s_p_L - L_rho*s_rho_L;        </div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>          }</div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>      <span class="comment">//determine a_R, b_R and d_R</span></div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>      <span class="keywordflow">if</span>(CRW[1]) <span class="comment">//the 3-wave is a CRW</span></div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>          {</div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>          beta_star = g_star_R/g_R;</div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>          a_R = -1.0;</div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>          b_R = 1.0 / g_star_R;</div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span>          d_R = (s_u_R-s_p_R/g_R) + 1.0/g_R/(3.0*gammaR-1.0)*(-c_L*c_L*s_rho_L+s_p_L)*(pow(beta_star,(3.0*gammaR-1.0)/2.0/(gammaR+1.0))-1.0);</div>
+<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span>          d_R = - 1.0 * sqrt(g_R*g_star_R)*d_R;</div>
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span>          }</div>
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span>      <span class="keywordflow">else</span> <span class="comment">//the 3-wave is a shock</span></div>
+<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span>          {</div>
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span>          W_R = (p_star-p_R) / (u_star-u_R);</div>
+<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span>          A   = - 0.5/(p_star + zetaR * p_R);</div>
+<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span>          a_R = - 2.0 - A * (p_star-p_R);</div>
+<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span>          b_R = W_R/g_star_R/g_star_R - (a_R + 1.0)/W_R;</div>
+<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span>          L_rho = (p_star-p_R)/2.0/rho_R;</div>
+<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span>          B = 1.0/(p_star-p_R) - zetaR * A;</div>
+<div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span>          L_u = rho_R * (u_R-u_star) * (gammaR*p_R*B + 0.5) - W_R;</div>
+<div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span>          L_p = 1.0 + B * (p_star-p_R);</div>
+<div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span>          d_R = L_u*s_u_R + L_p*s_p_R + L_rho*s_rho_R;</div>
+<div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span>          }</div>
+<div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span>      }</div>
+<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span>  </div>
+<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span>  U[1] =   u_star;</div>
+<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span>  U[2] =   p_star;</div>
+<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span>  U[0] = rho_star_L;</div>
+<div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span>  U[3] = rho_star_R;</div>
+<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span>  D[1] = (d_L*b_R-d_R*b_L)/(a_L*b_R-a_R*b_L);</div>
+<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span>  D[2] = (d_L*a_R-d_R*a_L)/(b_L*a_R-b_R*a_L);</div>
+<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span>  D[0] = 1.0/c_star_L/c_star_L*D[2];</div>
+<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span>  D[3] = 1.0/c_star_R/c_star_R*D[2];</div>
+<div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span>}</div>
+<div class="ttc" id="a_riemann__solver_8h_html_a45cd4fa0e00d9dd433f18f918988b49e"><div class="ttname"><a href="../../d8/d09/_riemann__solver_8h.html#a45cd4fa0e00d9dd433f18f918988b49e">Riemann_solver_exact</a></div><div class="ttdeci">double Riemann_solver_exact(double *U_star, double *P_star, const double gammaL, const double gammaR, const double u_L, const double u_R, const double p_L, const double p_R, const double c_L, const double c_R, _Bool *CRW, const double eps, const double tol, int N)</div><div class="ttdoc">EXACT RIEMANN SOLVER FOR Two-Component γ-Law Gas</div><div class="ttdef"><b>Definition:</b> <a href="../../d3/d54/_riemann__solver__exact___ben_8c_source.html#l00031">Riemann_solver_exact_Ben.c:31</a></div></div>
+<div class="ttc" id="alinear___g_r_p__solver___l_a_g_8c_html_a6567802e291121380cc9765c6f46a1fb"><div class="ttname"><a href="../../de/d81/linear___g_r_p__solver___l_a_g_8c.html#a6567802e291121380cc9765c6f46a1fb">linear_GRP_solver_LAG</a></div><div class="ttdeci">void linear_GRP_solver_LAG(double *D, double *U, const struct i_f_var ifv_L, const struct i_f_var ifv_R, const double eps, const double atc)</div><div class="ttdoc">A Lagrangian GRP solver for unsteady compressible inviscid two-component flow in one space dimension.</div><div class="ttdef"><b>Definition:</b> <a href="../../de/d81/linear___g_r_p__solver___l_a_g_8c_source.html#l00033">linear_GRP_solver_LAG.c:33</a></div></div>
+<div class="ttc" id="astructi__f__var_html"><div class="ttname"><a href="../../d9/dd4/structi__f__var.html">i_f_var</a></div><div class="ttdoc">Interfacial Fluid VARiables.</div><div class="ttdef"><b>Definition:</b> <a href="../../da/d1e/var__struc_8h_source.html#l00047">var_struc.h:47</a></div></div>
+<div class="ttc" id="astructi__f__var_html_a03ba434199d4c3d887569ab455c7e633"><div class="ttname"><a href="../../d9/dd4/structi__f__var.html#a03ba434199d4c3d887569ab455c7e633">i_f_var::t_rho</a></div><div class="ttdeci">double t_rho</div><div class="ttdef"><b>Definition:</b> <a href="../../da/d1e/var__struc_8h_source.html#l00053">var_struc.h:53</a></div></div>
+<div class="ttc" id="astructi__f__var_html_a3c860a618964c60dd75fae5a142007fa"><div class="ttname"><a href="../../d9/dd4/structi__f__var.html#a3c860a618964c60dd75fae5a142007fa">i_f_var::RHO</a></div><div class="ttdeci">double RHO</div><div class="ttdef"><b>Definition:</b> <a href="../../da/d1e/var__struc_8h_source.html#l00049">var_struc.h:49</a></div></div>
+<div class="ttc" id="astructi__f__var_html_a6adf77edbad3c6c9a69c0f2b7c9ab99a"><div class="ttname"><a href="../../d9/dd4/structi__f__var.html#a6adf77edbad3c6c9a69c0f2b7c9ab99a">i_f_var::U</a></div><div class="ttdeci">double U</div><div class="ttdef"><b>Definition:</b> <a href="../../da/d1e/var__struc_8h_source.html#l00049">var_struc.h:49</a></div></div>
+<div class="ttc" id="astructi__f__var_html_a6d7def9bc3200ab1dcb2824850d730cb"><div class="ttname"><a href="../../d9/dd4/structi__f__var.html#a6d7def9bc3200ab1dcb2824850d730cb">i_f_var::t_p</a></div><div class="ttdeci">double t_p</div><div class="ttdef"><b>Definition:</b> <a href="../../da/d1e/var__struc_8h_source.html#l00053">var_struc.h:53</a></div></div>
+<div class="ttc" id="astructi__f__var_html_a72f9e01745b3a8203067ab84aefc9aea"><div class="ttname"><a href="../../d9/dd4/structi__f__var.html#a72f9e01745b3a8203067ab84aefc9aea">i_f_var::gamma</a></div><div class="ttdeci">double gamma</div><div class="ttdoc">specific heat ratio</div><div class="ttdef"><b>Definition:</b> <a href="../../da/d1e/var__struc_8h_source.html#l00055">var_struc.h:55</a></div></div>
+<div class="ttc" id="astructi__f__var_html_a8019aa9167c19c810aefa4cd5c0b0ab5"><div class="ttname"><a href="../../d9/dd4/structi__f__var.html#a8019aa9167c19c810aefa4cd5c0b0ab5">i_f_var::P</a></div><div class="ttdeci">double P</div><div class="ttdef"><b>Definition:</b> <a href="../../da/d1e/var__struc_8h_source.html#l00049">var_struc.h:49</a></div></div>
+<div class="ttc" id="astructi__f__var_html_aae73c5ff8068d4ccbe37fbb02a0de06c"><div class="ttname"><a href="../../d9/dd4/structi__f__var.html#aae73c5ff8068d4ccbe37fbb02a0de06c">i_f_var::t_u</a></div><div class="ttdeci">double t_u</div><div class="ttdef"><b>Definition:</b> <a href="../../da/d1e/var__struc_8h_source.html#l00053">var_struc.h:53</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="../../dir_093c7f8d2be651e0859e8669f6d9820c.html">Riemann_solver</a></li><li class="navelem"><a class="el" href="../../de/d81/linear___g_r_p__solver___l_a_g_8c.html">linear_GRP_solver_LAG.c</a></li>
+    <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
+  </ul>
+</div>
+</body>
+</html>
