@@ -10,12 +10,11 @@ tags:
 
 <!--more-->
 
-{% asset_link html2/index.html 代码文档网页 %}
+{% asset_link html/index.html 代码文档网页 %}
 
-{% asset_link refman2.pdf 代码文档PDF %}
+{% asset_link refman.pdf 代码文档PDF %}
 
 {% asset_link Specification.pdf 程序说明PDF %}
-
 
 
 新11
