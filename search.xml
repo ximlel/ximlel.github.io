@@ -33,22 +33,6 @@
       </tags>
   </entry>
   <entry>
-    <title>新1</title>
-    <url>/zh-CN/2022/04/22/new1/</url>
-    <content><![CDATA[<p>新1</p>
-<span id="more"></span>
-
-<p>新11</p>
-]]></content>
-      <categories>
-        <category>Introduction</category>
-      </categories>
-      <tags>
-        <tag>Resume1</tag>
-        <tag>Curriculum Vitae1</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>新2</title>
     <url>/zh-CN/2022/04/27/new2/</url>
     <content><![CDATA[<p>新2</p>
@@ -62,6 +46,22 @@
       <tags>
         <tag>Resume1</tag>
         <tag>Curriculum Vitae2</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>新1</title>
+    <url>/zh-CN/2022/04/22/new1/</url>
+    <content><![CDATA[<p>新1</p>
+<span id="more"></span>
+
+<p>新11</p>
+]]></content>
+      <categories>
+        <category>Introduction</category>
+      </categories>
+      <tags>
+        <tag>Resume1</tag>
+        <tag>Curriculum Vitae1</tag>
       </tags>
   </entry>
 </search>
