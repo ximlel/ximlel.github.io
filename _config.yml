@@ -89,4 +89,4 @@ search:
 deploy:
   type: git
   repo: https://github.com/ximlel/ximlel.github.io.git
-  branch: master
+  branch: gh-pages
