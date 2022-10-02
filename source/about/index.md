@@ -43,11 +43,8 @@ tags:
 【2】**Lei, Xin**; Li, Jiequan; *Transversal effects of high order numerical schemes for compressible fluid flows*, Applied Mathematics and Mechanics (English Edition), 2019, 40(3): 343-354
 【3】**Lei, Xin**; Du, Zhifang; Li, Jiequan; *The simulation of compressible multi-fluid flows by a GRP-based energy-splitting method*, Computers & Fluids, 2019, 181: 416-428
 【4】**Lei, Xin**; Li, Jiequan; *A staggered-projection Godunov-type method for the Baer-Nunziato two-phase model*, Journal of Computational Physics, 2021, 437: 110312 1-39
-
 【5】**Lei, Xin**; Li, Jiequan; *An Energy-Splitting High-Order Numerical Method for Multi-material Flows*, In: Numerical Fluid Dynamics, Springer, Singapore, 2022, 223-262.
-
 【6】Li, Jiequan; **Lei, Xin**; Du, Zhifang; Wang, Yue; *High order temporal-spatially coupled schemes for compressible multi-fluid flows*, AIP Conference Proceedings, AIP Publishing LLC, 2019, 2116(1): 030002.
-
 【7】Cheng, Jian; Du, Zhifang; **Lei, Xin**; Wang, Yue; Li, Jiequan; *A two-stage fourth-order discontinuous Galerkin method based on the GRP solver for the compressible Euler equations*, Computers & Fluids, 2019, 181: 248-258
 【8】Kong, Lingrong; Wang, Yu; **Lei, Xin**; Feng, Chao; Wang, Zhiqiao; *Integral modeling of abrasive waterjet micro-machining process*, Wear, 2021, 482-483: 203987 1-13
 【9】廉海荣; **雷昕**; 罗万静; 江国明; 马兆海; 赵俊芳; *新时代工科“数学物理方程”课程教学改革探索*, 中国地质教育, 2021, 4: 71-74
