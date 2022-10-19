@@ -1,0 +1,180 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.3"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>HydroCODE_1D: src~/include/file_io.h 源文件</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../resize.js"></script>
+<script type="text/javascript" src="../../navtreedata.js"></script>
+<script type="text/javascript" src="../../navtree.js"></script>
+<link href="../../search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../search/searchdata.js"></script>
+<script type="text/javascript" src="../../search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+  $(document).ready(function() { init_search(); });
+/* @license-end */
+</script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="../../Logo.jpg"/></td>
+  <td id="projectalign">
+   <div id="projectname">HydroCODE_1D<span id="projectnumber">&#160;0.1</span>
+   </div>
+   <div id="projectbrief">This is a implementation of fully explict forward Euler scheme for 1-D Euler equations of motion on Lagrangian/Eulerian coordinate</div>
+  </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="../../search/mag_sel.svg"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="搜索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="../../search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.9.3 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "../../search",'搜索','.html');
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('db/db8/file__io_8h_source.html','../../'); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">file_io.h</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="../../db/db8/file__io_8h.html">浏览该文件的文档.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span> </div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#ifndef FILEIO_H</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#define FILEIO_H</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span> </div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="comment">// io_control.c</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="comment"></span><span class="keywordtype">void</span> <a class="code hl_function" href="../../db/db8/file__io_8h.html#a7e039d23ca87a439fbe9c9d336447887">example_io</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> * example, <span class="keywordtype">char</span> * add_mkdir, <span class="keyword">const</span> <span class="keywordtype">int</span> i_or_o);</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span> </div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="keywordtype">int</span> <a class="code hl_function" href="../../db/db8/file__io_8h.html#acdd9ccb7dc0ecc925cafe95a4c2f8a51">flu_var_count</a>     (FILE * fp, <span class="keyword">const</span> <span class="keywordtype">char</span> * add);</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="keywordtype">int</span> <a class="code hl_function" href="../../db/db8/file__io_8h.html#a53f2536667da1fda09a509f8d59e1fcd">flu_var_count_line</a>(FILE * fp, <span class="keyword">const</span> <span class="keywordtype">char</span> * add, <span class="keywordtype">int</span> * n_x);</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span> </div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="keywordtype">int</span> <a class="code hl_function" href="../../db/db8/file__io_8h.html#a40ca7ad20048ff97a27a8641cf31b7cb">flu_var_read</a>(FILE * fp, <span class="keywordtype">double</span> * U, <span class="keyword">const</span> <span class="keywordtype">int</span> num);</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span> </div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="keywordtype">int</span> <a class="code hl_function" href="../../db/db8/file__io_8h.html#afc5a75c19ae16af5227567eb1dde0ef1">time_plot_read</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> * add_in, <span class="keyword">const</span> <span class="keywordtype">int</span> N_max, <span class="keywordtype">int</span> * N_plot, <span class="keywordtype">double</span> * time_plot[]);</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span> </div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="comment">// terminal_io.c</span></div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="comment"></span><span class="keywordtype">void</span> <a class="code hl_function" href="../../db/db8/file__io_8h.html#a6f9b51d91c38d3ce58786dfd84973994">arg_preprocess</a>(<span class="keyword">const</span> <span class="keywordtype">int</span> argc_least, <span class="keyword">const</span> <span class="keywordtype">int</span> argc, <span class="keywordtype">char</span> *argv[], <span class="keywordtype">char</span> * scheme);</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span> </div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span><span class="comment">// config_handle.c</span></div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span><span class="comment"></span><span class="keywordtype">void</span> <a class="code hl_function" href="../../db/db8/file__io_8h.html#ace76b83652d5e43c540689cef951b58d">configurate</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> * name);</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span> </div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span><span class="keywordtype">void</span> <a class="code hl_function" href="../../db/db8/file__io_8h.html#a639a61ad0229b057258f8bc6edc4d050">config_write</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> * add_out, <span class="keyword">const</span> <span class="keywordtype">double</span> * cpu_time, <span class="keyword">const</span> <span class="keywordtype">char</span> * name);</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span> </div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span><span class="comment">// file_1D_in.c</span></div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span><span class="comment"></span><span class="keyword">struct </span><a class="code hl_struct" href="../../d2/d24/structflu__var.html">flu_var</a> <a class="code hl_function" href="../../db/db8/file__io_8h.html#afa89583d6583e954878dee9bab9cf7d9">initialize_1D</a>(const char * name, <span class="keywordtype">int</span> * N, <span class="keywordtype">int</span> * N_plot, <span class="keywordtype">double</span> * time_plot[]);</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span><span class="comment">// file_2D_in.c</span></div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno"><a class="line" href="../../db/db8/file__io_8h.html#a13555e5f4f916ffa5975ed5f22be2697">   41</a></span><span class="comment"></span><span class="keyword">struct </span><a class="code hl_struct" href="../../d2/d24/structflu__var.html">flu_var</a> <a class="code hl_function" href="../../db/db8/file__io_8h.html#a13555e5f4f916ffa5975ed5f22be2697">initialize_2D</a>(const char * name, <span class="keywordtype">int</span> * N, <span class="keywordtype">int</span> * N_plot, <span class="keywordtype">double</span> * time_plot[]);</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span> </div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span><span class="comment">// file_1D_out.c</span></div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span><span class="comment"></span><span class="keywordtype">void</span> <a class="code hl_function" href="../../db/db8/file__io_8h.html#a5edc2b6fa84841a6fb96918b065603cb">file_1D_write</a>          (<span class="keyword">const</span> <span class="keywordtype">int</span> m,                  <span class="keyword">const</span> <span class="keywordtype">int</span> N, <span class="keyword">const</span> <span class="keyword">struct</span> <a class="code hl_struct" href="../../da/d95/structcell__var__stru.html">cell_var_stru</a> CV, </div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>                    <span class="keywordtype">double</span> * X[], <span class="keyword">const</span> <span class="keywordtype">double</span> * cpu_time, <span class="keyword">const</span> <span class="keywordtype">char</span> * problem, <span class="keyword">const</span> <span class="keywordtype">double</span> time_plot[]);</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span><span class="comment">// file_2D_out.c</span></div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno"><a class="line" href="../../db/db8/file__io_8h.html#a2cfae0698a650473dfa73b2c8042e291">   51</a></span><span class="comment"></span><span class="keywordtype">void</span> <a class="code hl_function" href="../../db/db8/file__io_8h.html#a2cfae0698a650473dfa73b2c8042e291">file_2D_write</a>          (<span class="keyword">const</span> <span class="keywordtype">int</span> n_x, <span class="keyword">const</span> <span class="keywordtype">int</span> n_y, <span class="keyword">const</span> <span class="keywordtype">int</span> N, <span class="keyword">const</span> <span class="keyword">struct</span> <a class="code hl_struct" href="../../da/d95/structcell__var__stru.html">cell_var_stru</a> CV[],</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>            <span class="keywordtype">double</span> ** X, <span class="keywordtype">double</span> ** Y, <span class="keyword">const</span> <span class="keywordtype">double</span> * cpu_time, <span class="keyword">const</span> <span class="keywordtype">char</span> * problem, <span class="keyword">const</span> <span class="keywordtype">double</span> time_plot[]);</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno"><a class="line" href="../../db/db8/file__io_8h.html#ad420018a322081934dd8f2853f5a535d">   53</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="../../db/db8/file__io_8h.html#ad420018a322081934dd8f2853f5a535d">file_2D_write_POINT_TEC</a>(<span class="keyword">const</span> <span class="keywordtype">int</span> n_x, <span class="keyword">const</span> <span class="keywordtype">int</span> n_y, <span class="keyword">const</span> <span class="keywordtype">int</span> N, <span class="keyword">const</span> <span class="keyword">struct</span> <a class="code hl_struct" href="../../da/d95/structcell__var__stru.html">cell_var_stru</a> CV[],</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>            <span class="keywordtype">double</span> ** X, <span class="keywordtype">double</span> ** Y, <span class="keyword">const</span> <span class="keywordtype">double</span> * cpu_time, <span class="keyword">const</span> <span class="keywordtype">char</span> * problem, <span class="keyword">const</span> <span class="keywordtype">double</span> time_plot[]);</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span> </div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span><span class="comment">// file_out_hdf5.c</span></div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span><span class="comment"></span><span class="keywordtype">void</span> <a class="code hl_function" href="../../db/db8/file__io_8h.html#a183247d78d231c5a6fc920674e92d857">file_1D_write_HDF5</a>(<span class="keyword">const</span> <span class="keywordtype">int</span> m, <span class="keyword">const</span> <span class="keywordtype">int</span> N, <span class="keyword">const</span> <span class="keyword">struct</span> <a class="code hl_struct" href="../../da/d95/structcell__var__stru.html">cell_var_stru</a> CV, </div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>            <span class="keywordtype">double</span> * X[], <span class="keyword">const</span> <span class="keywordtype">double</span> * cpu_time, <span class="keyword">const</span> <span class="keywordtype">char</span> * problem, <span class="keywordtype">double</span> time_plot[]);</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span><span class="keywordtype">void</span> <a class="code hl_function" href="../../db/db8/file__io_8h.html#a23e6202deeb430def9c660b183591c22">file_2D_write_HDF5</a>(<span class="keyword">const</span> <span class="keywordtype">int</span> n_x, <span class="keyword">const</span> <span class="keywordtype">int</span> n_y, <span class="keyword">const</span> <span class="keywordtype">int</span> N, <span class="keyword">const</span> <span class="keyword">struct</span> <a class="code hl_struct" href="../../da/d95/structcell__var__stru.html">cell_var_stru</a> CV[],</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>            <span class="keywordtype">double</span> ** X, <span class="keywordtype">double</span> ** Y, <span class="keyword">const</span> <span class="keywordtype">double</span> * cpu_time, <span class="keyword">const</span> <span class="keywordtype">char</span> * problem, <span class="keywordtype">double</span> time_plot[]);</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span> </div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span><span class="comment">// file_radial_out.c</span></div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno"><a class="line" href="../../db/db8/file__io_8h.html#adaf9f8109eb6c852fcaf47aa8c21156c">   67</a></span><span class="comment"></span><span class="keywordtype">void</span> <a class="code hl_function" href="../../db/db8/file__io_8h.html#adaf9f8109eb6c852fcaf47aa8c21156c">file_radial_write_TEC</a>(<span class="keyword">const</span> <span class="keyword">struct</span> <a class="code hl_struct" href="../../d2/d24/structflu__var.html">flu_var</a> FV, <span class="keyword">const</span> <span class="keywordtype">double</span> * R, <span class="keyword">const</span> <span class="keywordtype">char</span> * problem, <span class="keyword">const</span> <span class="keywordtype">double</span> time);</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span> </div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span><span class="comment">// file_2D_unstruct_out.c</span></div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno"><a class="line" href="../../db/db8/file__io_8h.html#addb6d3390bbcc8e4abb00460536dc863">   72</a></span><span class="comment"></span><span class="keywordtype">void</span> <a class="code hl_function" href="../../db/db8/file__io_8h.html#addb6d3390bbcc8e4abb00460536dc863">file_write_2D_BLOCK_TEC</a>(<span class="keyword">const</span> <span class="keyword">struct</span> <a class="code hl_struct" href="../../d2/d24/structflu__var.html">flu_var</a> FV, <span class="keyword">const</span> <span class="keyword">struct</span> <a class="code hl_struct" href="../../dc/d0e/structmesh__var.html">mesh_var</a> mv, <span class="keyword">const</span> <span class="keywordtype">char</span> * problem, <span class="keyword">const</span> <span class="keywordtype">double</span> time);</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno"><a class="line" href="../../db/db8/file__io_8h.html#ad5c4fa82022f653e4f9056709930eee9">   73</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="../../db/db8/file__io_8h.html#ad5c4fa82022f653e4f9056709930eee9">file_write_3D_VTK</a>      (<span class="keyword">const</span> <span class="keyword">struct</span> <a class="code hl_struct" href="../../d2/d24/structflu__var.html">flu_var</a> FV, <span class="keyword">const</span> <span class="keyword">struct</span> <a class="code hl_struct" href="../../dc/d0e/structmesh__var.html">mesh_var</a> mv, <span class="keyword">const</span> <span class="keywordtype">char</span> * problem, <span class="keyword">const</span> <span class="keywordtype">double</span> time);</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span> </div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span><span class="preprocessor">#endif</span></div>
+<div class="ttc" id="afile__io_8h_html_a13555e5f4f916ffa5975ed5f22be2697"><div class="ttname"><a href="../../db/db8/file__io_8h.html#a13555e5f4f916ffa5975ed5f22be2697">initialize_2D</a></div><div class="ttdeci">struct flu_var initialize_2D(const char *name, int *N, int *N_plot, double *time_plot[])</div></div>
+<div class="ttc" id="afile__io_8h_html_a183247d78d231c5a6fc920674e92d857"><div class="ttname"><a href="../../db/db8/file__io_8h.html#a183247d78d231c5a6fc920674e92d857">file_1D_write_HDF5</a></div><div class="ttdeci">void file_1D_write_HDF5(const int m, const int N, const struct cell_var_stru CV, double *X[], const double *cpu_time, const char *problem, double time_plot[])</div><div class="ttdoc">This function write the 1-D solution into HDF5 output '.h5' files.</div><div class="ttdef"><b>Definition:</b> <a href="../../d4/d39/file__out__hdf5_8c_source.html#l00054">file_out_hdf5.c:54</a></div></div>
+<div class="ttc" id="afile__io_8h_html_a23e6202deeb430def9c660b183591c22"><div class="ttname"><a href="../../db/db8/file__io_8h.html#a23e6202deeb430def9c660b183591c22">file_2D_write_HDF5</a></div><div class="ttdeci">void file_2D_write_HDF5(const int n_x, const int n_y, const int N, const struct cell_var_stru CV[], double **X, double **Y, const double *cpu_time, const char *problem, double time_plot[])</div><div class="ttdoc">This function write the 2-D solution into HDF5 output '.h5' files.</div><div class="ttdef"><b>Definition:</b> <a href="../../d4/d39/file__out__hdf5_8c_source.html#l00162">file_out_hdf5.c:162</a></div></div>
+<div class="ttc" id="afile__io_8h_html_a2cfae0698a650473dfa73b2c8042e291"><div class="ttname"><a href="../../db/db8/file__io_8h.html#a2cfae0698a650473dfa73b2c8042e291">file_2D_write</a></div><div class="ttdeci">void file_2D_write(const int n_x, const int n_y, const int N, const struct cell_var_stru CV[], double **X, double **Y, const double *cpu_time, const char *problem, const double time_plot[])</div></div>
+<div class="ttc" id="afile__io_8h_html_a40ca7ad20048ff97a27a8641cf31b7cb"><div class="ttname"><a href="../../db/db8/file__io_8h.html#a40ca7ad20048ff97a27a8641cf31b7cb">flu_var_read</a></div><div class="ttdeci">int flu_var_read(FILE *fp, double *U, const int num)</div><div class="ttdoc">This function reads the initial data file to generate the initial data.</div><div class="ttdef"><b>Definition:</b> <a href="../../d4/de5/io__control_8c_source.html#l00221">io_control.c:221</a></div></div>
+<div class="ttc" id="afile__io_8h_html_a53f2536667da1fda09a509f8d59e1fcd"><div class="ttname"><a href="../../db/db8/file__io_8h.html#a53f2536667da1fda09a509f8d59e1fcd">flu_var_count_line</a></div><div class="ttdeci">int flu_var_count_line(FILE *fp, const char *add, int *n_x)</div><div class="ttdoc">This function counts the line and column number of the numbers are there in the initial data file.</div><div class="ttdef"><b>Definition:</b> <a href="../../d4/de5/io__control_8c_source.html#l00163">io_control.c:163</a></div></div>
+<div class="ttc" id="afile__io_8h_html_a5edc2b6fa84841a6fb96918b065603cb"><div class="ttname"><a href="../../db/db8/file__io_8h.html#a5edc2b6fa84841a6fb96918b065603cb">file_1D_write</a></div><div class="ttdeci">void file_1D_write(const int m, const int N, const struct cell_var_stru CV, double *X[], const double *cpu_time, const char *problem, const double time_plot[])</div><div class="ttdoc">This function write the 1-D solution into output '.dat' files.</div><div class="ttdef"><b>Definition:</b> <a href="../../df/d38/file__1_d__out_8c_source.html#l00049">file_1D_out.c:49</a></div></div>
+<div class="ttc" id="afile__io_8h_html_a639a61ad0229b057258f8bc6edc4d050"><div class="ttname"><a href="../../db/db8/file__io_8h.html#a639a61ad0229b057258f8bc6edc4d050">config_write</a></div><div class="ttdeci">void config_write(const char *add_out, const double *cpu_time, const char *name)</div><div class="ttdoc">This function write configuration data and program record into the file 'log.dat'.</div><div class="ttdef"><b>Definition:</b> <a href="../../d2/de0/config__handle_8c_source.html#l00253">config_handle.c:253</a></div></div>
+<div class="ttc" id="afile__io_8h_html_a6f9b51d91c38d3ce58786dfd84973994"><div class="ttname"><a href="../../db/db8/file__io_8h.html#a6f9b51d91c38d3ce58786dfd84973994">arg_preprocess</a></div><div class="ttdeci">void arg_preprocess(const int argc_least, const int argc, char *argv[], char *scheme)</div><div class="ttdoc">This is a functions preprocesses ARGuments.</div><div class="ttdef"><b>Definition:</b> <a href="../../d0/d49/terminal__io_8c_source.html#l00026">terminal_io.c:26</a></div></div>
+<div class="ttc" id="afile__io_8h_html_a7e039d23ca87a439fbe9c9d336447887"><div class="ttname"><a href="../../db/db8/file__io_8h.html#a7e039d23ca87a439fbe9c9d336447887">example_io</a></div><div class="ttdeci">void example_io(const char *example, char *add_mkdir, const int i_or_o)</div><div class="ttdoc">This function produces folder path for data input or output.</div><div class="ttdef"><b>Definition:</b> <a href="../../d4/de5/io__control_8c_source.html#l00040">io_control.c:40</a></div></div>
+<div class="ttc" id="afile__io_8h_html_acdd9ccb7dc0ecc925cafe95a4c2f8a51"><div class="ttname"><a href="../../db/db8/file__io_8h.html#acdd9ccb7dc0ecc925cafe95a4c2f8a51">flu_var_count</a></div><div class="ttdeci">int flu_var_count(FILE *fp, const char *add)</div><div class="ttdoc">This function counts how many numbers are there in the initial data file.</div><div class="ttdef"><b>Definition:</b> <a href="../../d4/de5/io__control_8c_source.html#l00124">io_control.c:124</a></div></div>
+<div class="ttc" id="afile__io_8h_html_ace76b83652d5e43c540689cef951b58d"><div class="ttname"><a href="../../db/db8/file__io_8h.html#ace76b83652d5e43c540689cef951b58d">configurate</a></div><div class="ttdeci">void configurate(const char *name)</div><div class="ttdoc">This function controls configuration data reading and validation.</div><div class="ttdef"><b>Definition:</b> <a href="../../d2/de0/config__handle_8c_source.html#l00208">config_handle.c:208</a></div></div>
+<div class="ttc" id="afile__io_8h_html_ad420018a322081934dd8f2853f5a535d"><div class="ttname"><a href="../../db/db8/file__io_8h.html#ad420018a322081934dd8f2853f5a535d">file_2D_write_POINT_TEC</a></div><div class="ttdeci">void file_2D_write_POINT_TEC(const int n_x, const int n_y, const int N, const struct cell_var_stru CV[], double **X, double **Y, const double *cpu_time, const char *problem, const double time_plot[])</div></div>
+<div class="ttc" id="afile__io_8h_html_ad5c4fa82022f653e4f9056709930eee9"><div class="ttname"><a href="../../db/db8/file__io_8h.html#ad5c4fa82022f653e4f9056709930eee9">file_write_3D_VTK</a></div><div class="ttdeci">void file_write_3D_VTK(const struct flu_var FV, const struct mesh_var mv, const char *problem, const double time)</div></div>
+<div class="ttc" id="afile__io_8h_html_adaf9f8109eb6c852fcaf47aa8c21156c"><div class="ttname"><a href="../../db/db8/file__io_8h.html#adaf9f8109eb6c852fcaf47aa8c21156c">file_radial_write_TEC</a></div><div class="ttdeci">void file_radial_write_TEC(const struct flu_var FV, const double *R, const char *problem, const double time)</div></div>
+<div class="ttc" id="afile__io_8h_html_addb6d3390bbcc8e4abb00460536dc863"><div class="ttname"><a href="../../db/db8/file__io_8h.html#addb6d3390bbcc8e4abb00460536dc863">file_write_2D_BLOCK_TEC</a></div><div class="ttdeci">void file_write_2D_BLOCK_TEC(const struct flu_var FV, const struct mesh_var mv, const char *problem, const double time)</div></div>
+<div class="ttc" id="afile__io_8h_html_afa89583d6583e954878dee9bab9cf7d9"><div class="ttname"><a href="../../db/db8/file__io_8h.html#afa89583d6583e954878dee9bab9cf7d9">initialize_1D</a></div><div class="ttdeci">struct flu_var initialize_1D(const char *name, int *N, int *N_plot, double *time_plot[])</div><div class="ttdoc">This function reads the 1-D initial data file of density/velocity/pressure and performs some other in...</div><div class="ttdef"><b>Definition:</b> <a href="../../d9/d89/file__1_d__in_8c_source.html#l00093">file_1D_in.c:93</a></div></div>
+<div class="ttc" id="afile__io_8h_html_afc5a75c19ae16af5227567eb1dde0ef1"><div class="ttname"><a href="../../db/db8/file__io_8h.html#afc5a75c19ae16af5227567eb1dde0ef1">time_plot_read</a></div><div class="ttdeci">int time_plot_read(const char *add_in, const int N_max, int *N_plot, double *time_plot[])</div><div class="ttdoc">This function reads the time data file for plotting 'time_plot.dat' and initialize tha array 'time_pl...</div><div class="ttdef"><b>Definition:</b> <a href="../../d4/de5/io__control_8c_source.html#l00288">io_control.c:288</a></div></div>
+<div class="ttc" id="astructcell__var__stru_html"><div class="ttname"><a href="../../da/d95/structcell__var__stru.html">cell_var_stru</a></div><div class="ttdoc">pointer structure of VARiables on STRUctural computational grid CELLs.</div><div class="ttdef"><b>Definition:</b> <a href="../../da/d1e/var__struc_8h_source.html#l00061">var_struc.h:61</a></div></div>
+<div class="ttc" id="astructflu__var_html"><div class="ttname"><a href="../../d2/d24/structflu__var.html">flu_var</a></div><div class="ttdoc">pointer structure of FLUid VARiables array.</div><div class="ttdef"><b>Definition:</b> <a href="../../da/d1e/var__struc_8h_source.html#l00048">var_struc.h:48</a></div></div>
+<div class="ttc" id="astructmesh__var_html"><div class="ttname"><a href="../../dc/d0e/structmesh__var.html">mesh_var</a></div><div class="ttdoc">MESHing VARiables.</div><div class="ttdef"><b>Definition:</b> <a href="../../da/d1e/var__struc_8h_source.html#l00155">var_struc.h:155</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="../../dir_6771aafbf413a5638c4e561417caddb9.html">src~</a></li><li class="navelem"><a class="el" href="../../dir_0aa4ecdbc965570bd87fb4da401df2c8.html">include</a></li><li class="navelem"><a class="el" href="../../db/db8/file__io_8h.html">file_io.h</a></li>
+    <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
+  </ul>
+</div>
+</body>
+</html>

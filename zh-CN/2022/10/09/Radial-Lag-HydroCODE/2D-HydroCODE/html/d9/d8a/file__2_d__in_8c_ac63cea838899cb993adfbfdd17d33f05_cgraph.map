@@ -1,0 +1,5 @@
+<map id="flu_var_init" name="flu_var_init">
+<area shape="rect" id="node1" title="This function count out and read in 2&#45;D data file with (line*column) data and initialize pointer to t..." alt="" coords="5,31,100,57"/>
+<area shape="rect" id="node2" href="$d4/de5/io__control_8c.html#a53f2536667da1fda09a509f8d59e1fcd" title="This function counts the line and column number of the numbers are there in the initial data file." alt="" coords="148,5,289,32"/>
+<area shape="rect" id="node3" href="$d4/de5/io__control_8c.html#a40ca7ad20048ff97a27a8641cf31b7cb" title="This function reads the initial data file to generate the initial data." alt="" coords="167,56,270,83"/>
+</map>

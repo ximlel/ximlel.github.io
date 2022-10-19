@@ -1,0 +1,195 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.3"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>HydroCODE_1D: src~/file_io/file_1D_out.c 源文件</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../resize.js"></script>
+<script type="text/javascript" src="../../navtreedata.js"></script>
+<script type="text/javascript" src="../../navtree.js"></script>
+<link href="../../search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../search/searchdata.js"></script>
+<script type="text/javascript" src="../../search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+  $(document).ready(function() { init_search(); });
+/* @license-end */
+</script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="../../Logo.jpg"/></td>
+  <td id="projectalign">
+   <div id="projectname">HydroCODE_1D<span id="projectnumber">&#160;0.1</span>
+   </div>
+   <div id="projectbrief">This is a implementation of fully explict forward Euler scheme for 1-D Euler equations of motion on Lagrangian/Eulerian coordinate</div>
+  </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="../../search/mag_sel.svg"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="搜索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="../../search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.9.3 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "../../search",'搜索','.html');
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('df/d38/file__1_d__out_8c_source.html','../../'); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">file_1D_out.c</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="../../df/d38/file__1_d__out_8c.html">浏览该文件的文档.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span> </div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &lt;math.h&gt;</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &lt;string.h&gt;</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#include &lt;stdio.h&gt;</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#include &lt;stdlib.h&gt;</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#include &lt;time.h&gt;</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span> </div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#include &quot;../include/var_struc.h&quot;</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#include &quot;../include/file_io.h&quot;</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span> </div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span> </div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno"><a class="line" href="../../df/d38/file__1_d__out_8c.html#a8863a1106f5ffe02341f92c1696d6c59">   19</a></span><span class="preprocessor">#define PRINT_NC(v, v_print)                        \</span></div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="preprocessor">    do {                                \</span></div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="preprocessor">    strcpy(file_data, add_out);                 \</span></div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="preprocessor">    strcat(file_data, #v);                      \</span></div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="preprocessor">    strcat(file_data, &quot;.dat&quot;</span>);                  \</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    if((fp_write = fopen(file_data, &quot;w&quot;)) == NULL)          \</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>        {                               \</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>        printf(&quot;Cannot open solution output file: %s!\n&quot;, #v);  \</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>        exit(1);                        \</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>        }                               \</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    for(k = 0; k &lt; N; ++k)                      \</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>        {                               \</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>        for(j = 0; j &lt; m; ++j)                  \</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>            fprintf(fp_write, &quot;%.10g\t&quot;, (v_print));        \</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>        fprintf(fp_write, &quot;\n&quot;);                \</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>        }                               \</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    fclose(fp_write);                       \</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    } while (0)</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span> </div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno"><a class="line" href="../../df/d38/file__1_d__out_8c.html#a5edc2b6fa84841a6fb96918b065603cb">   49</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="../../df/d38/file__1_d__out_8c.html#a5edc2b6fa84841a6fb96918b065603cb">file_1D_write</a>(<span class="keyword">const</span> <span class="keywordtype">int</span> m, <span class="keyword">const</span> <span class="keywordtype">int</span> N, <span class="keyword">const</span> <span class="keyword">struct</span> <a class="code hl_struct" href="../../da/d95/structcell__var__stru.html">cell_var_stru</a> CV, </div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>                    <span class="keywordtype">double</span> * X[], <span class="keyword">const</span> <span class="keywordtype">double</span> * cpu_time, <span class="keyword">const</span> <span class="keywordtype">char</span> * problem, <span class="keyword">const</span> <span class="keywordtype">double</span> time_plot[])</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>{</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>  <span class="comment">// Records the time when the program is running.</span></div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>  <span class="comment">/*</span></div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span><span class="comment">  struct tm * local_time;</span></div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span><span class="comment">  time_t t;</span></div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span><span class="comment">  t=time(NULL);</span></div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span><span class="comment">  local_time=localtime(&amp;t);</span></div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span><span class="comment">  char str_time[100];</span></div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span><span class="comment">  sprintf(str_time, &quot;_%02d%02d%02d%02d%02d%02d&quot;, local_time-&gt;tm_year-100, local_time-&gt;tm_mon+1, local_time-&gt;tm_mday, local_time-&gt;tm_hour, local_time-&gt;tm_min, local_time-&gt;tm_sec);</span></div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span><span class="comment">  */</span></div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>    <span class="keywordtype">char</span> add_out[FILENAME_MAX+40];</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>    <span class="comment">// Get the address of the output data folder of the test example.</span></div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>    <a class="code hl_function" href="../../d4/de5/io__control_8c.html#a7e039d23ca87a439fbe9c9d336447887">example_io</a>(problem, add_out, 0);</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>    </div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>    <span class="keywordtype">char</span> file_data[FILENAME_MAX+40];</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>    FILE * fp_write;</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span> </div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span><span class="comment">//===================Write Output Data File=========================</span></div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span> </div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>    <span class="keywordtype">int</span> k, j;</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>    <a class="code hl_define" href="../../df/d38/file__1_d__out_8c.html#a8863a1106f5ffe02341f92c1696d6c59">PRINT_NC</a>(RHO, CV.<a class="code hl_variable" href="../../da/d95/structcell__var__stru.html#a500d7c095639b7410510faefa3ce846c">RHO</a>[k][j]);</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>    <a class="code hl_define" href="../../df/d38/file__1_d__out_8c.html#a8863a1106f5ffe02341f92c1696d6c59">PRINT_NC</a>(U,   CV.<a class="code hl_variable" href="../../da/d95/structcell__var__stru.html#a08c1214071215fdf8101c58e3aa32bb1">U</a>[k][j]);</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>    <a class="code hl_define" href="../../df/d38/file__1_d__out_8c.html#a8863a1106f5ffe02341f92c1696d6c59">PRINT_NC</a>(P,   CV.<a class="code hl_variable" href="../../da/d95/structcell__var__stru.html#aec9cd0281bac1143c62b2233c3dd6862">P</a>[k][j]);</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>    <a class="code hl_define" href="../../df/d38/file__1_d__out_8c.html#a8863a1106f5ffe02341f92c1696d6c59">PRINT_NC</a>(E,   CV.<a class="code hl_variable" href="../../da/d95/structcell__var__stru.html#a022a9934fc5e01d78053742199211c81">E</a>[k][j]);</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span><span class="preprocessor">#ifdef RADIAL_BASICS</span></div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>    <a class="code hl_define" href="../../df/d38/file__1_d__out_8c.html#a8863a1106f5ffe02341f92c1696d6c59">PRINT_NC</a>(R,   X[k][j]);</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span><span class="preprocessor">#else</span></div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>    <a class="code hl_define" href="../../df/d38/file__1_d__out_8c.html#a8863a1106f5ffe02341f92c1696d6c59">PRINT_NC</a>(X, 0.5 * (X[k][j] + X[k][j+1]));</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span> </div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>    strcpy(file_data, add_out);</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>    strcat(file_data, <span class="stringliteral">&quot;time_plot.dat&quot;</span>);</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>    printf(<span class="stringliteral">&quot;%s\n&quot;</span>,file_data);</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>    <span class="keywordflow">if</span>((fp_write = fopen(file_data, <span class="stringliteral">&quot;w&quot;</span>)) == NULL)</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>    {</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>        printf(<span class="stringliteral">&quot;Cannot open solution output file: time_plot!\n&quot;</span>);</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>        exit(1);</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>    }</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>    <span class="keywordflow">for</span>(k = 0; k &lt; N; ++k)</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>    fprintf(fp_write, <span class="stringliteral">&quot;%.10g\n&quot;</span>, time_plot[k]);</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>    fclose(fp_write);</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span> </div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span><span class="comment">//======================Write Log File============================</span></div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>    <a class="code hl_function" href="../../d2/de0/config__handle_8c.html#a639a61ad0229b057258f8bc6edc4d050">config_write</a>(add_out, cpu_time, problem);</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>}</div>
+<div class="ttc" id="aconfig__handle_8c_html_a639a61ad0229b057258f8bc6edc4d050"><div class="ttname"><a href="../../d2/de0/config__handle_8c.html#a639a61ad0229b057258f8bc6edc4d050">config_write</a></div><div class="ttdeci">void config_write(const char *add_out, const double *cpu_time, const char *name)</div><div class="ttdoc">This function write configuration data and program record into the file 'log.dat'.</div><div class="ttdef"><b>Definition:</b> <a href="../../d2/de0/config__handle_8c_source.html#l00253">config_handle.c:253</a></div></div>
+<div class="ttc" id="afile__1_d__out_8c_html_a5edc2b6fa84841a6fb96918b065603cb"><div class="ttname"><a href="../../df/d38/file__1_d__out_8c.html#a5edc2b6fa84841a6fb96918b065603cb">file_1D_write</a></div><div class="ttdeci">void file_1D_write(const int m, const int N, const struct cell_var_stru CV, double *X[], const double *cpu_time, const char *problem, const double time_plot[])</div><div class="ttdoc">This function write the 1-D solution into output '.dat' files.</div><div class="ttdef"><b>Definition:</b> <a href="../../df/d38/file__1_d__out_8c_source.html#l00049">file_1D_out.c:49</a></div></div>
+<div class="ttc" id="afile__1_d__out_8c_html_a8863a1106f5ffe02341f92c1696d6c59"><div class="ttname"><a href="../../df/d38/file__1_d__out_8c.html#a8863a1106f5ffe02341f92c1696d6c59">PRINT_NC</a></div><div class="ttdeci">#define PRINT_NC(v, v_print)</div><div class="ttdoc">Print out fluid variable 'v' with array data element 'v_print'.</div><div class="ttdef"><b>Definition:</b> <a href="../../df/d38/file__1_d__out_8c_source.html#l00019">file_1D_out.c:19</a></div></div>
+<div class="ttc" id="aio__control_8c_html_a7e039d23ca87a439fbe9c9d336447887"><div class="ttname"><a href="../../d4/de5/io__control_8c.html#a7e039d23ca87a439fbe9c9d336447887">example_io</a></div><div class="ttdeci">void example_io(const char *example, char *add_mkdir, const int i_or_o)</div><div class="ttdoc">This function produces folder path for data input or output.</div><div class="ttdef"><b>Definition:</b> <a href="../../d4/de5/io__control_8c_source.html#l00040">io_control.c:40</a></div></div>
+<div class="ttc" id="astructcell__var__stru_html"><div class="ttname"><a href="../../da/d95/structcell__var__stru.html">cell_var_stru</a></div><div class="ttdoc">pointer structure of VARiables on STRUctural computational grid CELLs.</div><div class="ttdef"><b>Definition:</b> <a href="../../da/d1e/var__struc_8h_source.html#l00061">var_struc.h:61</a></div></div>
+<div class="ttc" id="astructcell__var__stru_html_a022a9934fc5e01d78053742199211c81"><div class="ttname"><a href="../../da/d95/structcell__var__stru.html#a022a9934fc5e01d78053742199211c81">cell_var_stru::E</a></div><div class="ttdeci">double ** E</div><div class="ttdoc">specific total energy.</div><div class="ttdef"><b>Definition:</b> <a href="../../da/d1e/var__struc_8h_source.html#l00062">var_struc.h:62</a></div></div>
+<div class="ttc" id="astructcell__var__stru_html_a08c1214071215fdf8101c58e3aa32bb1"><div class="ttname"><a href="../../da/d95/structcell__var__stru.html#a08c1214071215fdf8101c58e3aa32bb1">cell_var_stru::U</a></div><div class="ttdeci">double ** U</div><div class="ttdef"><b>Definition:</b> <a href="../../da/d1e/var__struc_8h_source.html#l00063">var_struc.h:63</a></div></div>
+<div class="ttc" id="astructcell__var__stru_html_a500d7c095639b7410510faefa3ce846c"><div class="ttname"><a href="../../da/d95/structcell__var__stru.html#a500d7c095639b7410510faefa3ce846c">cell_var_stru::RHO</a></div><div class="ttdeci">double ** RHO</div><div class="ttdef"><b>Definition:</b> <a href="../../da/d1e/var__struc_8h_source.html#l00063">var_struc.h:63</a></div></div>
+<div class="ttc" id="astructcell__var__stru_html_aec9cd0281bac1143c62b2233c3dd6862"><div class="ttname"><a href="../../da/d95/structcell__var__stru.html#aec9cd0281bac1143c62b2233c3dd6862">cell_var_stru::P</a></div><div class="ttdeci">double ** P</div><div class="ttdoc">density, velocity components in direction x and y, pressure.</div><div class="ttdef"><b>Definition:</b> <a href="../../da/d1e/var__struc_8h_source.html#l00063">var_struc.h:63</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="../../dir_6771aafbf413a5638c4e561417caddb9.html">src~</a></li><li class="navelem"><a class="el" href="../../dir_ab846451f6b2e1a7a2652f9756abe74c.html">file_io</a></li><li class="navelem"><a class="el" href="../../df/d38/file__1_d__out_8c.html">file_1D_out.c</a></li>
+    <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
+  </ul>
+</div>
+</body>
+</html>

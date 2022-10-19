@@ -1,0 +1,5 @@
+<map id="minmod_limiter_radial" name="minmod_limiter_radial">
+<area shape="rect" id="node1" title="This function apply the minmod limiter to the slope in radially symmetric case." alt="" coords="5,31,176,57"/>
+<area shape="rect" id="node2" href="$d5/da5/tools_8h.html#a56cac3298eeead8cf22c1e61eb5a5a88" title="Minmod limiter function of two variables." alt="" coords="224,5,308,32"/>
+<area shape="rect" id="node3" href="$d5/da5/tools_8h.html#a6dfba28e1af33b47f4656d3738996fe9" title="Minmod limiter function of three variables." alt="" coords="224,56,308,83"/>
+</map>

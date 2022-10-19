@@ -1,0 +1,12 @@
+<map id="initialize_2D" name="initialize_2D">
+<area shape="rect" id="node1" title="This function reads the 2&#45;D initial data file of density/velocity/pressure." alt="" coords="5,107,108,133"/>
+<area shape="rect" id="node2" href="$d2/de0/config__handle_8c.html#a4b15e37e2922cce20bf5cc8bb6e80c9a" title="This function controls configuration data reading and validation." alt="" coords="168,56,264,83"/>
+<area shape="rect" id="node5" href="$d4/de5/io__control_8c.html#a7e039d23ca87a439fbe9c9d336447887" title="This function produces folder path for data input or output." alt="" coords="167,107,265,133"/>
+<area shape="rect" id="node7" href="$d4/de5/io__control_8c.html#afc5a75c19ae16af5227567eb1dde0ef1" title="This function reads the time data file for plotting &#39;time_plot.dat&#39; and initialize tha array &#39;time_pl..." alt="" coords="156,183,276,209"/>
+<area shape="rect" id="node3" href="$d2/de0/config__handle_8c.html#a4b379c084f41490473f80792af24e0c7" title="This function check whether the configuration data is reasonable and set the default...." alt="" coords="336,5,443,32"/>
+<area shape="rect" id="node4" href="$d2/de0/config__handle_8c.html#a482404d20045a8a5f48b5ee425a04259" title="This function read the configuration data file, and store the configuration data in the array &#39;config..." alt="" coords="340,56,439,83"/>
+<area shape="rect" id="node6" href="$d4/ddd/sys__pro_8c.html#a40a5faeb19b1fd9aec2c5c10a87faeb4" title="This is a function that recursively creates folders." alt="" coords="347,107,431,133"/>
+<area shape="rect" id="node8" href="$d4/de5/io__control_8c.html#a7d7ac58cf9ddeec7a4a3c73fabd297e6" title="Compare function of double for sort function &#39;qsort()&#39;." alt="" coords="324,157,455,184"/>
+<area shape="rect" id="node9" href="$d4/de5/io__control_8c.html#acdd9ccb7dc0ecc925cafe95a4c2f8a51" title="This function counts how many numbers are there in the initial data file." alt="" coords="334,208,445,235"/>
+<area shape="rect" id="node10" href="$d4/de5/io__control_8c.html#a40ca7ad20048ff97a27a8641cf31b7cb" title="This function reads the initial data file to generate the initial data." alt="" coords="338,259,441,285"/>
+</map>

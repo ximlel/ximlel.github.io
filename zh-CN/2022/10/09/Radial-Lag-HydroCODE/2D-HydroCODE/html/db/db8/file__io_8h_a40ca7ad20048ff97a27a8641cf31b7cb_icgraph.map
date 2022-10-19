@@ -1,0 +1,7 @@
+<map id="flu_var_read" name="flu_var_read">
+<area shape="rect" id="node1" title="This function reads the initial data file to generate the initial data." alt="" coords="427,31,529,57"/>
+<area shape="rect" id="node2" href="$d9/d8a/file__2_d__in_8c.html#ac63cea838899cb993adfbfdd17d33f05" title="This function count out and read in 2&#45;D data file with (line*column) data and initialize pointer to t..." alt="" coords="271,5,366,32"/>
+<area shape="rect" id="node3" href="$d4/de5/io__control_8c.html#afc5a75c19ae16af5227567eb1dde0ef1" title="This function reads the time data file for plotting &#39;time_plot.dat&#39; and initialize tha array &#39;time_pl..." alt="" coords="259,56,379,83"/>
+<area shape="rect" id="node4" href="$d9/d8a/file__2_d__in_8c.html#a13555e5f4f916ffa5975ed5f22be2697" title="This function reads the 2&#45;D initial data file of density/velocity/pressure." alt="" coords="108,56,211,83"/>
+<area shape="rect" id="node5" href="$d2/d24/hydrocode_8c.html#a0ddf1224851353fc92bfbff6f499fa97" title="This is the main function which constructs the main structure of the 2&#45;D Eulerian hydrocode." alt="" coords="5,56,60,83"/>
+</map>
