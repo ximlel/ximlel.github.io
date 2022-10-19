@@ -31,6 +31,7 @@ i18n_dir: :lang
 skip_render: 
     - "_posts/zh-CN/1D-HydroCODE/**/*"
     - "_posts/zh-CN/2D-HydroCODE/**/*"
+    - "_posts/zh-CN/Radial-Lag-HydroCODE/**/*"
 
 # Writing
 new_post_name: :lang/:title.md # File name of new posts
