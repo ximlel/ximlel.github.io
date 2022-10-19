@@ -1,0 +1,255 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.3"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>HydroCODE_2D: src~/inter_process/slope_limiter_2D_x.c 文件参考</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../resize.js"></script>
+<script type="text/javascript" src="../../navtreedata.js"></script>
+<script type="text/javascript" src="../../navtree.js"></script>
+<link href="../../search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../search/searchdata.js"></script>
+<script type="text/javascript" src="../../search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+  $(document).ready(function() { init_search(); });
+/* @license-end */
+</script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="../../Logo.jpg"/></td>
+  <td id="projectalign">
+   <div id="projectname">HydroCODE_2D<span id="projectnumber">&#160;0.1</span>
+   </div>
+   <div id="projectbrief">This is a implementation of fully explict forward Euler scheme for 2-D Euler equations of motion on Eulerian coordinate</div>
+  </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="../../search/mag_sel.svg"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="搜索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="../../search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.9.3 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "../../search",'搜索','.html');
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('d7/d36/slope__limiter__2_d__x_8c.html','../../'); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#func-members">函数</a>  </div>
+  <div class="headertitle"><div class="title">slope_limiter_2D_x.c 文件参考</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>This is a function of the minmod slope limiter in the x-direction of two dimension.  
+<a href="#details">更多...</a></p>
+<div class="textblock"><code>#include &lt;stdio.h&gt;</code><br />
+<code>#include &lt;stdarg.h&gt;</code><br />
+<code>#include &quot;<a class="el" href="../../da/d1e/var__struc_8h_source.html">../include/var_struc.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="../../d5/da5/tools_8h_source.html">../include/tools.h</a>&quot;</code><br />
+</div><div class="textblock"><div class="dynheader">
+slope_limiter_2D_x.c 的引用(Include)关系图:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../d7/d5e/slope__limiter__2_d__x_8c__incl.svg" width="512" height="127"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</div>
+<p><a href="../../d7/d36/slope__limiter__2_d__x_8c_source.html">浏览源代码.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+函数</h2></td></tr>
+<tr class="memitem:a28623a6705c28efd5d34c57409c54678"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d36/slope__limiter__2_d__x_8c.html#a28623a6705c28efd5d34c57409c54678">minmod_limiter_2D_x</a> (const _Bool NO_h, const int m, const int i, const _Bool i_f_var_x_get, double **s, double **U, const double UL, const double UR, const double HL,...)</td></tr>
+<tr class="memdesc:a28623a6705c28efd5d34c57409c54678"><td class="mdescLeft">&#160;</td><td class="mdescRight">This function apply the minmod limiter to the slope in the x-direction of two dimension.  <a href="../../d7/d36/slope__limiter__2_d__x_8c.html#a28623a6705c28efd5d34c57409c54678">更多...</a><br /></td></tr>
+<tr class="separator:a28623a6705c28efd5d34c57409c54678"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
+<div class="textblock"><p >This is a function of the minmod slope limiter in the x-direction of two dimension. </p>
+
+<p class="definition">在文件 <a class="el" href="../../d7/d36/slope__limiter__2_d__x_8c_source.html">slope_limiter_2D_x.c</a> 中定义.</p>
+</div><h2 class="groupheader">函数说明</h2>
+<a id="a28623a6705c28efd5d34c57409c54678" name="a28623a6705c28efd5d34c57409c54678"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a28623a6705c28efd5d34c57409c54678">&#9670;&nbsp;</a></span>minmod_limiter_2D_x()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void minmod_limiter_2D_x </td>
+          <td>(</td>
+          <td class="paramtype">const _Bool&#160;</td>
+          <td class="paramname"><em>NO_h</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int&#160;</td>
+          <td class="paramname"><em>m</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int&#160;</td>
+          <td class="paramname"><em>i</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const _Bool&#160;</td>
+          <td class="paramname"><em>i_f_var_x_get</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double **&#160;</td>
+          <td class="paramname"><em>s</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double **&#160;</td>
+          <td class="paramname"><em>U</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const double&#160;</td>
+          <td class="paramname"><em>UL</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const double&#160;</td>
+          <td class="paramname"><em>UR</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const double&#160;</td>
+          <td class="paramname"><em>HL</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>...</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>This function apply the minmod limiter to the slope in the x-direction of two dimension. </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">NO_h</td><td>Whether there are moving grid point coordinates.<ul>
+<li>true: There are moving x-spatial grid point coordinates *X.</li>
+<li>false: There is fixed x-spatial grid length. </li>
+</ul>
+</td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">m</td><td>Number of the x-grids. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">i</td><td>On the i-th line grid. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">i_f_var_x_get</td><td>Whether the cell interfacial variables in x-direction have been obtained.<ul>
+<li>true: interfacial variables at t_{n+1} are available, and then trivariate <a class="el" href="../../d5/da5/tools_8h.html#a6dfba28e1af33b47f4656d3738996fe9" title="Minmod limiter function of three variables.">minmod3()</a> function is used.</li>
+<li>false: bivariate <a class="el" href="../../d5/da5/tools_8h.html#a56cac3298eeead8cf22c1e61eb5a5a88" title="Minmod limiter function of two variables.">minmod2()</a> function is used. </li>
+</ul>
+</td></tr>
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">s</td><td>x-spatial derivatives of the fluid variable are stored here. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">U</td><td>Array to store fluid variable values. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">UL</td><td>Fluid variable value at left boundary. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">UR</td><td>Fluid variable value at right boundary. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">HL</td><td>x-spatial grid length at left boundary OR fixed spatial grid length. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">...</td><td>Variable parameter if NO_h is true.<ul>
+<li><b>double</b> <code>HR:</code> x-spatial grid length at right boundary.</li>
+<li><b>double</b> <code>*X</code>: Array of moving spatial grid point x-coordinates. </li>
+</ul>
+</td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">在文件 <a class="el" href="../../d7/d36/slope__limiter__2_d__x_8c_source.html">slope_limiter_2D_x.c</a> 第 <a class="el" href="../../d7/d36/slope__limiter__2_d__x_8c_source.html#l00032">32</a> 行定义.</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../d7/d36/slope__limiter__2_d__x_8c_a28623a6705c28efd5d34c57409c54678_cgraph.svg" width="310" height="88"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../d7/d36/slope__limiter__2_d__x_8c_a28623a6705c28efd5d34c57409c54678_icgraph.svg" width="786" height="104"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="../../dir_6771aafbf413a5638c4e561417caddb9.html">src~</a></li><li class="navelem"><a class="el" href="../../dir_e8ef67cf99a2ba2267792f6cc6c44256.html">inter_process</a></li><li class="navelem"><a class="el" href="../../d7/d36/slope__limiter__2_d__x_8c.html">slope_limiter_2D_x.c</a></li>
+    <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
+  </ul>
+</div>
+</body>
+</html>

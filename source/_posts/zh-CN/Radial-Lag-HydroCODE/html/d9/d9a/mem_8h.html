@@ -1,0 +1,510 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.3"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>hydrocode_Radial_Lag: src~/include_cii/mem.h 文件参考</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../resize.js"></script>
+<script type="text/javascript" src="../../navtreedata.js"></script>
+<script type="text/javascript" src="../../navtree.js"></script>
+<link href="../../search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../search/searchdata.js"></script>
+<script type="text/javascript" src="../../search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+  $(document).ready(function() { init_search(); });
+/* @license-end */
+</script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="../../Logo.jpg"/></td>
+  <td id="projectalign">
+   <div id="projectname">hydrocode_Radial_Lag<span id="projectnumber">&#160;0.3</span>
+   </div>
+   <div id="projectbrief">This is an implementation of fully explict forward Euler scheme for multi-D radially symmetric compressible flows on Lagrangian coordinate</div>
+  </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="../../search/mag_sel.svg"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="搜索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="../../search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.9.3 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "../../search",'搜索','.html');
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('d9/d9a/mem_8h.html','../../'); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#define-members">宏定义</a> &#124;
+<a href="#func-members">函数</a> &#124;
+<a href="#var-members">变量</a>  </div>
+  <div class="headertitle"><div class="title">mem.h 文件参考</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>This file is a header file of source codes in the book 'C Interfaces and Implementations'.  
+<a href="#details">更多...</a></p>
+<div class="textblock"><code>#include &quot;<a class="el" href="../../dc/d65/except_8h_source.html">except.h</a>&quot;</code><br />
+</div><div class="textblock"><div class="dynheader">
+mem.h 的引用(Include)关系图:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../d6/da7/mem_8h__incl.svg" width="186" height="187"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</div><div class="textblock"><div class="dynheader">
+此图展示该文件直接或间接的被哪些文件引用了:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../dc/dc3/mem_8h__dep__incl.svg" width="532" height="142"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</div>
+<p><a href="../../d9/d9a/mem_8h_source.html">浏览源代码.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
+宏定义</h2></td></tr>
+<tr class="memitem:a971e5b15c6462f812503e1a1ad66ab20"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d9a/mem_8h.html#a971e5b15c6462f812503e1a1ad66ab20">ALLOC</a>(nbytes)&#160;&#160;&#160;	<a class="el" href="../../d3/d8f/mem_8c.html#aa04ebeaa62195c6b73e0c76241fa1724">Mem_alloc</a>((nbytes), __FILE__, __LINE__)</td></tr>
+<tr class="separator:a971e5b15c6462f812503e1a1ad66ab20"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2ddbf668111d4c93b943c15cc1306dc6"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d9a/mem_8h.html#a2ddbf668111d4c93b943c15cc1306dc6">CALLOC</a>(count,  nbytes)&#160;&#160;&#160;	<a class="el" href="../../d3/d8f/mem_8c.html#a066438ae83266724642e266da8cb2309">Mem_calloc</a>((count), (nbytes), __FILE__, __LINE__)</td></tr>
+<tr class="separator:a2ddbf668111d4c93b943c15cc1306dc6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6dcbdd586f47a62900804da2a6102a2e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d9a/mem_8h.html#a6dcbdd586f47a62900804da2a6102a2e">NEW</a>(p)&#160;&#160;&#160;((p) = <a class="el" href="../../d9/d9a/mem_8h.html#a971e5b15c6462f812503e1a1ad66ab20">ALLOC</a>((long)sizeof *(p)))</td></tr>
+<tr class="separator:a6dcbdd586f47a62900804da2a6102a2e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa1ee572e1a56579657d6568ddbc8cab5"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d9a/mem_8h.html#aa1ee572e1a56579657d6568ddbc8cab5">NEW0</a>(p)&#160;&#160;&#160;((p) = <a class="el" href="../../d9/d9a/mem_8h.html#a2ddbf668111d4c93b943c15cc1306dc6">CALLOC</a>(1, (long)sizeof *(p)))</td></tr>
+<tr class="separator:aa1ee572e1a56579657d6568ddbc8cab5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a105949c59c998e38aad80266afac92bf"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d9a/mem_8h.html#a105949c59c998e38aad80266afac92bf">FREE</a>(ptr)</td></tr>
+<tr class="separator:a105949c59c998e38aad80266afac92bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2dd9e1ed5a4d80d0a7c08ba2df512172"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d9a/mem_8h.html#a2dd9e1ed5a4d80d0a7c08ba2df512172">RESIZE</a>(ptr,  nbytes)</td></tr>
+<tr class="separator:a2dd9e1ed5a4d80d0a7c08ba2df512172"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+函数</h2></td></tr>
+<tr class="memitem:aa04ebeaa62195c6b73e0c76241fa1724"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d9a/mem_8h.html#aa04ebeaa62195c6b73e0c76241fa1724">Mem_alloc</a> (long nbytes, const char *file, int line)</td></tr>
+<tr class="separator:aa04ebeaa62195c6b73e0c76241fa1724"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a066438ae83266724642e266da8cb2309"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d9a/mem_8h.html#a066438ae83266724642e266da8cb2309">Mem_calloc</a> (long count, long nbytes, const char *file, int line)</td></tr>
+<tr class="separator:a066438ae83266724642e266da8cb2309"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aae781d905921205c45137906ac46275a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d9a/mem_8h.html#aae781d905921205c45137906ac46275a">Mem_free</a> (void *ptr, const char *file, int line)</td></tr>
+<tr class="separator:aae781d905921205c45137906ac46275a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af2fab9dd5fb95a2346e9a636cb79cc4b"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d9a/mem_8h.html#af2fab9dd5fb95a2346e9a636cb79cc4b">Mem_resize</a> (void *ptr, long nbytes, const char *file, int line)</td></tr>
+<tr class="separator:af2fab9dd5fb95a2346e9a636cb79cc4b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
+变量</h2></td></tr>
+<tr class="memitem:a4bc14a9be0eec9d47e4ffce4e014f66a"><td class="memItemLeft" align="right" valign="top">const Except_T&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d9a/mem_8h.html#a4bc14a9be0eec9d47e4ffce4e014f66a">Mem_Failed</a></td></tr>
+<tr class="separator:a4bc14a9be0eec9d47e4ffce4e014f66a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
+<div class="textblock"><p >This file is a header file of source codes in the book 'C Interfaces and Implementations'. </p>
+<p >This header file declares functions in the source file '<a class="el" href="../../d3/d8f/mem_8c.html" title="This file is the source codes in the book &#39;C Interfaces and Implementations&#39;.">src_cii/mem.c</a>'. </p>
+
+<p class="definition">在文件 <a class="el" href="../../d9/d9a/mem_8h_source.html">mem.h</a> 中定义.</p>
+</div><h2 class="groupheader">宏定义说明</h2>
+<a id="a971e5b15c6462f812503e1a1ad66ab20" name="a971e5b15c6462f812503e1a1ad66ab20"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a971e5b15c6462f812503e1a1ad66ab20">&#9670;&nbsp;</a></span>ALLOC</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ALLOC</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">nbytes</td><td>)</td>
+          <td>&#160;&#160;&#160;	<a class="el" href="../../d3/d8f/mem_8c.html#aa04ebeaa62195c6b73e0c76241fa1724">Mem_alloc</a>((nbytes), __FILE__, __LINE__)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../d9/d9a/mem_8h_source.html">mem.h</a> 第 <a class="el" href="../../d9/d9a/mem_8h_source.html#l00019">19</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a2ddbf668111d4c93b943c15cc1306dc6" name="a2ddbf668111d4c93b943c15cc1306dc6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2ddbf668111d4c93b943c15cc1306dc6">&#9670;&nbsp;</a></span>CALLOC</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CALLOC</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">count, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">nbytes&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td>&#160;&#160;&#160;	<a class="el" href="../../d3/d8f/mem_8c.html#a066438ae83266724642e266da8cb2309">Mem_calloc</a>((count), (nbytes), __FILE__, __LINE__)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../d9/d9a/mem_8h_source.html">mem.h</a> 第 <a class="el" href="../../d9/d9a/mem_8h_source.html#l00021">21</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a105949c59c998e38aad80266afac92bf" name="a105949c59c998e38aad80266afac92bf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a105949c59c998e38aad80266afac92bf">&#9670;&nbsp;</a></span>FREE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define FREE</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">ptr</td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>值:</b><div class="fragment"><div class="line">    ((void)(<a class="code hl_function" href="../../d9/d9a/mem_8h.html#aae781d905921205c45137906ac46275a">Mem_free</a>((ptr), \</div>
+<div class="line">    __FILE__, __LINE__), (ptr) = 0))</div>
+<div class="ttc" id="amem_8h_html_aae781d905921205c45137906ac46275a"><div class="ttname"><a href="../../d9/d9a/mem_8h.html#aae781d905921205c45137906ac46275a">Mem_free</a></div><div class="ttdeci">void Mem_free(void *ptr, const char *file, int line)</div><div class="ttdef"><b>Definition:</b> <a href="../../d3/d8f/mem_8c_source.html#l00040">mem.c:40</a></div></div>
+</div><!-- fragment -->
+<p class="definition">在文件 <a class="el" href="../../d9/d9a/mem_8h_source.html">mem.h</a> 第 <a class="el" href="../../d9/d9a/mem_8h_source.html#l00025">25</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a6dcbdd586f47a62900804da2a6102a2e" name="a6dcbdd586f47a62900804da2a6102a2e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6dcbdd586f47a62900804da2a6102a2e">&#9670;&nbsp;</a></span>NEW</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define NEW</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">p</td><td>)</td>
+          <td>&#160;&#160;&#160;((p) = <a class="el" href="../../d9/d9a/mem_8h.html#a971e5b15c6462f812503e1a1ad66ab20">ALLOC</a>((long)sizeof *(p)))</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../d9/d9a/mem_8h_source.html">mem.h</a> 第 <a class="el" href="../../d9/d9a/mem_8h_source.html#l00023">23</a> 行定义.</p>
+
+</div>
+</div>
+<a id="aa1ee572e1a56579657d6568ddbc8cab5" name="aa1ee572e1a56579657d6568ddbc8cab5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa1ee572e1a56579657d6568ddbc8cab5">&#9670;&nbsp;</a></span>NEW0</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define NEW0</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">p</td><td>)</td>
+          <td>&#160;&#160;&#160;((p) = <a class="el" href="../../d9/d9a/mem_8h.html#a2ddbf668111d4c93b943c15cc1306dc6">CALLOC</a>(1, (long)sizeof *(p)))</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../d9/d9a/mem_8h_source.html">mem.h</a> 第 <a class="el" href="../../d9/d9a/mem_8h_source.html#l00024">24</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a2dd9e1ed5a4d80d0a7c08ba2df512172" name="a2dd9e1ed5a4d80d0a7c08ba2df512172"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2dd9e1ed5a4d80d0a7c08ba2df512172">&#9670;&nbsp;</a></span>RESIZE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define RESIZE</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">ptr, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">nbytes&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>值:</b><div class="fragment"><div class="line">    ((ptr) = <a class="code hl_function" href="../../d9/d9a/mem_8h.html#af2fab9dd5fb95a2346e9a636cb79cc4b">Mem_resize</a>((ptr), \</div>
+<div class="line">    (nbytes), __FILE__, __LINE__))</div>
+<div class="ttc" id="amem_8h_html_af2fab9dd5fb95a2346e9a636cb79cc4b"><div class="ttname"><a href="../../d9/d9a/mem_8h.html#af2fab9dd5fb95a2346e9a636cb79cc4b">Mem_resize</a></div><div class="ttdeci">void * Mem_resize(void *ptr, long nbytes, const char *file, int line)</div><div class="ttdef"><b>Definition:</b> <a href="../../d3/d8f/mem_8c_source.html#l00044">mem.c:44</a></div></div>
+</div><!-- fragment -->
+<p class="definition">在文件 <a class="el" href="../../d9/d9a/mem_8h_source.html">mem.h</a> 第 <a class="el" href="../../d9/d9a/mem_8h_source.html#l00027">27</a> 行定义.</p>
+
+</div>
+</div>
+<h2 class="groupheader">函数说明</h2>
+<a id="aa04ebeaa62195c6b73e0c76241fa1724" name="aa04ebeaa62195c6b73e0c76241fa1724"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa04ebeaa62195c6b73e0c76241fa1724">&#9670;&nbsp;</a></span>Mem_alloc()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void * Mem_alloc </td>
+          <td>(</td>
+          <td class="paramtype">long&#160;</td>
+          <td class="paramname"><em>nbytes</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>file</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>line</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../d3/d8f/mem_8c_source.html">mem.c</a> 第 <a class="el" href="../../d3/d8f/mem_8c_source.html#l00012">12</a> 行定义.</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../d9/d9a/mem_8h_aa04ebeaa62195c6b73e0c76241fa1724_cgraph.svg" width="258" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+
+</div>
+</div>
+<a id="a066438ae83266724642e266da8cb2309" name="a066438ae83266724642e266da8cb2309"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a066438ae83266724642e266da8cb2309">&#9670;&nbsp;</a></span>Mem_calloc()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void * Mem_calloc </td>
+          <td>(</td>
+          <td class="paramtype">long&#160;</td>
+          <td class="paramname"><em>count</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">long&#160;</td>
+          <td class="paramname"><em>nbytes</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>file</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>line</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../d3/d8f/mem_8c_source.html">mem.c</a> 第 <a class="el" href="../../d3/d8f/mem_8c_source.html#l00025">25</a> 行定义.</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../d9/d9a/mem_8h_a066438ae83266724642e266da8cb2309_cgraph.svg" width="264" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+
+</div>
+</div>
+<a id="aae781d905921205c45137906ac46275a" name="aae781d905921205c45137906ac46275a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aae781d905921205c45137906ac46275a">&#9670;&nbsp;</a></span>Mem_free()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Mem_free </td>
+          <td>(</td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>ptr</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>file</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>line</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../d3/d8f/mem_8c_source.html">mem.c</a> 第 <a class="el" href="../../d3/d8f/mem_8c_source.html#l00040">40</a> 行定义.</p>
+
+</div>
+</div>
+<a id="af2fab9dd5fb95a2346e9a636cb79cc4b" name="af2fab9dd5fb95a2346e9a636cb79cc4b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af2fab9dd5fb95a2346e9a636cb79cc4b">&#9670;&nbsp;</a></span>Mem_resize()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void * Mem_resize </td>
+          <td>(</td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>ptr</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">long&#160;</td>
+          <td class="paramname"><em>nbytes</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>file</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>line</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../d3/d8f/mem_8c_source.html">mem.c</a> 第 <a class="el" href="../../d3/d8f/mem_8c_source.html#l00044">44</a> 行定义.</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../d9/d9a/mem_8h_af2fab9dd5fb95a2346e9a636cb79cc4b_cgraph.svg" width="266" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+
+</div>
+</div>
+<h2 class="groupheader">变量说明</h2>
+<a id="a4bc14a9be0eec9d47e4ffce4e014f66a" name="a4bc14a9be0eec9d47e4ffce4e014f66a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4bc14a9be0eec9d47e4ffce4e014f66a">&#9670;&nbsp;</a></span>Mem_Failed</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const Except_T Mem_Failed</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">extern</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../d3/d8f/mem_8c_source.html">mem.c</a> 第 <a class="el" href="../../d3/d8f/mem_8c_source.html#l00011">11</a> 行定义.</p>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="../../dir_6771aafbf413a5638c4e561417caddb9.html">src~</a></li><li class="navelem"><a class="el" href="../../dir_9d9130b3691fae8de17759ed0feecb0a.html">include_cii</a></li><li class="navelem"><a class="el" href="../../d9/d9a/mem_8h.html">mem.h</a></li>
+    <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
+  </ul>
+</div>
+</body>
+</html>

@@ -1,0 +1,520 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.3"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>hydrocode_Radial_Lag: src~/include_cii/except.h 文件参考</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../resize.js"></script>
+<script type="text/javascript" src="../../navtreedata.js"></script>
+<script type="text/javascript" src="../../navtree.js"></script>
+<link href="../../search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../search/searchdata.js"></script>
+<script type="text/javascript" src="../../search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+  $(document).ready(function() { init_search(); });
+/* @license-end */
+</script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="../../Logo.jpg"/></td>
+  <td id="projectalign">
+   <div id="projectname">hydrocode_Radial_Lag<span id="projectnumber">&#160;0.3</span>
+   </div>
+   <div id="projectbrief">This is an implementation of fully explict forward Euler scheme for multi-D radially symmetric compressible flows on Lagrangian coordinate</div>
+  </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="../../search/mag_sel.svg"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="搜索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="../../search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.9.3 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "../../search",'搜索','.html');
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('dc/d65/except_8h.html','../../'); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#nested-classes">结构体</a> &#124;
+<a href="#define-members">宏定义</a> &#124;
+<a href="#typedef-members">类型定义</a> &#124;
+<a href="#enum-members">枚举</a> &#124;
+<a href="#func-members">函数</a> &#124;
+<a href="#var-members">变量</a>  </div>
+  <div class="headertitle"><div class="title">except.h 文件参考</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>This file is a header file of source codes in the book 'C Interfaces and Implementations'.  
+<a href="#details">更多...</a></p>
+<div class="textblock"><code>#include &lt;setjmp.h&gt;</code><br />
+</div><div class="textblock"><div class="dynheader">
+except.h 的引用(Include)关系图:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../dc/d6a/except_8h__incl.svg" width="196" height="112"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</div><div class="textblock"><div class="dynheader">
+此图展示该文件直接或间接的被哪些文件引用了:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../da/da9/except_8h__dep__incl.svg" width="639" height="216"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</div>
+<p><a href="../../dc/d65/except_8h_source.html">浏览源代码.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
+结构体</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d7e/struct_t.html">T</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/dd8/struct_except___frame.html">Except_Frame</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
+宏定义</h2></td></tr>
+<tr class="memitem:a0acb682b8260ab1c60b918599864e2e5"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d65/except_8h.html#a0acb682b8260ab1c60b918599864e2e5">T</a>&#160;&#160;&#160;Except_T</td></tr>
+<tr class="separator:a0acb682b8260ab1c60b918599864e2e5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a45e87c4d7dee50346b15c7761b0b340a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d65/except_8h.html#a45e87c4d7dee50346b15c7761b0b340a">RAISE</a>(e)&#160;&#160;&#160;<a class="el" href="../../d1/d99/except_8c.html#a74a6737ffcaaf94b7c8137a651f9d94b">Except_raise</a>(&amp;(e), __FILE__, __LINE__)</td></tr>
+<tr class="separator:a45e87c4d7dee50346b15c7761b0b340a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a947ef43f0f0def3fcc050a8df849fd16"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d65/except_8h.html#a947ef43f0f0def3fcc050a8df849fd16">RERAISE</a></td></tr>
+<tr class="separator:a947ef43f0f0def3fcc050a8df849fd16"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6a0e6b80dd3d5ca395cf58151749f5e2"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d65/except_8h.html#a6a0e6b80dd3d5ca395cf58151749f5e2">RETURN</a>&#160;&#160;&#160;switch (<a class="el" href="../../d1/d99/except_8c.html#a3d38c6361ecf1c4873bbcb2de8a50874">Except_stack</a> = <a class="el" href="../../d1/d99/except_8c.html#a3d38c6361ecf1c4873bbcb2de8a50874">Except_stack</a>-&gt;prev,0) default: return</td></tr>
+<tr class="separator:a6a0e6b80dd3d5ca395cf58151749f5e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad2746371528bdf15c3910b7bf217dac0"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d65/except_8h.html#ad2746371528bdf15c3910b7bf217dac0">TRY</a></td></tr>
+<tr class="separator:ad2746371528bdf15c3910b7bf217dac0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab5e72fc2bd41014c75e0ace4feabfe8e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d65/except_8h.html#ab5e72fc2bd41014c75e0ace4feabfe8e">EXCEPT</a>(e)</td></tr>
+<tr class="separator:ab5e72fc2bd41014c75e0ace4feabfe8e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0a70ee0cbf5b1738be4c9463c529ce72"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d65/except_8h.html#a0a70ee0cbf5b1738be4c9463c529ce72">ELSE</a></td></tr>
+<tr class="separator:a0a70ee0cbf5b1738be4c9463c529ce72"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0e2a75478cd44f1666a6aca626c5c50b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d65/except_8h.html#a0e2a75478cd44f1666a6aca626c5c50b">FINALLY</a></td></tr>
+<tr class="separator:a0e2a75478cd44f1666a6aca626c5c50b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae6628ac788ad213363b89dba9868420b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d65/except_8h.html#ae6628ac788ad213363b89dba9868420b">END_TRY</a></td></tr>
+<tr class="separator:ae6628ac788ad213363b89dba9868420b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="typedef-members" name="typedef-members"></a>
+类型定义</h2></td></tr>
+<tr class="memitem:adec21d234619c8f0afbf0914249837b1"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="../../d5/d7e/struct_t.html">T</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d65/except_8h.html#adec21d234619c8f0afbf0914249837b1">T</a></td></tr>
+<tr class="separator:adec21d234619c8f0afbf0914249837b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae9476933f67b88456bce2b1445851f6f"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="../../d2/dd8/struct_except___frame.html">Except_Frame</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d65/except_8h.html#ae9476933f67b88456bce2b1445851f6f">Except_Frame</a></td></tr>
+<tr class="separator:ae9476933f67b88456bce2b1445851f6f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="enum-members" name="enum-members"></a>
+枚举</h2></td></tr>
+<tr class="memitem:a06fc87d81c62e9abb8790b6e5713c55b"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom">{ <a class="el" href="../../dc/d65/except_8h.html#a06fc87d81c62e9abb8790b6e5713c55ba388ad603a03109702c508bd464b66da2">Except_entered</a> =0
+, <a class="el" href="../../dc/d65/except_8h.html#a06fc87d81c62e9abb8790b6e5713c55ba80cdb3635fb4b8d00925dea5821c9fbb">Except_raised</a>
+, <a class="el" href="../../dc/d65/except_8h.html#a06fc87d81c62e9abb8790b6e5713c55bac0d9956bf062b2f2db1f9294563e73b4">Except_handled</a>
+, <a class="el" href="../../dc/d65/except_8h.html#a06fc87d81c62e9abb8790b6e5713c55ba8f2b6b8b0f719ecda31559637209f40b">Except_finalized</a>
+ }</td></tr>
+<tr class="separator:a06fc87d81c62e9abb8790b6e5713c55b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+函数</h2></td></tr>
+<tr class="memitem:a74a6737ffcaaf94b7c8137a651f9d94b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d65/except_8h.html#a74a6737ffcaaf94b7c8137a651f9d94b">Except_raise</a> (const <a class="el" href="../../d5/d7e/struct_t.html">T</a> *e, const char *file, int line)</td></tr>
+<tr class="separator:a74a6737ffcaaf94b7c8137a651f9d94b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
+变量</h2></td></tr>
+<tr class="memitem:a3d38c6361ecf1c4873bbcb2de8a50874"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d2/dd8/struct_except___frame.html">Except_Frame</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d65/except_8h.html#a3d38c6361ecf1c4873bbcb2de8a50874">Except_stack</a></td></tr>
+<tr class="separator:a3d38c6361ecf1c4873bbcb2de8a50874"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a02c91dd1cedbfe4b9e31d7775e0ead7f"><td class="memItemLeft" align="right" valign="top">const Except_T&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d65/except_8h.html#a02c91dd1cedbfe4b9e31d7775e0ead7f">Assert_Failed</a></td></tr>
+<tr class="separator:a02c91dd1cedbfe4b9e31d7775e0ead7f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
+<div class="textblock"><p >This file is a header file of source codes in the book 'C Interfaces and Implementations'. </p>
+<p >This header file declares functions in the source file '<a class="el" href="../../d1/d99/except_8c.html" title="This file is the source codes in the book &#39;C Interfaces and Implementations&#39;.">src_cii/except.c</a>'. </p>
+
+<p class="definition">在文件 <a class="el" href="../../dc/d65/except_8h_source.html">except.h</a> 中定义.</p>
+</div><h2 class="groupheader">宏定义说明</h2>
+<a id="a0a70ee0cbf5b1738be4c9463c529ce72" name="a0a70ee0cbf5b1738be4c9463c529ce72"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0a70ee0cbf5b1738be4c9463c529ce72">&#9670;&nbsp;</a></span>ELSE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ELSE</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>值:</b><div class="fragment"><div class="line">        <span class="keywordflow">if</span> (Except_flag == <a class="code hl_enumvalue" href="../../dc/d65/except_8h.html#a06fc87d81c62e9abb8790b6e5713c55ba388ad603a03109702c508bd464b66da2">Except_entered</a>) <a class="code hl_variable" href="../../dc/d65/except_8h.html#a3d38c6361ecf1c4873bbcb2de8a50874">Except_stack</a> = <a class="code hl_variable" href="../../dc/d65/except_8h.html#a3d38c6361ecf1c4873bbcb2de8a50874">Except_stack</a>-&gt;<a class="code hl_variable" href="../../d2/dd8/struct_except___frame.html#a1d458967cb04e82447b38964a45df5ad">prev</a>; \</div>
+<div class="line">    } <span class="keywordflow">else</span> { \</div>
+<div class="line">        Except_flag = <a class="code hl_enumvalue" href="../../dc/d65/except_8h.html#a06fc87d81c62e9abb8790b6e5713c55bac0d9956bf062b2f2db1f9294563e73b4">Except_handled</a>;</div>
+<div class="ttc" id="aexcept_8h_html_a06fc87d81c62e9abb8790b6e5713c55ba388ad603a03109702c508bd464b66da2"><div class="ttname"><a href="../../dc/d65/except_8h.html#a06fc87d81c62e9abb8790b6e5713c55ba388ad603a03109702c508bd464b66da2">Except_entered</a></div><div class="ttdeci">@ Except_entered</div><div class="ttdef"><b>Definition:</b> <a href="../../dc/d65/except_8h_source.html#l00022">except.h:22</a></div></div>
+<div class="ttc" id="aexcept_8h_html_a06fc87d81c62e9abb8790b6e5713c55bac0d9956bf062b2f2db1f9294563e73b4"><div class="ttname"><a href="../../dc/d65/except_8h.html#a06fc87d81c62e9abb8790b6e5713c55bac0d9956bf062b2f2db1f9294563e73b4">Except_handled</a></div><div class="ttdeci">@ Except_handled</div><div class="ttdef"><b>Definition:</b> <a href="../../dc/d65/except_8h_source.html#l00023">except.h:23</a></div></div>
+<div class="ttc" id="aexcept_8h_html_a3d38c6361ecf1c4873bbcb2de8a50874"><div class="ttname"><a href="../../dc/d65/except_8h.html#a3d38c6361ecf1c4873bbcb2de8a50874">Except_stack</a></div><div class="ttdeci">Except_Frame * Except_stack</div><div class="ttdef"><b>Definition:</b> <a href="../../d1/d99/except_8c_source.html#l00014">except.c:14</a></div></div>
+<div class="ttc" id="astruct_except___frame_html_a1d458967cb04e82447b38964a45df5ad"><div class="ttname"><a href="../../d2/dd8/struct_except___frame.html#a1d458967cb04e82447b38964a45df5ad">Except_Frame::prev</a></div><div class="ttdeci">Except_Frame * prev</div><div class="ttdef"><b>Definition:</b> <a href="../../dc/d65/except_8h_source.html#l00016">except.h:16</a></div></div>
+</div><!-- fragment -->
+<p class="definition">在文件 <a class="el" href="../../dc/d65/except_8h_source.html">except.h</a> 第 <a class="el" href="../../dc/d65/except_8h_source.html#l00045">45</a> 行定义.</p>
+
+</div>
+</div>
+<a id="ae6628ac788ad213363b89dba9868420b" name="ae6628ac788ad213363b89dba9868420b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae6628ac788ad213363b89dba9868420b">&#9670;&nbsp;</a></span>END_TRY</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define END_TRY</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>值:</b><div class="fragment"><div class="line">        <span class="keywordflow">if</span> (Except_flag == <a class="code hl_enumvalue" href="../../dc/d65/except_8h.html#a06fc87d81c62e9abb8790b6e5713c55ba388ad603a03109702c508bd464b66da2">Except_entered</a>) <a class="code hl_variable" href="../../dc/d65/except_8h.html#a3d38c6361ecf1c4873bbcb2de8a50874">Except_stack</a> = <a class="code hl_variable" href="../../dc/d65/except_8h.html#a3d38c6361ecf1c4873bbcb2de8a50874">Except_stack</a>-&gt;<a class="code hl_variable" href="../../d2/dd8/struct_except___frame.html#a1d458967cb04e82447b38964a45df5ad">prev</a>; \</div>
+<div class="line">        } <span class="keywordflow">if</span> (Except_flag == <a class="code hl_enumvalue" href="../../dc/d65/except_8h.html#a06fc87d81c62e9abb8790b6e5713c55ba80cdb3635fb4b8d00925dea5821c9fbb">Except_raised</a>) <a class="code hl_define" href="../../dc/d65/except_8h.html#a947ef43f0f0def3fcc050a8df849fd16">RERAISE</a>; \</div>
+<div class="line">} <span class="keywordflow">while</span> (0)</div>
+<div class="ttc" id="aexcept_8h_html_a06fc87d81c62e9abb8790b6e5713c55ba80cdb3635fb4b8d00925dea5821c9fbb"><div class="ttname"><a href="../../dc/d65/except_8h.html#a06fc87d81c62e9abb8790b6e5713c55ba80cdb3635fb4b8d00925dea5821c9fbb">Except_raised</a></div><div class="ttdeci">@ Except_raised</div><div class="ttdef"><b>Definition:</b> <a href="../../dc/d65/except_8h_source.html#l00022">except.h:22</a></div></div>
+<div class="ttc" id="aexcept_8h_html_a947ef43f0f0def3fcc050a8df849fd16"><div class="ttname"><a href="../../dc/d65/except_8h.html#a947ef43f0f0def3fcc050a8df849fd16">RERAISE</a></div><div class="ttdeci">#define RERAISE</div><div class="ttdef"><b>Definition:</b> <a href="../../dc/d65/except_8h_source.html#l00031">except.h:31</a></div></div>
+</div><!-- fragment -->
+<p class="definition">在文件 <a class="el" href="../../dc/d65/except_8h_source.html">except.h</a> 第 <a class="el" href="../../dc/d65/except_8h_source.html#l00054">54</a> 行定义.</p>
+
+</div>
+</div>
+<a id="ab5e72fc2bd41014c75e0ace4feabfe8e" name="ab5e72fc2bd41014c75e0ace4feabfe8e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab5e72fc2bd41014c75e0ace4feabfe8e">&#9670;&nbsp;</a></span>EXCEPT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define EXCEPT</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">e</td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>值:</b><div class="fragment"><div class="line">        <span class="keywordflow">if</span> (Except_flag == <a class="code hl_enumvalue" href="../../dc/d65/except_8h.html#a06fc87d81c62e9abb8790b6e5713c55ba388ad603a03109702c508bd464b66da2">Except_entered</a>) <a class="code hl_variable" href="../../dc/d65/except_8h.html#a3d38c6361ecf1c4873bbcb2de8a50874">Except_stack</a> = <a class="code hl_variable" href="../../dc/d65/except_8h.html#a3d38c6361ecf1c4873bbcb2de8a50874">Except_stack</a>-&gt;<a class="code hl_variable" href="../../d2/dd8/struct_except___frame.html#a1d458967cb04e82447b38964a45df5ad">prev</a>; \</div>
+<div class="line">    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (Except_frame.exception == &amp;(e)) { \</div>
+<div class="line">        Except_flag = <a class="code hl_enumvalue" href="../../dc/d65/except_8h.html#a06fc87d81c62e9abb8790b6e5713c55bac0d9956bf062b2f2db1f9294563e73b4">Except_handled</a>;</div>
+</div><!-- fragment -->
+<p class="definition">在文件 <a class="el" href="../../dc/d65/except_8h_source.html">except.h</a> 第 <a class="el" href="../../dc/d65/except_8h_source.html#l00041">41</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a0e2a75478cd44f1666a6aca626c5c50b" name="a0e2a75478cd44f1666a6aca626c5c50b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0e2a75478cd44f1666a6aca626c5c50b">&#9670;&nbsp;</a></span>FINALLY</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define FINALLY</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>值:</b><div class="fragment"><div class="line">        <span class="keywordflow">if</span> (Except_flag == <a class="code hl_enumvalue" href="../../dc/d65/except_8h.html#a06fc87d81c62e9abb8790b6e5713c55ba388ad603a03109702c508bd464b66da2">Except_entered</a>) <a class="code hl_variable" href="../../dc/d65/except_8h.html#a3d38c6361ecf1c4873bbcb2de8a50874">Except_stack</a> = <a class="code hl_variable" href="../../dc/d65/except_8h.html#a3d38c6361ecf1c4873bbcb2de8a50874">Except_stack</a>-&gt;<a class="code hl_variable" href="../../d2/dd8/struct_except___frame.html#a1d458967cb04e82447b38964a45df5ad">prev</a>; \</div>
+<div class="line">    } { \</div>
+<div class="line">        if (Except_flag == <a class="code hl_enumvalue" href="../../dc/d65/except_8h.html#a06fc87d81c62e9abb8790b6e5713c55ba388ad603a03109702c508bd464b66da2">Except_entered</a>) \</div>
+<div class="line">            Except_flag = <a class="code hl_enumvalue" href="../../dc/d65/except_8h.html#a06fc87d81c62e9abb8790b6e5713c55ba8f2b6b8b0f719ecda31559637209f40b">Except_finalized</a>;</div>
+<div class="ttc" id="aexcept_8h_html_a06fc87d81c62e9abb8790b6e5713c55ba8f2b6b8b0f719ecda31559637209f40b"><div class="ttname"><a href="../../dc/d65/except_8h.html#a06fc87d81c62e9abb8790b6e5713c55ba8f2b6b8b0f719ecda31559637209f40b">Except_finalized</a></div><div class="ttdeci">@ Except_finalized</div><div class="ttdef"><b>Definition:</b> <a href="../../dc/d65/except_8h_source.html#l00023">except.h:23</a></div></div>
+</div><!-- fragment -->
+<p class="definition">在文件 <a class="el" href="../../dc/d65/except_8h_source.html">except.h</a> 第 <a class="el" href="../../dc/d65/except_8h_source.html#l00049">49</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a45e87c4d7dee50346b15c7761b0b340a" name="a45e87c4d7dee50346b15c7761b0b340a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a45e87c4d7dee50346b15c7761b0b340a">&#9670;&nbsp;</a></span>RAISE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define RAISE</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">e</td><td>)</td>
+          <td>&#160;&#160;&#160;<a class="el" href="../../d1/d99/except_8c.html#a74a6737ffcaaf94b7c8137a651f9d94b">Except_raise</a>(&amp;(e), __FILE__, __LINE__)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../dc/d65/except_8h_source.html">except.h</a> 第 <a class="el" href="../../dc/d65/except_8h_source.html#l00030">30</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a947ef43f0f0def3fcc050a8df849fd16" name="a947ef43f0f0def3fcc050a8df849fd16"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a947ef43f0f0def3fcc050a8df849fd16">&#9670;&nbsp;</a></span>RERAISE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define RERAISE</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>值:</b><div class="fragment"><div class="line">    <a class="code hl_function" href="../../dc/d65/except_8h.html#a74a6737ffcaaf94b7c8137a651f9d94b">Except_raise</a>(Except_frame.exception, \</div>
+<div class="line">    Except_frame.file, Except_frame.line)</div>
+<div class="ttc" id="aexcept_8h_html_a74a6737ffcaaf94b7c8137a651f9d94b"><div class="ttname"><a href="../../dc/d65/except_8h.html#a74a6737ffcaaf94b7c8137a651f9d94b">Except_raise</a></div><div class="ttdeci">void Except_raise(const T *e, const char *file, int line)</div><div class="ttdef"><b>Definition:</b> <a href="../../d1/d99/except_8c_source.html#l00015">except.c:15</a></div></div>
+</div><!-- fragment -->
+<p class="definition">在文件 <a class="el" href="../../dc/d65/except_8h_source.html">except.h</a> 第 <a class="el" href="../../dc/d65/except_8h_source.html#l00031">31</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a6a0e6b80dd3d5ca395cf58151749f5e2" name="a6a0e6b80dd3d5ca395cf58151749f5e2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6a0e6b80dd3d5ca395cf58151749f5e2">&#9670;&nbsp;</a></span>RETURN</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define RETURN&#160;&#160;&#160;switch (<a class="el" href="../../d1/d99/except_8c.html#a3d38c6361ecf1c4873bbcb2de8a50874">Except_stack</a> = <a class="el" href="../../d1/d99/except_8c.html#a3d38c6361ecf1c4873bbcb2de8a50874">Except_stack</a>-&gt;prev,0) default: return</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../dc/d65/except_8h_source.html">except.h</a> 第 <a class="el" href="../../dc/d65/except_8h_source.html#l00033">33</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a0acb682b8260ab1c60b918599864e2e5" name="a0acb682b8260ab1c60b918599864e2e5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0acb682b8260ab1c60b918599864e2e5">&#9670;&nbsp;</a></span>T</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define <a class="el" href="../../d5/d7e/struct_t.html">T</a>&#160;&#160;&#160;Except_T</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../dc/d65/except_8h_source.html">except.h</a> 第 <a class="el" href="../../dc/d65/except_8h_source.html#l00010">10</a> 行定义.</p>
+
+</div>
+</div>
+<a id="ad2746371528bdf15c3910b7bf217dac0" name="ad2746371528bdf15c3910b7bf217dac0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad2746371528bdf15c3910b7bf217dac0">&#9670;&nbsp;</a></span>TRY</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define TRY</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>值:</b><div class="fragment"><div class="line">    <span class="keywordflow">do</span> { \</div>
+<div class="line">    volatile <span class="keywordtype">int</span> Except_flag; \</div>
+<div class="line">    Except_Frame Except_frame; \</div>
+<div class="line">    Except_frame.prev = <a class="code hl_variable" href="../../dc/d65/except_8h.html#a3d38c6361ecf1c4873bbcb2de8a50874">Except_stack</a>; \</div>
+<div class="line">    Except_stack = &amp;Except_frame;  \</div>
+<div class="line">    Except_flag = setjmp(Except_frame.env); \</div>
+<div class="line">    if (Except_flag == <a class="code hl_enumvalue" href="../../dc/d65/except_8h.html#a06fc87d81c62e9abb8790b6e5713c55ba388ad603a03109702c508bd464b66da2">Except_entered</a>) {</div>
+</div><!-- fragment -->
+<p class="definition">在文件 <a class="el" href="../../dc/d65/except_8h_source.html">except.h</a> 第 <a class="el" href="../../dc/d65/except_8h_source.html#l00034">34</a> 行定义.</p>
+
+</div>
+</div>
+<h2 class="groupheader">类型定义说明</h2>
+<a id="ae9476933f67b88456bce2b1445851f6f" name="ae9476933f67b88456bce2b1445851f6f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae9476933f67b88456bce2b1445851f6f">&#9670;&nbsp;</a></span>Except_Frame</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef struct <a class="el" href="../../d2/dd8/struct_except___frame.html">Except_Frame</a> <a class="el" href="../../d2/dd8/struct_except___frame.html">Except_Frame</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../dc/d65/except_8h_source.html">except.h</a> 第 <a class="el" href="../../dc/d65/except_8h_source.html#l00014">14</a> 行定义.</p>
+
+</div>
+</div>
+<a id="adec21d234619c8f0afbf0914249837b1" name="adec21d234619c8f0afbf0914249837b1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adec21d234619c8f0afbf0914249837b1">&#9670;&nbsp;</a></span>T</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef struct <a class="el" href="../../d5/d7e/struct_t.html">T</a> <a class="el" href="../../d5/d7e/struct_t.html">T</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">枚举类型说明</h2>
+<a id="a06fc87d81c62e9abb8790b6e5713c55b" name="a06fc87d81c62e9abb8790b6e5713c55b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a06fc87d81c62e9abb8790b6e5713c55b">&#9670;&nbsp;</a></span>anonymous enum</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">anonymous enum</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<table class="fieldtable">
+<tr><th colspan="2">枚举值</th></tr><tr><td class="fieldname"><a id="a06fc87d81c62e9abb8790b6e5713c55ba388ad603a03109702c508bd464b66da2" name="a06fc87d81c62e9abb8790b6e5713c55ba388ad603a03109702c508bd464b66da2"></a>Except_entered&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a06fc87d81c62e9abb8790b6e5713c55ba80cdb3635fb4b8d00925dea5821c9fbb" name="a06fc87d81c62e9abb8790b6e5713c55ba80cdb3635fb4b8d00925dea5821c9fbb"></a>Except_raised&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a06fc87d81c62e9abb8790b6e5713c55bac0d9956bf062b2f2db1f9294563e73b4" name="a06fc87d81c62e9abb8790b6e5713c55bac0d9956bf062b2f2db1f9294563e73b4"></a>Except_handled&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a06fc87d81c62e9abb8790b6e5713c55ba8f2b6b8b0f719ecda31559637209f40b" name="a06fc87d81c62e9abb8790b6e5713c55ba8f2b6b8b0f719ecda31559637209f40b"></a>Except_finalized&#160;</td><td class="fielddoc"></td></tr>
+</table>
+
+<p class="definition">在文件 <a class="el" href="../../dc/d65/except_8h_source.html">except.h</a> 第 <a class="el" href="../../dc/d65/except_8h_source.html#l00022">22</a> 行定义.</p>
+
+</div>
+</div>
+<h2 class="groupheader">函数说明</h2>
+<a id="a74a6737ffcaaf94b7c8137a651f9d94b" name="a74a6737ffcaaf94b7c8137a651f9d94b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a74a6737ffcaaf94b7c8137a651f9d94b">&#9670;&nbsp;</a></span>Except_raise()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Except_raise </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="../../d5/d7e/struct_t.html">T</a> *&#160;</td>
+          <td class="paramname"><em>e</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>file</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>line</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../d1/d99/except_8c_source.html">except.c</a> 第 <a class="el" href="../../d1/d99/except_8c_source.html#l00015">15</a> 行定义.</p>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../dc/d65/except_8h_a74a6737ffcaaf94b7c8137a651f9d94b_icgraph.svg" width="266" height="139"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+
+</div>
+</div>
+<h2 class="groupheader">变量说明</h2>
+<a id="a02c91dd1cedbfe4b9e31d7775e0ead7f" name="a02c91dd1cedbfe4b9e31d7775e0ead7f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a02c91dd1cedbfe4b9e31d7775e0ead7f">&#9670;&nbsp;</a></span>Assert_Failed</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const Except_T Assert_Failed</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">extern</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a3d38c6361ecf1c4873bbcb2de8a50874" name="a3d38c6361ecf1c4873bbcb2de8a50874"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3d38c6361ecf1c4873bbcb2de8a50874">&#9670;&nbsp;</a></span>Except_stack</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d2/dd8/struct_except___frame.html">Except_Frame</a>* Except_stack</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">extern</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../d1/d99/except_8c_source.html">except.c</a> 第 <a class="el" href="../../d1/d99/except_8c_source.html#l00014">14</a> 行定义.</p>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="../../dir_6771aafbf413a5638c4e561417caddb9.html">src~</a></li><li class="navelem"><a class="el" href="../../dir_9d9130b3691fae8de17759ed0feecb0a.html">include_cii</a></li><li class="navelem"><a class="el" href="../../dc/d65/except_8h.html">except.h</a></li>
+    <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
+  </ul>
+</div>
+</body>
+</html>

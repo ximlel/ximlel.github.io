@@ -1,0 +1,324 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.3"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>hydrocode_Radial_Lag: src~/tools/sys_pro.c 文件参考</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../resize.js"></script>
+<script type="text/javascript" src="../../navtreedata.js"></script>
+<script type="text/javascript" src="../../navtree.js"></script>
+<link href="../../search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../search/searchdata.js"></script>
+<script type="text/javascript" src="../../search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+  $(document).ready(function() { init_search(); });
+/* @license-end */
+</script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="../../Logo.jpg"/></td>
+  <td id="projectalign">
+   <div id="projectname">hydrocode_Radial_Lag<span id="projectnumber">&#160;0.3</span>
+   </div>
+   <div id="projectbrief">This is an implementation of fully explict forward Euler scheme for multi-D radially symmetric compressible flows on Lagrangian coordinate</div>
+  </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="../../search/mag_sel.svg"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="搜索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="../../search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.9.3 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "../../search",'搜索','.html');
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('d4/ddd/sys__pro_8c.html','../../'); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#func-members">函数</a>  </div>
+  <div class="headertitle"><div class="title">sys_pro.c 文件参考</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>There are some system processing programs.  
+<a href="#details">更多...</a></p>
+<div class="textblock"><code>#include &lt;stdio.h&gt;</code><br />
+<code>#include &lt;stdlib.h&gt;</code><br />
+<code>#include &lt;string.h&gt;</code><br />
+<code>#include &lt;math.h&gt;</code><br />
+</div><div class="textblock"><div class="dynheader">
+sys_pro.c 的引用(Include)关系图:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../df/d6f/sys__pro_8c__incl.svg" width="360" height="112"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</div>
+<p><a href="../../d4/ddd/sys__pro_8c_source.html">浏览源代码.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+函数</h2></td></tr>
+<tr class="memitem:aab058cac35713b52c083b9e54ffa45eb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/ddd/sys__pro_8c.html#aab058cac35713b52c083b9e54ffa45eb">DispPro</a> (const double pro, const int step)</td></tr>
+<tr class="memdesc:aab058cac35713b52c083b9e54ffa45eb"><td class="mdescLeft">&#160;</td><td class="mdescRight">This function print a progress bar on one line of standard output.  <a href="../../d4/ddd/sys__pro_8c.html#aab058cac35713b52c083b9e54ffa45eb">更多...</a><br /></td></tr>
+<tr class="separator:aab058cac35713b52c083b9e54ffa45eb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a40a5faeb19b1fd9aec2c5c10a87faeb4"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/ddd/sys__pro_8c.html#a40a5faeb19b1fd9aec2c5c10a87faeb4">CreateDir</a> (const char *pPath)</td></tr>
+<tr class="memdesc:a40a5faeb19b1fd9aec2c5c10a87faeb4"><td class="mdescLeft">&#160;</td><td class="mdescRight">This is a function that recursively creates folders.  <a href="../../d4/ddd/sys__pro_8c.html#a40a5faeb19b1fd9aec2c5c10a87faeb4">更多...</a><br /></td></tr>
+<tr class="separator:a40a5faeb19b1fd9aec2c5c10a87faeb4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a609ea8ee89a2387d68e020de49c90367"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/ddd/sys__pro_8c.html#a609ea8ee89a2387d68e020de49c90367">init_mem</a> (double *p[], const int n, int **cell_pt)</td></tr>
+<tr class="memdesc:a609ea8ee89a2387d68e020de49c90367"><td class="mdescLeft">&#160;</td><td class="mdescRight">This is a function that initializes memory for double-precision floating-point data.  <a href="../../d4/ddd/sys__pro_8c.html#a609ea8ee89a2387d68e020de49c90367">更多...</a><br /></td></tr>
+<tr class="separator:a609ea8ee89a2387d68e020de49c90367"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3b1836054e1e740080e57956dfb9af14"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/ddd/sys__pro_8c.html#a3b1836054e1e740080e57956dfb9af14">init_mem_int</a> (int *p[], const int n, int **cell_pt)</td></tr>
+<tr class="memdesc:a3b1836054e1e740080e57956dfb9af14"><td class="mdescLeft">&#160;</td><td class="mdescRight">This is a function that initializes memory for integer data.  <a href="../../d4/ddd/sys__pro_8c.html#a3b1836054e1e740080e57956dfb9af14">更多...</a><br /></td></tr>
+<tr class="separator:a3b1836054e1e740080e57956dfb9af14"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
+<div class="textblock"><p >There are some system processing programs. </p>
+
+<p class="definition">在文件 <a class="el" href="../../d4/ddd/sys__pro_8c_source.html">sys_pro.c</a> 中定义.</p>
+</div><h2 class="groupheader">函数说明</h2>
+<a id="a40a5faeb19b1fd9aec2c5c10a87faeb4" name="a40a5faeb19b1fd9aec2c5c10a87faeb4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a40a5faeb19b1fd9aec2c5c10a87faeb4">&#9670;&nbsp;</a></span>CreateDir()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int CreateDir </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>pPath</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>This is a function that recursively creates folders. </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">pPath</td><td>Pointer to the folder Path. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>Folder Creation Status. </dd></dl>
+<dl class="retval"><dt>返回值</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">-1</td><td>The path folder already exists and is readable. </td></tr>
+    <tr><td class="paramname">0</td><td>Readable path folders are created recursively. </td></tr>
+    <tr><td class="paramname">1</td><td>The path folder is not created properly. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">在文件 <a class="el" href="../../d4/ddd/sys__pro_8c_source.html">sys_pro.c</a> 第 <a class="el" href="../../d4/ddd/sys__pro_8c_source.html#l00072">72</a> 行定义.</p>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../d4/ddd/sys__pro_8c_a40a5faeb19b1fd9aec2c5c10a87faeb4_icgraph.svg" width="774" height="251"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+
+</div>
+</div>
+<a id="aab058cac35713b52c083b9e54ffa45eb" name="aab058cac35713b52c083b9e54ffa45eb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aab058cac35713b52c083b9e54ffa45eb">&#9670;&nbsp;</a></span>DispPro()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void DispPro </td>
+          <td>(</td>
+          <td class="paramtype">const double&#160;</td>
+          <td class="paramname"><em>pro</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int&#160;</td>
+          <td class="paramname"><em>step</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>This function print a progress bar on one line of standard output. </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">pro</td><td>Numerator of percent that the process has completed. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">step</td><td>Number of time steps. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">在文件 <a class="el" href="../../d4/ddd/sys__pro_8c_source.html">sys_pro.c</a> 第 <a class="el" href="../../d4/ddd/sys__pro_8c_source.html#l00037">37</a> 行定义.</p>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../d4/ddd/sys__pro_8c_aab058cac35713b52c083b9e54ffa45eb_icgraph.svg" width="408" height="52"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+
+</div>
+</div>
+<a id="a609ea8ee89a2387d68e020de49c90367" name="a609ea8ee89a2387d68e020de49c90367"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a609ea8ee89a2387d68e020de49c90367">&#9670;&nbsp;</a></span>init_mem()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void init_mem </td>
+          <td>(</td>
+          <td class="paramtype">double *&#160;</td>
+          <td class="paramname"><em>p</em>[], </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int **&#160;</td>
+          <td class="paramname"><em>cell_pt</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>This is a function that initializes memory for double-precision floating-point data. </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[out]</td><td class="paramname">p</td><td>Pointer of data. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">n</td><td>Number of grid cells. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">cell_pt[]</td><td>cell_pt[k][0] is the number of grid node on the k-th grid cell in the clockwise direction.. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">在文件 <a class="el" href="../../d4/ddd/sys__pro_8c_source.html">sys_pro.c</a> 第 <a class="el" href="../../d4/ddd/sys__pro_8c_source.html#l00107">107</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a3b1836054e1e740080e57956dfb9af14" name="a3b1836054e1e740080e57956dfb9af14"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3b1836054e1e740080e57956dfb9af14">&#9670;&nbsp;</a></span>init_mem_int()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void init_mem_int </td>
+          <td>(</td>
+          <td class="paramtype">int *&#160;</td>
+          <td class="paramname"><em>p</em>[], </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int **&#160;</td>
+          <td class="paramname"><em>cell_pt</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>This is a function that initializes memory for integer data. </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[out]</td><td class="paramname">p</td><td>Pointer of data. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">n</td><td>Number of grid cells. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">cell_pt[]</td><td>cell_pt[k][0] is the number of grid node on the k-th grid cell in the clockwise direction.. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">在文件 <a class="el" href="../../d4/ddd/sys__pro_8c_source.html">sys_pro.c</a> 第 <a class="el" href="../../d4/ddd/sys__pro_8c_source.html#l00132">132</a> 行定义.</p>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="../../dir_6771aafbf413a5638c4e561417caddb9.html">src~</a></li><li class="navelem"><a class="el" href="../../dir_f9049ab4ccfea5722647058c3f5f5939.html">tools</a></li><li class="navelem"><a class="el" href="../../d4/ddd/sys__pro_8c.html">sys_pro.c</a></li>
+    <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
+  </ul>
+</div>
+</body>
+</html>

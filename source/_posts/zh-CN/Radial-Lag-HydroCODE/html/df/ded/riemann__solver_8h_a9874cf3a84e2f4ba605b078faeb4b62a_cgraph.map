@@ -1,0 +1,5 @@
+<map id="Riemann_solver_starPU" name="Riemann_solver_starPU">
+<area shape="rect" id="node1" title="EXACT RIEMANN SOLVER FOR Two&#45;Component γ&#45;Law Gas" alt="" coords="5,31,183,57"/>
+<area shape="rect" id="node2" href="$d2/d49/riemann__solver__star_p_u_8c.html#a9e810193004adbabfe0e143efb93ff04" title="Provide a guess value for pressure PM in the Star Region." alt="" coords="231,5,301,32"/>
+<area shape="rect" id="node3" href="$d2/d49/riemann__solver__star_p_u_8c.html#a751e4af4442c32ecdfb4e82e2c50dbd3" title="Evaluate the pressure functions FL and FR in exact Riemann solver." alt="" coords="233,56,299,83"/>
+</map>
