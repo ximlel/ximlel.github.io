@@ -11,43 +11,21 @@ tags:
 
 ## Curriculum Vitae:
 
-雷昕，现为中国地质大学（北京）数理学院讲师、数据计算及应用专业2021级本科生班主任。申请人长期从事计算流体力学相关的研究工作，主要研究可压缩多介质流问题的数值方法，涉及数值模拟多介质流物质界面处的物理过程、抑制物质界面处的数值不稳定性现象。已经以第一作者在J. Comput. Phys., Phys. Fluids, Comput. Fluids等知名SCI期刊发表多篇学术论文。
+Lei Xin, a lecturer at the School of Science, China University of Geosciences, Beijing, and a class teacher for undergraduate students majoring in Data Computing and Application. I work on the research of computational compressible fluid dynamics for a long time, mainly studying numerical methods for compressible multi-material flow problems, involving the numerical simulation of physical processes at the material interface of multi-material flow and the suppression of numerical instability at the material interface. I have published several academic papers as the first author in well-known SCI journals such as J. Comput. Phys., Phys. Fluids, Comput. Fluids.
 
 ## Education Experience:
 
-* 2010-09 至 2014-07，北京师范大学，统计学专业，理学学士学位
-* 2014-09 至 2019-06，北京师范大学，计算数学专业，理学博士学位
+* 2010-09 to 2014-07，Beijing Normal University，Major in Statistics，Bachelor of Science
+* 2014-09 to 2019-06，Beijing Normal University，Major in Computational Mathematics，Doctor of Science 
 
 ## Work Experience:
 
-* 2019-07 至今，中国地质大学(北京)，数理学院数学教研室，讲师
+* 2019-07 to now，China University of Geosciences, Beijing，School of Science，Lecturer
 
 ## Teaching Situation:
 
-* 教授本科生课程：数学物理方程、概率论与数理统计、线性代数
-* 教授研究生课程：偏微分方程数值解、应用时间序列分析、科技论文选题与写作（专业英语）
-
-## Instructing Students:
-
-* 指导大学生创新创业
-
-| 项目时间 | 项目负责学生 | 项目类型                   | 项目名称                                   |
-| -------- | ------------ | -------------------------- | ------------------------------------------ |
-| 2022年   | 刘星雨       | 大学生创新创业训练项目     | 气固两相流问题中非齐次线性方程组的数值解法 |
-| 2022年   | 周韬奎       | “摇篮杯”大学生创新创业大赛 | 泡沫、塑料、包装盒等压缩装置研制           |
-
-* 指导本科生毕业论文
-
-| 学生年级  | 学生姓名     | 论文题目                              |
-| -------- | ----------- | ------------------------------------------ |
-| 2021届   | 张宇天       | 相场模型的数值方法的比较                 |
-| 2022届   | 周真         | 拉格朗日乘子方法在等式约束优化问题中的运用 |
-
-* 指导本科生队伍获美国大学生数学建模竞赛 M 奖（一等奖）1 项，H 奖（二等奖）2 项。
-
-* 指导研究生情况
-
-  >  2021级电子信息专业硕士生1名，2022级应用统计专业硕士生1名。 
+* Teach undergraduate courses：Mathematical and Physical Equations, Probability and Mathematical Statistics, Linear Algebra, Data Modeling
+* Teach postgraduate courses：Numerical Solutions to Partial Differential Equations, Applied Time Series Analysis, Topic Selection and Writing of Scientific and Technological Papers (Professional English)
 
 ## Fund Projects/Topics:
 
@@ -76,18 +54,14 @@ tags:
 
 ## Academic Awards:
 
-* 2018-08  北京计算数学学会优秀青年论文奖（二等奖）
-
-## College Introduction:
-
-中国地质大学（北京）数理学院数学学科由公共数学教学部、应用数学系、数据科学系组成，拥有数学与应用数学、数据计算及应用两个本科专业。数学与应用数学专业设立于2000年，并于2020年获批“国家一流本科专业建设点”；数据计算及应用专业为我校新增本科专业，于2021年开始招生。2000年获批“应用数学”二级学科硕士授权点，2006年获批“计算数学”二级学科硕士点，2011年获“数学”一级学科硕士点，2018年获批“应用统计”专业学位硕士点。2019年自设二级博士点“现代数学与控制理论”。
+* 2018-08  Outstanding Youth Paper Award of Beijing Society of Computational Mathematics (Second Prize)
 
 ### Contact Information:
 
-办公地点：中国地质大学（北京）教3楼321室
+Office Location: Room 321, 3rd Teaching Building, China University of Geosciences, Beijing
 
-电子信箱：[xinlei@cugb.edu.cn](mailto:xinlei@cugb.edu.cn)
+E-mail Address：[xinlei@cugb.edu.cn](mailto:xinlei@cugb.edu.cn)
 
-通讯地址：北京市海淀区学院路29号中国地质大学（北京）数理学院
+Postal Address：No.29, Xueyuan Road, Haidian District, Beijing, P.R. China
 
-邮政编码：100083
+Postal Code：100083
