@@ -1,22 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>NEW2</title>
-    <url>/en/2022/04/27/new2/</url>
-    <content><![CDATA[<p>NEW2 - EN</p>
-<span id="more"></span>
-
-<p>NEW22</p>
-]]></content>
-      <categories>
-        <category>Introduction1</category>
-      </categories>
-      <tags>
-        <tag>Resume1</tag>
-        <tag>Curriculum Vitae2</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>NEW1</title>
     <url>/en/2022/04/22/new1/</url>
     <content><![CDATA[<p>NEW1 - EN</p>
@@ -30,6 +14,22 @@
       <tags>
         <tag>Resume1</tag>
         <tag>Curriculum Vitae1</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>NEW2</title>
+    <url>/en/2022/04/27/new2/</url>
+    <content><![CDATA[<p>NEW2 - EN</p>
+<span id="more"></span>
+
+<p>NEW22</p>
+]]></content>
+      <categories>
+        <category>Introduction1</category>
+      </categories>
+      <tags>
+        <tag>Resume1</tag>
+        <tag>Curriculum Vitae2</tag>
       </tags>
   </entry>
   <entry>
