@@ -15,30 +15,30 @@ Lei Xin, a lecturer at the School of Science, China University of Geosciences, B
 
 ## Education Experience:
 
-* 2010-09 to 2014-07，Beijing Normal University，Major in Statistics，Bachelor of Science
-* 2014-09 to 2019-06，Beijing Normal University，Major in Computational Mathematics，Doctor of Science 
+* 2010-09 to 2014-07, Beijing Normal University, Major in Statistics, Bachelor of Science
+* 2014-09 to 2019-06, Beijing Normal University, Major in Computational Mathematics, Doctor of Science 
 
 ## Work Experience:
 
-* 2019-07 to now，China University of Geosciences, Beijing，School of Science，Lecturer
+* 2019-07 to Now, China University of Geosciences, Beijing, School of Science, Lecturer
 
 ## Teaching Situation:
 
-* Teach undergraduate courses：Mathematical and Physical Equations, Probability and Mathematical Statistics, Linear Algebra, Data Modeling
-* Teach postgraduate courses：Numerical Solutions to Partial Differential Equations, Applied Time Series Analysis, Topic Selection and Writing of Scientific and Technological Papers (Professional English)
+* Teach Undergraduate Courses: Mathematical and Physical Equations, Probability and Mathematical Statistics, Linear Algebra, Data Modeling
+* Teach Postgraduate Courses: Numerical Solution of Partial Differential Equations, Applied Time Series Analysis, Topic Selection and Writing of Scientific and Technological Papers (Professional English)
 
 ## Fund Projects/Topics:
 
-* 国家自然科学基金委员会，青年科学基金项目，12201585，可压缩两相流时空耦合的二维交错投影格式，2023-01至2025-12，30万元，主持
-* 中国地质大学（北京），基本科研业务费资助项目，35932020011，可压缩多相流Godunov型数值方法的研究，2020-01至2022-12，15万元，主持
-* 北京市高教学会数学研究分会/北京交叉科学学会，教育教改课题，SXJC-2022-005，基于数据建模课程研究数据计算及应用专业学科交叉，2023-01至2024-12，主持
-* 美林数据技术股份有限公司，教育部产学合作协同育人项目，220604615285959，面向产业需求的数据计算及应用专业《数据建模》协同育⼈课程建设，2022-10至2024-10，5万元，主持
-* 中国地质大学（北京），课程思政教学改革项目，KCSZ202141，《数学物理方程》，2021-12至2022-12，1万元，主持
-* 国家自然科学基金委员会，面上项目，42272362，气举反循环连续取心混合流中岩心运移机理与调控机制研究，2023-01至2026-12，60万元，参与
-* 国家自然科学基金委员会，面上项目，11771054，可压缩多介质流体力学的广义黎曼问题数值方法，2018-01至2021-12，48万元，参与
-* 冠县众达交通设施有限公司，民营企业委托项目，33122021012，期货沪锌、螺纹短期走势及市场分析，2021-11至2024-11，100万元，参与
-* 中国地质环境监测院，地调委托项目，WT2022097B，地质灾害多参数预警模型算法模块优化，2022-06至2022-12，28万元，参与
-* 江苏省测绘工程院，自然资源部国土卫星遥感应用重点实验室开放基金科研项目，Z083622022044，多源卫星遥感影像数据变化特征的提取研究，2022-11至2024-10，20万元，参与
+* 国家自然科学基金委员会，青年科学基金项目，12201585，可压缩两相流时空耦合的二维交错投影格式，2023-01 to 2025-12，30万元，Host
+* 中国地质大学（北京），基本科研业务费资助项目，35932020011，可压缩多相流Godunov型数值方法的研究，2020-01 to 2022-12，15万元，Host
+* 北京市高教学会数学研究分会/北京交叉科学学会，教育教改课题，SXJC-2022-005，基于数据建模课程研究数据计算及应用专业学科交叉，2023-01 to 2024-12，Host
+* 美林数据技术股份有限公司，教育部产学合作协同育人项目，220604615285959，面向产业需求的数据计算及应用专业《数据建模》协同育⼈课程建设，2022-10至2024-10，5万元，Host
+* 中国地质大学（北京），课程思政教学改革项目，KCSZ202141，《数学物理方程》，2021-12 to 2022-12，1万元，Host
+* 国家自然科学基金委员会，面上项目，42272362，气举反循环连续取心混合流中岩心运移机理与调控机制研究，2023-01 to 2026-12，60万元，Participate
+* 国家自然科学基金委员会，面上项目，11771054，可压缩多介质流体力学的广义黎曼问题数值方法，2018-01 to 2021-12，48万元，Participate
+* 冠县众达交通设施有限公司，民营企业委托项目，33122021012，期货沪锌、螺纹短期走势及市场分析，2021-11 to 2024-11，100万元，Participate
+* 中国地质环境监测院，地调委托项目，WT2022097B，地质灾害多参数预警模型算法模块优化，2022-06 to 2022-12，28万元，Participate
+* 江苏省测绘工程院，自然资源部国土卫星遥感应用重点实验室开放基金科研项目，Z083622022044，多源卫星遥感影像数据变化特征的提取研究，2022-11 to 2024-10，20万元，Participate
 
 ## Representative Publications:
 
@@ -54,14 +54,14 @@ Lei Xin, a lecturer at the School of Science, China University of Geosciences, B
 
 ## Academic Awards:
 
-* 2018-08  Outstanding Youth Paper Award of Beijing Society of Computational Mathematics (Second Prize)
+* 2018-08  Outstanding Youth Paper Award from Beijing Society of Computational Mathematics (Second Prize)
 
 ### Contact Information:
 
 Office Location: Room 321, 3rd Teaching Building, China University of Geosciences, Beijing
 
-E-mail Address：[xinlei@cugb.edu.cn](mailto:xinlei@cugb.edu.cn)
+E-mail Address: [xinlei@cugb.edu.cn](mailto:xinlei@cugb.edu.cn)
 
-Postal Address：No.29, Xueyuan Road, Haidian District, Beijing, P.R. China
+Postal Address: No.29, Xueyuan Road, Haidian District, Beijing, P.R. China
 
-Postal Code：100083
+Postal Code: 100083
