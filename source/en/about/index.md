@@ -11,7 +11,7 @@ tags:
 
 ## Curriculum Vitae:
 
-Lei Xin, a lecturer at the School of Science, China University of Geosciences, Beijing, and a class teacher for undergraduate students majoring in Data Computing and Application. I work on the research of computational compressible fluid dynamics for a long time, mainly studying numerical methods for compressible multi-material flow problems, involving the numerical simulation of physical processes at the material interface of multi-material flow and the suppression of numerical instability at the material interface. I have published several academic papers as the first author in well-known SCI journals such as J. Comput. Phys., Phys. Fluids, Comput. Fluids.
+Lei Xin, a lecturer and advisor for postgraduate students at the School of Science, China University of Geosciences, Beijing, and a class teacher for undergraduate students majoring in Data Computing and Application. I work on the research of computational compressible fluid dynamics for a long time, mainly studying numerical methods for compressible multi-material flow problems, involving the numerical simulation of physical processes at the material interface of multi-material flow and the suppression of numerical instability at the material interface. I have published several academic papers as the first author in well-known SCI journals such as J. Comput. Phys., Phys. Fluids, Comput. Fluids.
 
 ## Education Experience:
 
