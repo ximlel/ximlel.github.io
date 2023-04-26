@@ -26,6 +26,7 @@ Lei Xin, a lecturer and advisor for postgraduate students at the School of Scien
 
 * Teach Undergraduate Courses: Mathematical and Physical Equations, Probability and Mathematical Statistics, Linear Algebra, Data Modeling
 * Teach Postgraduate Courses: Numerical Solution of Partial Differential Equations, Applied Time Series Analysis, Topic Selection and Writing of Scientific and Technological Papers (Professional English)
+* Postgraduate Enrollment: Computational Fluid Dynamics, Computational Astrophysics, Astrostatistics, Game Physics Engine.
 
 ## Fund Projects/Topics:
 
