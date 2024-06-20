@@ -11,7 +11,7 @@ tags:
 
 ## Curriculum Vitae:
 
-Lei Xin, a lecturer and advisor for postgraduate students at the School of Science, China University of Geosciences, Beijing, and a class teacher for undergraduate students majoring in Data Computing and Application. I work on the research of computational compressible fluid dynamics for a long time, mainly studying numerical methods for compressible multi-material flow problems, involving the numerical simulation of physical processes at the material interface of multi-material flow and the suppression of numerical instability at the material interface. I have published several academic papers as the first author in well-known SCI journals such as J. Comput. Phys., Phys. Fluids, Comput. Fluids.
+Lei Xin, an associate professor and advisor for postgraduate students at the School of Science, China University of Geosciences, Beijing, and a class teacher for undergraduate students majoring in Data Computing and Application. I work on the research of computational compressible fluid dynamics and radiation processes, mainly studying numerical methods for compressible multi-material flow problems, involving the numerical simulation of physical processes at the material interface of multi-material flow and the suppression of numerical instability at the material interface. I have published several academic papers as the first author in well-known SCI journals such as J. Comput. Phys., Phys. Fluids, Comput. Fluids.
 
 ## Education Experience:
 
@@ -20,7 +20,7 @@ Lei Xin, a lecturer and advisor for postgraduate students at the School of Scien
 
 ## Work Experience:
 
-* 2019-07 to Now, China University of Geosciences, Beijing, School of Science, Lecturer
+* 2019-07 to Now, China University of Geosciences, Beijing, School of Science
 
 ## Teaching Situation:
 
@@ -32,6 +32,7 @@ Lei Xin, a lecturer and advisor for postgraduate students at the School of Scien
 
 * 国家自然科学基金委员会，青年科学基金项目，12201585，可压缩两相流时空耦合的二维交错投影格式，2023-01 to 2025-12，30万元，Host
 * 中国地质大学（北京），基本科研业务费资助项目，35932020011，可压缩多相流Godunov型数值方法的研究，2020-01 to 2022-12，15万元，Host
+* 行星科学与超算联合实验室，开放课题（一般项目），地球弓形激波附近瞬态现象及磁层顶Kelvin-Helmholtz不稳定性的混合模拟，2024-06至2025-06，30万核时，主持
 * 北京市高教学会数学研究分会/北京交叉科学学会，教育教改课题，SXJC-2022-005，基于数据建模课程研究数据计算及应用专业学科交叉，2023-01 to 2024-12，Host
 * 美林数据技术股份有限公司，教育部产学合作协同育人项目，220604615285959，面向产业需求的数据计算及应用专业《数据建模》协同育⼈课程建设，2022-10至2024-10，5万元，Host
 * 中国地质大学（北京），课程思政教学改革项目，KCSZ202141，《数学物理方程》，2021-12 to 2022-12，1万元，Host
