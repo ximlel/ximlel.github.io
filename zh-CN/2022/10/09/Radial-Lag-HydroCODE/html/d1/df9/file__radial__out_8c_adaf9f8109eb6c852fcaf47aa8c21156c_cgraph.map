@@ -1,0 +1,5 @@
+<map id="file_radial_write_TEC" name="file_radial_write_TEC">
+<area shape="rect" id="node1" title="This function write the radially symmetric 2&#45;D solution into Tecplot output &#39;.tec&#39; files." alt="" coords="5,5,164,32"/>
+<area shape="rect" id="node2" href="$d4/de5/io__control_8c.html#a7e039d23ca87a439fbe9c9d336447887" title="This function produces folder path for data input or output." alt="" coords="212,5,311,32"/>
+<area shape="rect" id="node3" href="$d4/ddd/sys__pro_8c.html#a40a5faeb19b1fd9aec2c5c10a87faeb4" title="This is a function that recursively creates folders." alt="" coords="359,5,443,32"/>
+</map>

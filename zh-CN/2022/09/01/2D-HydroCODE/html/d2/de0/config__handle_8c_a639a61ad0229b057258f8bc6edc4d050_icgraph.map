@@ -1,0 +1,7 @@
+<map id="config_write" name="config_write">
+<area shape="rect" id="node1" title=" " alt="" coords="303,56,405,83"/>
+<area shape="rect" id="node2" href="$db/db6/__1_d__file__out_8c.html#ac8a02f83676d1a92835bb46c4eb0bcbc" title="This function write the 1&#45;D solution into output .dat files." alt="" coords="124,5,239,32"/>
+<area shape="rect" id="node3" href="$d8/d32/__2_d__file__out_8c.html#a2af47b5ca07b0ab40a1bc384565ab2a0" title="This function write the 2&#45;D solution into output .dat files." alt="" coords="124,56,239,83"/>
+<area shape="rect" id="node5" href="$d8/d32/__2_d__file__out_8c.html#aec541405a9b5172445c0cd309a723c7d" title="This function write the 2&#45;D solution into Tecplot output files." alt="" coords="108,107,255,133"/>
+<area shape="rect" id="node4" href="$d2/d24/hydrocode_8c.html#a0ddf1224851353fc92bfbff6f499fa97" title="This is the main function which constructs the main structure of the Eulerian hydrocode." alt="" coords="5,81,60,108"/>
+</map>

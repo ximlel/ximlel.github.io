@@ -1,0 +1,34 @@
+<map id="/home/leixin/Programs/HydroCODE/src/include/var_struc.h" name="/home/leixin/Programs/HydroCODE/src/include/var_struc.h">
+<area shape="rect" id="node1" title="This file is the header file of some globally common variables and structural bodies." alt="" coords="2063,5,2239,61"/>
+<area shape="rect" id="node2" href="$dc/d70/linear___g_r_p__solver___edir_8c.html" title="This is a direct Eulerian GRP solver for compressible inviscid flow in Li&#39;s paper." alt="" coords="5,235,240,291"/>
+<area shape="rect" id="node3" href="$d3/da7/linear___g_r_p__solver___edir___g2_d_8c.html" title="This is a Genuinely&#45;2D direct Eulerian GRP solver for compressible inviscid flow in Li&#39;s paper." alt="" coords="265,228,455,299"/>
+<area shape="rect" id="node4" href="$d5/dea/linear___g_r_p__solver___edir___q1_d_8c.html" title="This is a Quasi&#45;1D direct Eulerian GRP solver for compressible inviscid flow in Li&#39;s paper." alt="" coords="479,228,670,299"/>
+<area shape="rect" id="node5" href="$de/d81/linear___g_r_p__solver___l_a_g_8c.html" title="This is a Lagrangian GRP solver for compressible inviscid flow in Ben&#45;Artzi&#39;s paper." alt="" coords="694,235,930,291"/>
+<area shape="rect" id="node6" href="$dd/d92/__1_d__file__in_8c.html" title="This is a set of functions which control the read&#45;in of one&#45;dimensional data." alt="" coords="574,117,743,173"/>
+<area shape="rect" id="node7" href="$db/db6/__1_d__file__out_8c.html" title="This is a set of functions which control the readout of one&#45;dimensional data." alt="" coords="767,117,937,173"/>
+<area shape="rect" id="node8" href="$d4/d75/__2_d__file__in_8c.html" title="This is a set of functions which control the read&#45;in of two&#45;dimensional data." alt="" coords="961,117,1130,173"/>
+<area shape="rect" id="node9" href="$d8/d32/__2_d__file__out_8c.html" title="This is a set of functions which control the readout of two&#45;dimensional data." alt="" coords="1154,117,1323,173"/>
+<area shape="rect" id="node10" href="$d2/de0/config__handle_8c.html" title="This is a set of functions which control the read&#45;in of configuration data." alt="" coords="1347,117,1517,173"/>
+<area shape="rect" id="node11" href="$d4/de5/io__control_8c.html" title="This is a set of common functions which control the input/output data." alt="" coords="1541,117,1710,173"/>
+<area shape="rect" id="node12" href="$d6/d0f/_g_r_p__solver__2_d___e_u_l__source_8c.html" title="This is an Eulerian GRP scheme to solve 2&#45;D Euler equations without dimension splitting." alt="" coords="2643,228,2824,299"/>
+<area shape="rect" id="node13" href="$dc/d9e/_g_r_p__solver__2_d__split___e_u_l__source_8c.html" title="This is an Eulerian GRP scheme to solve 2&#45;D Euler equations with dimension splitting." alt="" coords="2437,228,2619,299"/>
+<area shape="rect" id="node14" href="$de/de8/_g_r_p__solver___a_l_e__source_8c.html" title="This is an ALE GRP scheme to solve 1&#45;D Euler equations." alt="" coords="1379,228,1565,299"/>
+<area shape="rect" id="node15" href="$d5/d10/_g_r_p__solver___e_u_l__source_8c.html" title="This is an Eulerian GRP scheme to solve 1&#45;D Euler equations." alt="" coords="1166,228,1354,299"/>
+<area shape="rect" id="node16" href="$dd/dd7/_g_r_p__solver___l_a_g__source_8c.html" title="This is a Lagrangian GRP scheme to solve 1&#45;D Euler equations." alt="" coords="1590,228,1781,299"/>
+<area shape="rect" id="node17" href="$d4/da5/_godunov__solver___a_l_e__source_8c.html" title="This is an ALE Godunov scheme to solve 1&#45;D Euler equations." alt="" coords="1805,228,1992,299"/>
+<area shape="rect" id="node18" href="$de/dd9/_godunov__solver___e_u_l__source_8c.html" title="This is an Eulerian Godunov scheme to solve 1&#45;D Euler equations." alt="" coords="2016,228,2203,299"/>
+<area shape="rect" id="node19" href="$dd/d30/_godunov__solver___l_a_g__source_8c.html" title="This is a Lagrangian Godunov scheme to solve 1&#45;D Euler equations." alt="" coords="2227,228,2413,299"/>
+<area shape="rect" id="node20" href="$de/d35/flux__generator__x_8c.html" title="This file is a function which generates Eulerian fluxes in x&#45;direction of 2&#45;D Euler equations solved ..." alt="" coords="3528,235,3715,291"/>
+<area shape="rect" id="node21" href="$de/db1/flux__generator__y_8c.html" title="This file is a function which generates Eulerian fluxes in y&#45;direction of 2&#45;D Euler equations solved ..." alt="" coords="3739,235,3925,291"/>
+<area shape="rect" id="node22" href="$d5/d55/flux__solver_8c.html" title="This file is a set of functions to calculate interfacial fluxes and demanded variables according to t..." alt="" coords="955,235,1141,291"/>
+<area shape="rect" id="node23" href="$d8/d09/_riemann__solver_8h.html" title="This file is the header file of several Riemann solvers and GRP solvers." alt="" coords="1836,117,2012,173"/>
+<area shape="rect" id="node24" href="$d8/da8/finite__volume_8h.html" title="This file is the header file of Lagrangian/Eulerian hydrocode in finite volume framework." alt="" coords="3095,117,3271,173"/>
+<area shape="rect" id="node25" href="$d2/d24/hydrocode_8c.html" title="This is a C file of the main function." alt="" coords="3949,250,4051,277"/>
+<area shape="rect" id="node26" href="$dd/df5/flux__calc_8h.html" title="This file is the header file of intermediate processes of finite volume scheme." alt="" coords="2591,117,2767,173"/>
+<area shape="rect" id="node27" href="$d6/d6f/inter__process_8h.html" title="This file is the header file of intermediate processes of finite volume scheme." alt="" coords="2289,117,2465,173"/>
+<area shape="rect" id="node28" href="$df/d13/bound__cond__slope__limiter_8c.html" title="This is a function to set boundary conditions and use the slope limiter in one dimension." alt="" coords="2848,228,3051,299"/>
+<area shape="rect" id="node29" href="$d8/d49/bound__cond__slope__limiter__x_8c.html" title="This is a function to set boundary conditions and use the slope limiter in x&#45;direction of two dimensi..." alt="" coords="3075,228,3277,299"/>
+<area shape="rect" id="node30" href="$d8/dbb/bound__cond__slope__limiter__y_8c.html" title=" " alt="" coords="3301,228,3504,299"/>
+<area shape="rect" id="node31" href="$d2/d49/slope__limiter_8c.html" title="This is a function of the minmod slope limiter in one dimension." alt="" coords="3295,117,3473,173"/>
+<area shape="rect" id="node32" href="$d7/d36/slope__limiter__2_d__x_8c.html" title="This is a function of the minmod slope limiter in the x&#45;direction of two dimension." alt="" coords="3498,109,3667,180"/>
+</map>

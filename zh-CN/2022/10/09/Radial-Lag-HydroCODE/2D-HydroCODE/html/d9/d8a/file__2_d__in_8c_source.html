@@ -1,0 +1,272 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.3"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>HydroCODE_2D: src~/file_io/file_2D_in.c 源文件</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../resize.js"></script>
+<script type="text/javascript" src="../../navtreedata.js"></script>
+<script type="text/javascript" src="../../navtree.js"></script>
+<link href="../../search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../search/searchdata.js"></script>
+<script type="text/javascript" src="../../search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+  $(document).ready(function() { init_search(); });
+/* @license-end */
+</script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="../../Logo.jpg"/></td>
+  <td id="projectalign">
+   <div id="projectname">HydroCODE_2D<span id="projectnumber">&#160;0.1</span>
+   </div>
+   <div id="projectbrief">This is a implementation of fully explict forward Euler scheme for 2-D Euler equations of motion on Eulerian coordinate</div>
+  </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="../../search/mag_sel.svg"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="搜索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="../../search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.9.3 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "../../search",'搜索','.html');
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('d9/d8a/file__2_d__in_8c_source.html','../../'); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">file_2D_in.c</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="../../d9/d8a/file__2_d__in_8c.html">浏览该文件的文档.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span> </div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &lt;math.h&gt;</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &lt;string.h&gt;</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#include &lt;stdio.h&gt;</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#include &lt;stdlib.h&gt;</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#include &lt;stdbool.h&gt;</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span> </div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#include &quot;../include/var_struc.h&quot;</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#include &quot;../include/file_io.h&quot;</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span> </div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span> </div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno"><a class="line" href="../../d9/d8a/file__2_d__in_8c.html#a081c933678c411df03e2ce1c1bae18e7">   17</a></span><span class="preprocessor">#define N_MAX_2D 5</span></div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span> </div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno"><a class="line" href="../../d9/d8a/file__2_d__in_8c.html#ac63cea838899cb993adfbfdd17d33f05">   28</a></span><span class="keyword">static</span> <span class="keywordtype">double</span> * <a class="code hl_function" href="../../d9/d8a/file__2_d__in_8c.html#ac63cea838899cb993adfbfdd17d33f05">flu_var_init</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> * add, FILE *fp)</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>{</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>    <span class="keywordtype">double</span> * sfv;</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    <span class="keywordtype">int</span> num_cell, line, column;  <span class="comment">// The number of the numbers in the above data files.</span></div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span> </div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>    line = <a class="code hl_function" href="../../d4/de5/io__control_8c.html#a53f2536667da1fda09a509f8d59e1fcd">flu_var_count_line</a>(fp, add, &amp;column);</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>    num_cell = line * column;</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    <span class="keywordflow">if</span> (num_cell &lt; 1)</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    {</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>        printf(<span class="stringliteral">&quot;Error in counting fluid variables in initial data file! %s\n&quot;</span>, add);</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>        fclose(fp);</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>        exit(2);</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>    }</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>    <span class="keywordflow">if</span>(isinf(<a class="code hl_variable" href="../../d2/d24/hydrocode_8c.html#a671ac7b0a37eecc05ebebf6a2a42f6dc">config</a>[3]))</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>    <a class="code hl_variable" href="../../d2/d24/hydrocode_8c.html#a671ac7b0a37eecc05ebebf6a2a42f6dc">config</a>[3] = (double)num_cell;</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>    <span class="keywordflow">if</span>(isinf(<a class="code hl_variable" href="../../d2/d24/hydrocode_8c.html#a671ac7b0a37eecc05ebebf6a2a42f6dc">config</a>[13]))</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>    <a class="code hl_variable" href="../../d2/d24/hydrocode_8c.html#a671ac7b0a37eecc05ebebf6a2a42f6dc">config</a>[13] = (<span class="keywordtype">double</span>)column;</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>    <span class="keywordflow">if</span>(isinf(<a class="code hl_variable" href="../../d2/d24/hydrocode_8c.html#a671ac7b0a37eecc05ebebf6a2a42f6dc">config</a>[14]))</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>    <a class="code hl_variable" href="../../d2/d24/hydrocode_8c.html#a671ac7b0a37eecc05ebebf6a2a42f6dc">config</a>[14] = (<span class="keywordtype">double</span>)line;</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>    <span class="keywordflow">else</span> <span class="keywordflow">if</span>(num_cell != (<span class="keywordtype">int</span>)<a class="code hl_variable" href="../../d2/d24/hydrocode_8c.html#a671ac7b0a37eecc05ebebf6a2a42f6dc">config</a>[3] || column != (int)<a class="code hl_variable" href="../../d2/d24/hydrocode_8c.html#a671ac7b0a37eecc05ebebf6a2a42f6dc">config</a>[13] || line != (<span class="keywordtype">int</span>)<a class="code hl_variable" href="../../d2/d24/hydrocode_8c.html#a671ac7b0a37eecc05ebebf6a2a42f6dc">config</a>[14])</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>    {</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>        printf(<span class="stringliteral">&quot;Input unequal! %s\n&quot;</span>, add);</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>        printf(<span class="stringliteral">&quot; num=%d, num_cell=%d;&quot;</span>, num_cell, (<span class="keywordtype">int</span>)<a class="code hl_variable" href="../../d2/d24/hydrocode_8c.html#a671ac7b0a37eecc05ebebf6a2a42f6dc">config</a>[3]);</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>        printf(<span class="stringliteral">&quot; column=%d, n_x=%d;&quot;</span>, column, (<span class="keywordtype">int</span>)<a class="code hl_variable" href="../../d2/d24/hydrocode_8c.html#a671ac7b0a37eecc05ebebf6a2a42f6dc">config</a>[13]);</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>        printf(<span class="stringliteral">&quot; line=%d, n_y=%d.\n&quot;</span>, line, (<span class="keywordtype">int</span>)<a class="code hl_variable" href="../../d2/d24/hydrocode_8c.html#a671ac7b0a37eecc05ebebf6a2a42f6dc">config</a>[14]);</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>        exit(2);</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>    }</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>    sfv = (<span class="keywordtype">double</span>*)malloc(num_cell * <span class="keyword">sizeof</span>(<span class="keywordtype">double</span>));</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>    <span class="keywordflow">if</span>(sfv == NULL)</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>    {</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>        printf(<span class="stringliteral">&quot;NOT enough memory! %s\n&quot;</span>, add);</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>        exit(5);</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>    }</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>    <span class="keywordflow">if</span>(<a class="code hl_function" href="../../d4/de5/io__control_8c.html#a40ca7ad20048ff97a27a8641cf31b7cb">flu_var_read</a>(fp, sfv, num_cell))</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>    {</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>        fclose(fp);</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>        exit(2);</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>    }</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>    <span class="keywordflow">return</span> sfv;</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>}</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span> </div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span> </div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno"><a class="line" href="../../d9/d8a/file__2_d__in_8c.html#a27c61b11dddd07bb536cbde374060e1c">   75</a></span><span class="preprocessor">#define STR_FLU_INI(sfv, err_exit)                  \</span></div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span><span class="preprocessor">    do {                                \</span></div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span><span class="preprocessor">    strcpy(add, add_in);                        \</span></div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span><span class="preprocessor">    strcat(add, #sfv &quot;.txt&quot;</span>);                       \</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>    if((fp = fopen(add, &quot;r&quot;)) == NULL)                  \</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>    {                               \</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>        strcpy(add, add_in);                    \</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>        strcat(add, #sfv &quot;.dat&quot;);                   \</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>    }                               \</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>    if((fp = fopen(add, &quot;r&quot;)) == NULL)                  \</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>    {                               \</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>        printf(&quot;Cannot open initial data file: %s!\n&quot;, #sfv);   \</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>        if(err_exit)                        \</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>        exit(1);                        \</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>        r = false;                          \</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>    }                               \</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>    if(r)                               \</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>    {                               \</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>        FV0.sfv = flu_var_init(add, fp);                \</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>        fclose(fp);                         \</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>    }                               \</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>    else                                \</div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>    {                               \</div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>        FV0.sfv = (double*)malloc((int)config[3] * sizeof(double)); \</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>        if(FV0.sfv == NULL)                     \</div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>        {                           \</div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>            printf(&quot;NOT enough memory! %s\n&quot;, #sfv);        \</div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>            exit(5);                        \</div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>        }                           \</div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>    }                               \</div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>    } while(0)</div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span> </div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno"><a class="line" href="../../d9/d8a/file__2_d__in_8c.html#a13555e5f4f916ffa5975ed5f22be2697">  119</a></span><span class="keyword">struct </span><a class="code hl_struct" href="../../d2/d24/structflu__var.html">flu_var</a> <a class="code hl_function" href="../../d9/d8a/file__2_d__in_8c.html#a13555e5f4f916ffa5975ed5f22be2697">initialize_2D</a>(const char * name, <span class="keywordtype">int</span> * N, <span class="keywordtype">int</span> * N_plot, <span class="keywordtype">double</span> * time_plot[])</div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>{</div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>    <span class="keyword">struct </span><a class="code hl_struct" href="../../d2/d24/structflu__var.html">flu_var</a> FV0 = {NULL};</div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span> </div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>    <span class="keywordtype">char</span> add_in[FILENAME_MAX+40]; </div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>    <span class="comment">// Get the address of the initial data folder of the test example.</span></div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>    <a class="code hl_function" href="../../d4/de5/io__control_8c.html#a7e039d23ca87a439fbe9c9d336447887">example_io</a>(name, add_in, 1);</div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>    </div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>    <span class="comment">/* </span></div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span><span class="comment">     * Read the configuration data.</span></div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span><span class="comment">     * The detail could be seen in the definition of array config</span></div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span><span class="comment">     * referring to file &#39;doc/config.csv&#39;.</span></div>
+<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span><span class="comment">     */</span></div>
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span>    <a class="code hl_function" href="../../d2/de0/config__handle_8c.html#a4b15e37e2922cce20bf5cc8bb6e80c9a">configurate</a>(add_in);</div>
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span>    printf(<span class="stringliteral">&quot;  delta_x\t= %g\n&quot;</span>, <a class="code hl_variable" href="../../d2/d24/hydrocode_8c.html#a671ac7b0a37eecc05ebebf6a2a42f6dc">config</a>[10]);</div>
+<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span>    printf(<span class="stringliteral">&quot;  delta_y\t= %g\n&quot;</span>, <a class="code hl_variable" href="../../d2/d24/hydrocode_8c.html#a671ac7b0a37eecc05ebebf6a2a42f6dc">config</a>[11]);</div>
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span>    printf(<span class="stringliteral">&quot;  bondary_x\t= %d\n&quot;</span>, (<span class="keywordtype">int</span>)<a class="code hl_variable" href="../../d2/d24/hydrocode_8c.html#a671ac7b0a37eecc05ebebf6a2a42f6dc">config</a>[17]);</div>
+<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span>    printf(<span class="stringliteral">&quot;  bondary_y\t= %d\n&quot;</span>, (<span class="keywordtype">int</span>)<a class="code hl_variable" href="../../d2/d24/hydrocode_8c.html#a671ac7b0a37eecc05ebebf6a2a42f6dc">config</a>[18]);</div>
+<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span> </div>
+<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span>    (*N) = <a class="code hl_function" href="../../d4/de5/io__control_8c.html#afc5a75c19ae16af5227567eb1dde0ef1">time_plot_read</a>(add_in, <a class="code hl_define" href="../../d9/d8a/file__2_d__in_8c.html#a081c933678c411df03e2ce1c1bae18e7">N_MAX_2D</a>, N_plot, time_plot);</div>
+<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span> </div>
+<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span>    <span class="keywordtype">char</span> add[FILENAME_MAX+40]; <span class="comment">// The address of the velocity/pressure/density file to read in.</span></div>
+<div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span>    FILE * fp;      <span class="comment">// The pointer to the above data files.</span></div>
+<div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span>    _Bool r = <span class="keyword">true</span>; <span class="comment">// r: Whether to read data file successfully.</span></div>
+<div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span> </div>
+<div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span>    <span class="comment">// Open the initial data files and initializes the reading of data.</span></div>
+<div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span>    <a class="code hl_define" href="../../d9/d8a/file__2_d__in_8c.html#a27c61b11dddd07bb536cbde374060e1c">STR_FLU_INI</a>(<a class="code hl_variable" href="../../d2/d24/structflu__var.html#a60adfcb91199d9957fc2a388d97743cc">RHO</a>,  1);</div>
+<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span>    <a class="code hl_define" href="../../d9/d8a/file__2_d__in_8c.html#a27c61b11dddd07bb536cbde374060e1c">STR_FLU_INI</a>(<a class="code hl_variable" href="../../d2/d24/structflu__var.html#a76744090d881dc1c747d8efc68f10461">U</a>,    1);</div>
+<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span>    <a class="code hl_define" href="../../d9/d8a/file__2_d__in_8c.html#a27c61b11dddd07bb536cbde374060e1c">STR_FLU_INI</a>(<a class="code hl_variable" href="../../d2/d24/structflu__var.html#a8838c7f89e959b2ed7bf8929ae7aff75">V</a>,    1);</div>
+<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span>    <a class="code hl_define" href="../../d9/d8a/file__2_d__in_8c.html#a27c61b11dddd07bb536cbde374060e1c">STR_FLU_INI</a>(<a class="code hl_variable" href="../../d2/d24/structflu__var.html#a06b8860aedc29bf8ea62686ad2ef0caf">P</a>,    1);</div>
+<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span><span class="preprocessor">#ifdef MULTIFLUID_BASICS</span></div>
+<div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span><span class="preprocessor">#ifdef MULTIPHASE_BASICS</span></div>
+<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span>    <a class="code hl_define" href="../../d9/d8a/file__2_d__in_8c.html#a27c61b11dddd07bb536cbde374060e1c">STR_FLU_INI</a>(Z_a,  1);</div>
+<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span>    <a class="code hl_define" href="../../d9/d8a/file__2_d__in_8c.html#a27c61b11dddd07bb536cbde374060e1c">STR_FLU_INI</a>(RHO_b,1);</div>
+<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span>    <a class="code hl_define" href="../../d9/d8a/file__2_d__in_8c.html#a27c61b11dddd07bb536cbde374060e1c">STR_FLU_INI</a>(U_b,  1);</div>
+<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span>    <a class="code hl_define" href="../../d9/d8a/file__2_d__in_8c.html#a27c61b11dddd07bb536cbde374060e1c">STR_FLU_INI</a>(V_b,  1);</div>
+<div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span>    <a class="code hl_define" href="../../d9/d8a/file__2_d__in_8c.html#a27c61b11dddd07bb536cbde374060e1c">STR_FLU_INI</a>(P_b,  1);</div>
+<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span><span class="preprocessor">#else</span></div>
+<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span>    <a class="code hl_define" href="../../d9/d8a/file__2_d__in_8c.html#a27c61b11dddd07bb536cbde374060e1c">STR_FLU_INI</a>(PHI,  1);</div>
+<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span>    <a class="code hl_define" href="../../d9/d8a/file__2_d__in_8c.html#a27c61b11dddd07bb536cbde374060e1c">STR_FLU_INI</a>(Z_a,  0);</div>
+<div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span>    <span class="keywordflow">if</span>(!r)</div>
+<div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span>    {</div>
+<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span>        <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i = 0; i &lt; (int)<a class="code hl_variable" href="../../d2/d24/hydrocode_8c.html#a671ac7b0a37eecc05ebebf6a2a42f6dc">config</a>[3]; i++)</div>
+<div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span>        FV0.Z_a[i] = FV0.PHI[i];</div>
+<div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span>        printf(<span class="stringliteral">&quot;\t Initial volume fraction &#39;Z_a&#39; is initialized by mass fraction &#39;PHI&#39;.\n&quot;</span>);</div>
+<div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span>        r = <span class="keyword">true</span>;</div>
+<div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span>    }</div>
+<div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span>    <a class="code hl_define" href="../../d9/d8a/file__2_d__in_8c.html#a27c61b11dddd07bb536cbde374060e1c">STR_FLU_INI</a>(gamma,0);</div>
+<div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span>    <span class="keywordflow">if</span>(!r)</div>
+<div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span>    {</div>
+<div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span>        <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i = 0; i &lt; (int)<a class="code hl_variable" href="../../d2/d24/hydrocode_8c.html#a671ac7b0a37eecc05ebebf6a2a42f6dc">config</a>[3]; i++)</div>
+<div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span>        FV0.gamma[i] = 1.0 + 1.0 / (FV0.Z_a[i]/(<a class="code hl_variable" href="../../d2/d24/hydrocode_8c.html#a671ac7b0a37eecc05ebebf6a2a42f6dc">config</a>[6]-1.0) + (1.0-FV0.Z_a[i])/(<a class="code hl_variable" href="../../d2/d24/hydrocode_8c.html#a671ac7b0a37eecc05ebebf6a2a42f6dc">config</a>[106]-1.0));</div>
+<div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span>        printf(<span class="stringliteral">&quot;\t Initial specific heat rate &#39;gamma&#39; is initialized by volume fraction &#39;Z_a&#39;.\n&quot;</span>);</div>
+<div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span>        r = <span class="keyword">true</span>;</div>
+<div class="line"><a id="l00173" name="l00173"></a><span class="lineno">  173</span>    }</div>
+<div class="line"><a id="l00174" name="l00174"></a><span class="lineno">  174</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00175" name="l00175"></a><span class="lineno">  175</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00176" name="l00176"></a><span class="lineno">  176</span> </div>
+<div class="line"><a id="l00177" name="l00177"></a><span class="lineno">  177</span>    printf(<span class="stringliteral">&quot;&#39;%s&#39; data initialized, line = %d, column = %d.\n&quot;</span>, add_in, (<span class="keywordtype">int</span>)<a class="code hl_variable" href="../../d2/d24/hydrocode_8c.html#a671ac7b0a37eecc05ebebf6a2a42f6dc">config</a>[14], (<span class="keywordtype">int</span>)<a class="code hl_variable" href="../../d2/d24/hydrocode_8c.html#a671ac7b0a37eecc05ebebf6a2a42f6dc">config</a>[13]);</div>
+<div class="line"><a id="l00178" name="l00178"></a><span class="lineno">  178</span>    <span class="keywordflow">return</span> FV0;</div>
+<div class="line"><a id="l00179" name="l00179"></a><span class="lineno">  179</span>}</div>
+<div class="ttc" id="aconfig__handle_8c_html_a4b15e37e2922cce20bf5cc8bb6e80c9a"><div class="ttname"><a href="../../d2/de0/config__handle_8c.html#a4b15e37e2922cce20bf5cc8bb6e80c9a">configurate</a></div><div class="ttdeci">void configurate(const char *add_in)</div><div class="ttdoc">This function controls configuration data reading and validation.</div><div class="ttdef"><b>Definition:</b> <a href="../../d2/de0/config__handle_8c_source.html#l00208">config_handle.c:208</a></div></div>
+<div class="ttc" id="afile__2_d__in_8c_html_a081c933678c411df03e2ce1c1bae18e7"><div class="ttname"><a href="../../d9/d8a/file__2_d__in_8c.html#a081c933678c411df03e2ce1c1bae18e7">N_MAX_2D</a></div><div class="ttdeci">#define N_MAX_2D</div><div class="ttdoc">The maximum number of 2-D data dimension storing fluid variables in memory.</div><div class="ttdef"><b>Definition:</b> <a href="../../d9/d8a/file__2_d__in_8c_source.html#l00017">file_2D_in.c:17</a></div></div>
+<div class="ttc" id="afile__2_d__in_8c_html_a13555e5f4f916ffa5975ed5f22be2697"><div class="ttname"><a href="../../d9/d8a/file__2_d__in_8c.html#a13555e5f4f916ffa5975ed5f22be2697">initialize_2D</a></div><div class="ttdeci">struct flu_var initialize_2D(const char *name, int *N, int *N_plot, double *time_plot[])</div><div class="ttdoc">This function reads the 2-D initial data file of density/velocity/pressure.</div><div class="ttdef"><b>Definition:</b> <a href="../../d9/d8a/file__2_d__in_8c_source.html#l00119">file_2D_in.c:119</a></div></div>
+<div class="ttc" id="afile__2_d__in_8c_html_a27c61b11dddd07bb536cbde374060e1c"><div class="ttname"><a href="../../d9/d8a/file__2_d__in_8c.html#a27c61b11dddd07bb536cbde374060e1c">STR_FLU_INI</a></div><div class="ttdeci">#define STR_FLU_INI(sfv, err_exit)</div><div class="ttdoc">Count out and read in 2-D data of the initial fluid variable 'sfv' using function 'flu_var_init()'....</div><div class="ttdef"><b>Definition:</b> <a href="../../d9/d8a/file__2_d__in_8c_source.html#l00075">file_2D_in.c:75</a></div></div>
+<div class="ttc" id="afile__2_d__in_8c_html_ac63cea838899cb993adfbfdd17d33f05"><div class="ttname"><a href="../../d9/d8a/file__2_d__in_8c.html#ac63cea838899cb993adfbfdd17d33f05">flu_var_init</a></div><div class="ttdeci">static double * flu_var_init(const char *add, FILE *fp)</div><div class="ttdoc">This function count out and read in 2-D data file with (line*column) data and initialize pointer to t...</div><div class="ttdef"><b>Definition:</b> <a href="../../d9/d8a/file__2_d__in_8c_source.html#l00028">file_2D_in.c:28</a></div></div>
+<div class="ttc" id="ahydrocode_8c_html_a671ac7b0a37eecc05ebebf6a2a42f6dc"><div class="ttname"><a href="../../d2/d24/hydrocode_8c.html#a671ac7b0a37eecc05ebebf6a2a42f6dc">config</a></div><div class="ttdeci">double config[N_CONF]</div><div class="ttdoc">Initial configuration data array.</div><div class="ttdef"><b>Definition:</b> <a href="../../d2/d24/hydrocode_8c_source.html#l00123">hydrocode.c:123</a></div></div>
+<div class="ttc" id="aio__control_8c_html_a40ca7ad20048ff97a27a8641cf31b7cb"><div class="ttname"><a href="../../d4/de5/io__control_8c.html#a40ca7ad20048ff97a27a8641cf31b7cb">flu_var_read</a></div><div class="ttdeci">int flu_var_read(FILE *fp, double *U, const int num)</div><div class="ttdoc">This function reads the initial data file to generate the initial data.</div><div class="ttdef"><b>Definition:</b> <a href="../../d4/de5/io__control_8c_source.html#l00221">io_control.c:221</a></div></div>
+<div class="ttc" id="aio__control_8c_html_a53f2536667da1fda09a509f8d59e1fcd"><div class="ttname"><a href="../../d4/de5/io__control_8c.html#a53f2536667da1fda09a509f8d59e1fcd">flu_var_count_line</a></div><div class="ttdeci">int flu_var_count_line(FILE *fp, const char *add, int *n_x)</div><div class="ttdoc">This function counts the line and column number of the numbers are there in the initial data file.</div><div class="ttdef"><b>Definition:</b> <a href="../../d4/de5/io__control_8c_source.html#l00163">io_control.c:163</a></div></div>
+<div class="ttc" id="aio__control_8c_html_a7e039d23ca87a439fbe9c9d336447887"><div class="ttname"><a href="../../d4/de5/io__control_8c.html#a7e039d23ca87a439fbe9c9d336447887">example_io</a></div><div class="ttdeci">void example_io(const char *example, char *add_mkdir, const int i_or_o)</div><div class="ttdoc">This function produces folder path for data input or output.</div><div class="ttdef"><b>Definition:</b> <a href="../../d4/de5/io__control_8c_source.html#l00040">io_control.c:40</a></div></div>
+<div class="ttc" id="aio__control_8c_html_afc5a75c19ae16af5227567eb1dde0ef1"><div class="ttname"><a href="../../d4/de5/io__control_8c.html#afc5a75c19ae16af5227567eb1dde0ef1">time_plot_read</a></div><div class="ttdeci">int time_plot_read(const char *add_in, const int N_max, int *N_plot, double *time_plot[])</div><div class="ttdoc">This function reads the time data file for plotting 'time_plot.dat' and initialize tha array 'time_pl...</div><div class="ttdef"><b>Definition:</b> <a href="../../d4/de5/io__control_8c_source.html#l00288">io_control.c:288</a></div></div>
+<div class="ttc" id="astructflu__var_html"><div class="ttname"><a href="../../d2/d24/structflu__var.html">flu_var</a></div><div class="ttdoc">pointer structure of FLUid VARiables array.</div><div class="ttdef"><b>Definition:</b> <a href="../../da/d1e/var__struc_8h_source.html#l00048">var_struc.h:48</a></div></div>
+<div class="ttc" id="astructflu__var_html_a06b8860aedc29bf8ea62686ad2ef0caf"><div class="ttname"><a href="../../d2/d24/structflu__var.html#a06b8860aedc29bf8ea62686ad2ef0caf">flu_var::P</a></div><div class="ttdeci">double * P</div><div class="ttdef"><b>Definition:</b> <a href="../../da/d1e/var__struc_8h_source.html#l00049">var_struc.h:49</a></div></div>
+<div class="ttc" id="astructflu__var_html_a60adfcb91199d9957fc2a388d97743cc"><div class="ttname"><a href="../../d2/d24/structflu__var.html#a60adfcb91199d9957fc2a388d97743cc">flu_var::RHO</a></div><div class="ttdeci">double * RHO</div><div class="ttdef"><b>Definition:</b> <a href="../../da/d1e/var__struc_8h_source.html#l00049">var_struc.h:49</a></div></div>
+<div class="ttc" id="astructflu__var_html_a76744090d881dc1c747d8efc68f10461"><div class="ttname"><a href="../../d2/d24/structflu__var.html#a76744090d881dc1c747d8efc68f10461">flu_var::U</a></div><div class="ttdeci">double * U</div><div class="ttdef"><b>Definition:</b> <a href="../../da/d1e/var__struc_8h_source.html#l00049">var_struc.h:49</a></div></div>
+<div class="ttc" id="astructflu__var_html_a8838c7f89e959b2ed7bf8929ae7aff75"><div class="ttname"><a href="../../d2/d24/structflu__var.html#a8838c7f89e959b2ed7bf8929ae7aff75">flu_var::V</a></div><div class="ttdeci">double * V</div><div class="ttdef"><b>Definition:</b> <a href="../../da/d1e/var__struc_8h_source.html#l00049">var_struc.h:49</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="../../dir_6771aafbf413a5638c4e561417caddb9.html">src~</a></li><li class="navelem"><a class="el" href="../../dir_ab846451f6b2e1a7a2652f9756abe74c.html">file_io</a></li><li class="navelem"><a class="el" href="../../d9/d8a/file__2_d__in_8c.html">file_2D_in.c</a></li>
+    <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
+  </ul>
+</div>
+</body>
+</html>

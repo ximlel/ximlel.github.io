@@ -1,0 +1,13 @@
+<map id="src/include/var_struc.h" name="src/include/var_struc.h">
+<area shape="rect" id="node1" title=" " alt="" coords="833,5,1001,32"/>
+<area shape="rect" id="node2" href="$dd/d92/__1_d__file__in_8c.html" title="This is a set of functions which control the read&#45;in of one&#45;dimensional data." alt="" coords="5,87,177,114"/>
+<area shape="rect" id="node3" href="$db/db6/__1_d__file__out_8c.html" title="This is a set of functions which control the readout of one&#45;dimensional data." alt="" coords="201,80,344,121"/>
+<area shape="rect" id="node4" href="$da/d8c/config__in_8c.html" title="This is a set of functions which control the read&#45;in of configuration data." alt="" coords="368,87,527,114"/>
+<area shape="rect" id="node5" href="$d4/de5/io__control_8c.html" title="This is a set of common functions which control the input/output data." alt="" coords="551,87,715,114"/>
+<area shape="rect" id="node6" href="$d5/d10/_g_r_p__solver___e_u_l__source_8c.html" title="This is an Eulerian GRP scheme to solve 1&#45;D Euler equations." alt="" coords="739,80,905,121"/>
+<area shape="rect" id="node7" href="$dd/dd7/_g_r_p__solver___l_a_g__source_8c.html" title="This is a Lagrangian GRP scheme to solve 1&#45;D Euler equations." alt="" coords="929,80,1096,121"/>
+<area shape="rect" id="node8" href="$de/dd9/_godunov__solver___e_u_l__source_8c.html" title="This is an Eulerian Godunov scheme to solve 1&#45;D Euler equations." alt="" coords="1121,80,1318,121"/>
+<area shape="rect" id="node9" href="$dd/d30/_godunov__solver___l_a_g__source_8c.html" title="This is a Lagrangian Godunov scheme to solve 1&#45;D Euler equations." alt="" coords="1342,80,1539,121"/>
+<area shape="rect" id="node10" href="$d2/d24/hydrocode_8c.html" title="This is a C file of the main function." alt="" coords="1529,169,1725,196"/>
+<area shape="rect" id="node11" href="$d8/da8/finite__volume_8h.html" title="This file is the header file of Lagrangian/Eulerian hydrocode in finite volume framework." alt="" coords="1614,80,1745,121"/>
+</map>

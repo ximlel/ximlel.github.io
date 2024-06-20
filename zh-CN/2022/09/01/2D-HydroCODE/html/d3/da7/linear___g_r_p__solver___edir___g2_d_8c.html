@@ -1,0 +1,275 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.3"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>HydroCODE_2D: /home/leixin/Programs/HydroCODE/src/Riemann_solver/linear_GRP_solver_Edir_G2D.c 文件参考</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../resize.js"></script>
+<script type="text/javascript" src="../../navtreedata.js"></script>
+<script type="text/javascript" src="../../navtree.js"></script>
+<link href="../../search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../search/searchdata.js"></script>
+<script type="text/javascript" src="../../search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+  $(document).ready(function() { init_search(); });
+/* @license-end */
+</script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="../../Logo.jpg"/></td>
+  <td id="projectalign">
+   <div id="projectname">HydroCODE_2D<span id="projectnumber">&#160;0.1</span>
+   </div>
+   <div id="projectbrief">This is a implementation of fully explict forward Euler scheme for 2-D Euler equations of motion on Eulerian coordinate</div>
+  </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="../../search/mag_sel.svg"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="搜索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="../../search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.9.3 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "../../search",'搜索','.html');
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('d3/da7/linear___g_r_p__solver___edir___g2_d_8c.html','../../'); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#define-members">宏定义</a> &#124;
+<a href="#func-members">函数</a>  </div>
+  <div class="headertitle"><div class="title">linear_GRP_solver_Edir_G2D.c 文件参考</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>This is a Genuinely-2D direct Eulerian GRP solver for compressible inviscid flow in Li's paper.  
+<a href="#details">更多...</a></p>
+<div class="textblock"><code>#include &lt;math.h&gt;</code><br />
+<code>#include &lt;stdio.h&gt;</code><br />
+<code>#include &quot;<a class="el" href="../../da/d1e/var__struc_8h_source.html">../include/var_struc.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="../../d8/d09/_riemann__solver_8h_source.html">../include/Riemann_solver.h</a>&quot;</code><br />
+</div><div class="textblock"><div class="dynheader">
+linear_GRP_solver_Edir_G2D.c 的引用(Include)关系图:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../d9/d97/linear___g_r_p__solver___edir___g2_d_8c__incl.svg" width="388" height="246"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</div>
+<p><a href="../../d3/da7/linear___g_r_p__solver___edir___g2_d_8c_source.html">浏览源代码.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
+宏定义</h2></td></tr>
+<tr class="memitem:a4febe2ade167e7e1485c7b6d561ca60b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/da7/linear___g_r_p__solver___edir___g2_d_8c.html#a4febe2ade167e7e1485c7b6d561ca60b">EXACT_TANGENT_DERIVATIVE</a></td></tr>
+<tr class="memdesc:a4febe2ade167e7e1485c7b6d561ca60b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Switch whether the tangential derivatives are accurately computed.  <a href="../../d3/da7/linear___g_r_p__solver___edir___g2_d_8c.html#a4febe2ade167e7e1485c7b6d561ca60b">更多...</a><br /></td></tr>
+<tr class="separator:a4febe2ade167e7e1485c7b6d561ca60b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+函数</h2></td></tr>
+<tr class="memitem:aff686a52210d82c346d2537c0c704ef3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/da7/linear___g_r_p__solver___edir___g2_d_8c.html#aff686a52210d82c346d2537c0c704ef3">linear_GRP_solver_Edir_G2D</a> (double *wave_speed, double *D, double *U, double *U_star, const struct <a class="el" href="../../d9/dd4/structi__f__var.html">i_f_var</a> ifv_L, const struct <a class="el" href="../../d9/dd4/structi__f__var.html">i_f_var</a> ifv_R, const double eps, const double atc)</td></tr>
+<tr class="memdesc:aff686a52210d82c346d2537c0c704ef3"><td class="mdescLeft">&#160;</td><td class="mdescRight">A Genuinely-2D direct Eulerian GRP solver for unsteady compressible inviscid two-component flow in two space dimension.  <a href="../../d3/da7/linear___g_r_p__solver___edir___g2_d_8c.html#aff686a52210d82c346d2537c0c704ef3">更多...</a><br /></td></tr>
+<tr class="separator:aff686a52210d82c346d2537c0c704ef3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
+<div class="textblock"><p >This is a Genuinely-2D direct Eulerian GRP solver for compressible inviscid flow in Li's paper. </p>
+
+<p class="definition">在文件 <a class="el" href="../../d3/da7/linear___g_r_p__solver___edir___g2_d_8c_source.html">linear_GRP_solver_Edir_G2D.c</a> 中定义.</p>
+</div><h2 class="groupheader">宏定义说明</h2>
+<a id="a4febe2ade167e7e1485c7b6d561ca60b" name="a4febe2ade167e7e1485c7b6d561ca60b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4febe2ade167e7e1485c7b6d561ca60b">&#9670;&nbsp;</a></span>EXACT_TANGENT_DERIVATIVE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define EXACT_TANGENT_DERIVATIVE</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Switch whether the tangential derivatives are accurately computed. </p>
+
+<p class="definition">在文件 <a class="el" href="../../d3/da7/linear___g_r_p__solver___edir___g2_d_8c_source.html">linear_GRP_solver_Edir_G2D.c</a> 第 <a class="el" href="../../d3/da7/linear___g_r_p__solver___edir___g2_d_8c_source.html#l00017">17</a> 行定义.</p>
+
+</div>
+</div>
+<h2 class="groupheader">函数说明</h2>
+<a id="aff686a52210d82c346d2537c0c704ef3" name="aff686a52210d82c346d2537c0c704ef3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aff686a52210d82c346d2537c0c704ef3">&#9670;&nbsp;</a></span>linear_GRP_solver_Edir_G2D()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void linear_GRP_solver_Edir_G2D </td>
+          <td>(</td>
+          <td class="paramtype">double *&#160;</td>
+          <td class="paramname"><em>wave_speed</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double *&#160;</td>
+          <td class="paramname"><em>D</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double *&#160;</td>
+          <td class="paramname"><em>U</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double *&#160;</td>
+          <td class="paramname"><em>U_star</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const struct <a class="el" href="../../d9/dd4/structi__f__var.html">i_f_var</a>&#160;</td>
+          <td class="paramname"><em>ifv_L</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const struct <a class="el" href="../../d9/dd4/structi__f__var.html">i_f_var</a>&#160;</td>
+          <td class="paramname"><em>ifv_R</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const double&#160;</td>
+          <td class="paramname"><em>eps</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const double&#160;</td>
+          <td class="paramname"><em>atc</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>A Genuinely-2D direct Eulerian GRP solver for unsteady compressible inviscid two-component flow in two space dimension. </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[out]</td><td class="paramname">wave_speed</td><td>the velocity of left and right waves. </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">D</td><td>the temporal derivative of fluid variables. <br  />
+ [rho, u, v, p, phi, z_a]_t </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">U</td><td>the intermediate Riemann solutions at t-axis. <br  />
+ [rho_mid, u_mid, v_mid, p_mid, phi_mid, z_a_mid] </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">U_star</td><td>the Riemann solutions in star region. <br  />
+ [rho_star_L, u_star, rho_star_R, p_star, c_star_L, c_star_R] </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">ifv_L</td><td>Left States (rho/u/v/p/phi/z, d_, t_, gammaL). </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">ifv_R</td><td>Right States (rho/u/v/p/phi/z, d_, t_, gammaR).<ul>
+<li>s_: normal derivatives.</li>
+<li>t_: tangential derivatives.</li>
+<li>gamma: the constant of the perfect gas. </li>
+</ul>
+</td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">eps</td><td>the largest value could be seen as zero. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">atc</td><td>Parameter that determines the solver type.<ul>
+<li>INFINITY: acoustic approximation<ul>
+<li>ifv_.s_, ifv_.t_ = -0.0: exact Riemann solver</li>
+</ul>
+</li>
+<li>eps: Genuinely-2D GRP solver(nonlinear + acoustic case)<ul>
+<li>ifv_.t_ = -0.0: Planar-1D GRP solver</li>
+</ul>
+</li>
+<li>-0.0: Genuinely-2D GRP solver(only nonlinear case)<ul>
+<li>ifv_.t_ = -0.0: Planar-1D GRP solver </li>
+</ul>
+</li>
+</ul>
+</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section remark"><dt>备注</dt><dd>macro definition <b>EXACT_TANGENT_DERIVATIVE:</b> <br  />
+ Switch whether the tangential derivatives are accurately computed. </dd></dl>
+<dl class="section user"><dt>Reference</dt><dd>Theory is found in Reference [1]. <br  />
+ [1] 齐进, 二维欧拉方程广义黎曼问题数值建模及其应用, Ph.D Thesis, Beijing Normal University, 2017. </dd></dl>
+
+<p class="definition">在文件 <a class="el" href="../../d3/da7/linear___g_r_p__solver___edir___g2_d_8c_source.html">linear_GRP_solver_Edir_G2D.c</a> 第 <a class="el" href="../../d3/da7/linear___g_r_p__solver___edir___g2_d_8c_source.html#l00049">49</a> 行定义.</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../d3/da7/linear___g_r_p__solver___edir___g2_d_8c_aff686a52210d82c346d2537c0c704ef3_cgraph.svg" width="691" height="63"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="../../dir_093c7f8d2be651e0859e8669f6d9820c.html">Riemann_solver</a></li><li class="navelem"><a class="el" href="../../d3/da7/linear___g_r_p__solver___edir___g2_d_8c.html">linear_GRP_solver_Edir_G2D.c</a></li>
+    <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
+  </ul>
+</div>
+</body>
+</html>

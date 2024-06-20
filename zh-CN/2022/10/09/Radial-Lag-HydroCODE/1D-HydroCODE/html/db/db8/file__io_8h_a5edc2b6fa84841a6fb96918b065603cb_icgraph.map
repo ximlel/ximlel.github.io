@@ -1,0 +1,4 @@
+<map id="file_1D_write" name="file_1D_write">
+<area shape="rect" id="node1" title="This function write the 1&#45;D solution into output &#39;.dat&#39; files." alt="" coords="108,5,216,32"/>
+<area shape="rect" id="node2" href="$d2/d24/hydrocode_8c.html#a0ddf1224851353fc92bfbff6f499fa97" title="This is the main function which constructs the main structure of the 1&#45;D Lagrangian/Eulerian hydrocod..." alt="" coords="5,5,60,32"/>
+</map>

@@ -1,0 +1,220 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.3"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>hydrocode_Radial_Lag: src~/inter_process/slope_VIP_limiter_radial.c 文件参考</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../resize.js"></script>
+<script type="text/javascript" src="../../navtreedata.js"></script>
+<script type="text/javascript" src="../../navtree.js"></script>
+<link href="../../search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../search/searchdata.js"></script>
+<script type="text/javascript" src="../../search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+  $(document).ready(function() { init_search(); });
+/* @license-end */
+</script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="../../Logo.jpg"/></td>
+  <td id="projectalign">
+   <div id="projectname">hydrocode_Radial_Lag<span id="projectnumber">&#160;0.3</span>
+   </div>
+   <div id="projectbrief">This is an implementation of fully explict forward Euler scheme for multi-D radially symmetric compressible flows on Lagrangian coordinate</div>
+  </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="../../search/mag_sel.svg"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="搜索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="../../search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.9.3 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "../../search",'搜索','.html');
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('d6/df2/slope___v_i_p__limiter__radial_8c.html','../../'); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#func-members">函数</a>  </div>
+  <div class="headertitle"><div class="title">slope_VIP_limiter_radial.c 文件参考</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>This is a function of the VIP/minmod slope limiter of the fluid velocity in radially symmetric case.  
+<a href="#details">更多...</a></p>
+<div class="textblock"><code>#include &lt;stdio.h&gt;</code><br />
+<code>#include &lt;stdlib.h&gt;</code><br />
+<code>#include &lt;math.h&gt;</code><br />
+<code>#include &quot;<a class="el" href="../../da/d1e/var__struc_8h_source.html">../include/var_struc.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="../../d5/da5/tools_8h_source.html">../include/tools.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="../../dc/daa/inter__process__cpp_8hpp_source.html">../include_cpp/inter_process_cpp.hpp</a>&quot;</code><br />
+</div><div class="textblock"><div class="dynheader">
+slope_VIP_limiter_radial.c 的引用(Include)关系图:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../df/d49/slope___v_i_p__limiter__radial_8c__incl.svg" width="771" height="142"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</div>
+<p><a href="../../d6/df2/slope___v_i_p__limiter__radial_8c_source.html">浏览源代码.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+函数</h2></td></tr>
+<tr class="memitem:aaaa06c143daec504594545993241e747"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/df2/slope___v_i_p__limiter__radial_8c.html#aaaa06c143daec504594545993241e747">VIP_limiter_radial</a> (const int Ncell, const _Bool i_f_var_get, double DmU[], double TmV[], const double UU[], struct radial_mesh_var *rmv)</td></tr>
+<tr class="memdesc:aaaa06c143daec504594545993241e747"><td class="mdescLeft">&#160;</td><td class="mdescRight">This function apply the VIP/minmod limiter to the slope of the fluid velocity in radially symmetric case.  <a href="../../d6/df2/slope___v_i_p__limiter__radial_8c.html#aaaa06c143daec504594545993241e747">更多...</a><br /></td></tr>
+<tr class="separator:aaaa06c143daec504594545993241e747"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
+<div class="textblock"><p >This is a function of the VIP/minmod slope limiter of the fluid velocity in radially symmetric case. </p>
+
+<p class="definition">在文件 <a class="el" href="../../d6/df2/slope___v_i_p__limiter__radial_8c_source.html">slope_VIP_limiter_radial.c</a> 中定义.</p>
+</div><h2 class="groupheader">函数说明</h2>
+<a id="aaaa06c143daec504594545993241e747" name="aaaa06c143daec504594545993241e747"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaaa06c143daec504594545993241e747">&#9670;&nbsp;</a></span>VIP_limiter_radial()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void VIP_limiter_radial </td>
+          <td>(</td>
+          <td class="paramtype">const int&#160;</td>
+          <td class="paramname"><em>Ncell</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const _Bool&#160;</td>
+          <td class="paramname"><em>i_f_var_get</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>DmU</em>[], </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>TmV</em>[], </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const double&#160;</td>
+          <td class="paramname"><em>UU</em>[], </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">struct radial_mesh_var *&#160;</td>
+          <td class="paramname"><em>rmv</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>This function apply the VIP/minmod limiter to the slope of the fluid velocity in radially symmetric case. </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">Ncell</td><td>Number of the r-grids. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">i_f_var_get</td><td>Whether the cell interfacial variables have been obtained.<ul>
+<li>true: interfacial variables at t_{n+1} are available, and then trivariate <a class="el" href="../../d5/da5/tools_8h.html#a6dfba28e1af33b47f4656d3738996fe9" title="Minmod limiter function of three variables.">minmod3()</a>/useVIPLimiter() functions are used.</li>
+<li>false: bivariate <a class="el" href="../../d5/da5/tools_8h.html#a56cac3298eeead8cf22c1e61eb5a5a88" title="Minmod limiter function of two variables.">minmod2()</a>/useVIPLimiter() functions are used. </li>
+</ul>
+</td></tr>
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">DmU[]</td><td>Radially spatial derivatives of the fluid velocity are stored here. </td></tr>
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">TmV[]</td><td>Transversely spatial derivatives of the fluid velocity are stored here. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">UU[]</td><td>Array to store fluid velocity values. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">rmv</td><td>Structure of radially symmetric meshing variable data. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">在文件 <a class="el" href="../../d6/df2/slope___v_i_p__limiter__radial_8c_source.html">slope_VIP_limiter_radial.c</a> 第 <a class="el" href="../../d6/df2/slope___v_i_p__limiter__radial_8c_source.html#l00026">26</a> 行定义.</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../d6/df2/slope___v_i_p__limiter__radial_8c_aaaa06c143daec504594545993241e747_cgraph.svg" width="647" height="212"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../d6/df2/slope___v_i_p__limiter__radial_8c_aaaa06c143daec504594545993241e747_icgraph.svg" width="474" height="52"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="../../dir_6771aafbf413a5638c4e561417caddb9.html">src~</a></li><li class="navelem"><a class="el" href="../../dir_e8ef67cf99a2ba2267792f6cc6c44256.html">inter_process</a></li><li class="navelem"><a class="el" href="../../d6/df2/slope___v_i_p__limiter__radial_8c.html">slope_VIP_limiter_radial.c</a></li>
+    <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
+  </ul>
+</div>
+</body>
+</html>

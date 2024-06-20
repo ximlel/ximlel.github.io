@@ -1,0 +1,224 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.3"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>hydrocode_Radial_Lag: src~/riemann_solver/riemann_solver_starPU.c 源文件</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../resize.js"></script>
+<script type="text/javascript" src="../../navtreedata.js"></script>
+<script type="text/javascript" src="../../navtree.js"></script>
+<link href="../../search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../search/searchdata.js"></script>
+<script type="text/javascript" src="../../search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+  $(document).ready(function() { init_search(); });
+/* @license-end */
+</script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="../../Logo.jpg"/></td>
+  <td id="projectalign">
+   <div id="projectname">hydrocode_Radial_Lag<span id="projectnumber">&#160;0.3</span>
+   </div>
+   <div id="projectbrief">This is an implementation of fully explict forward Euler scheme for multi-D radially symmetric compressible flows on Lagrangian coordinate</div>
+  </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="../../search/mag_sel.svg"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="搜索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="../../search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.9.3 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "../../search",'搜索','.html');
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('d2/d49/riemann__solver__star_p_u_8c_source.html','../../'); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">riemann_solver_starPU.c</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="../../d2/d49/riemann__solver__star_p_u_8c.html">浏览该文件的文档.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span> </div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &lt;stdio.h&gt;</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &lt;math.h&gt;</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &lt;stdbool.h&gt;</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span> </div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span> </div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno"><a class="line" href="../../d2/d49/riemann__solver__star_p_u_8c.html#a9e810193004adbabfe0e143efb93ff04">   20</a></span><span class="keyword">static</span> <span class="keywordtype">double</span> <a class="code hl_function" href="../../d2/d49/riemann__solver__star_p_u_8c.html#a9e810193004adbabfe0e143efb93ff04">GuessP</a>(<span class="keyword">const</span> <span class="keywordtype">double</span> DL, <span class="keyword">const</span> <span class="keywordtype">double</span> DR, <span class="keyword">const</span> <span class="keywordtype">double</span> UL, <span class="keyword">const</span> <span class="keywordtype">double</span> UR, <span class="keyword">const</span> <span class="keywordtype">double</span> PL, <span class="keyword">const</span> <span class="keywordtype">double</span> PR,</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>             <span class="keyword">const</span> <span class="keywordtype">double</span> CL, <span class="keyword">const</span> <span class="keywordtype">double</span> CR, <span class="keyword">const</span> <span class="keywordtype">double</span> GammaL, <span class="keyword">const</span> <span class="keywordtype">double</span> GammaR, <span class="keyword">const</span> <span class="keywordtype">double</span> eps)</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>{</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    <span class="keywordtype">double</span> PM;</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    <span class="keywordtype">double</span> CUP,GEL,GER,PMAX,PMIN,PPV,QMAX;</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    <span class="keyword">const</span> <span class="keywordtype">double</span> QUSER=2.0;</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span> </div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>    CUP=0.25*(DL+DR)*(CL+CR);</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    PPV=0.5*(PL+PR)+0.5*(UL-UR)*CUP;</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    PPV=(eps&gt;PPV?eps:PPV);</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>    PMIN=(PL&lt;PR?PL:PR);</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    PMAX=(PL&gt;PR?PL:PR);</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    QMAX=PMAX/PMIN;</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>    <span class="keywordflow">if</span>(QMAX&lt;=QUSER&amp;&amp;PMIN&lt;=PPV&amp;&amp;PPV&lt;=PMAX)<span class="comment">//PVRS solution</span></div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>        PM=PPV;</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    <span class="comment">/*</span></div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span><span class="comment">             else if(PPV&lt;PMIN)//Two rarefaction</span></div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span><span class="comment">             {</span></div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span><span class="comment">             //PQ=pow(PL/PR,(Gamma-1.)/(2.*Gamma));</span></div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span><span class="comment">             //UM=(PQ*UL/CL+UR/CR+2./(Gamma-1.)*(PQ-1.))/(PQ/CL+1./CR);</span></div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span><span class="comment">             //PTL=1.+(Gamma-1.)/2.*(UL-UM)/CL;</span></div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span><span class="comment">             //PTR=1.+(Gamma-1.)/2.*(UM-UR)/CR;</span></div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span><span class="comment">             //PM=0.5*(pow(PL*PTL,2.*Gamma/(Gamma-1.))+pow(PR*PTR,2.*Gamma/(Gamma-1.)));</span></div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span><span class="comment">             PNU=CL+CR-0.5*(Gamma-1.)*(UR-UL);</span></div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span><span class="comment">             PDE=CL/(pow(PL,0.5*(Gamma-1.)/Gamma))+CR/(pow(PR,0.5*(Gamma-1.)/Gamma));</span></div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span><span class="comment">             PM=pow(PNU/PDE,2.*Gamma/(Gamma-1.));</span></div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span><span class="comment">             }</span></div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span><span class="comment">    */</span></div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>    <span class="keywordflow">else</span> <span class="keywordflow">if</span>(PPV&lt;PMIN)<span class="comment">//No 2-GAMMA TRRS, We use PVRS too.</span></div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>        PM=PPV;</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>    <span class="keywordflow">else</span><span class="comment">//Two shock</span></div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>        {</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>            GEL=sqrt((2./((GammaL+1.)*DL))/((GammaL-1.)/(GammaL+1.)*PL+PPV));</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>            GER=sqrt((2./((GammaR+1.)*DR))/((GammaR-1.)/(GammaR+1.)*PR+PPV));</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>            PM=(GEL*PL+GER*PR-(UR-UL))/(GEL+GER);</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>            PM=(eps&gt;PM?eps:PM);</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>        }</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>    <span class="keywordflow">return</span> PM;</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>}</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span> </div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span> </div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno"><a class="line" href="../../d2/d49/riemann__solver__star_p_u_8c.html#a751e4af4442c32ecdfb4e82e2c50dbd3">   71</a></span><span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code hl_function" href="../../d2/d49/riemann__solver__star_p_u_8c.html#a751e4af4442c32ecdfb4e82e2c50dbd3">PreFun</a>(<span class="keywordtype">double</span> *F, <span class="keywordtype">double</span> *FD, <span class="keyword">const</span> <span class="keywordtype">double</span> P, <span class="keyword">const</span> <span class="keywordtype">double</span> DK, <span class="keyword">const</span> <span class="keywordtype">double</span> PK, <span class="keyword">const</span> <span class="keywordtype">double</span> CK, <span class="keyword">const</span> <span class="keywordtype">double</span> Gamma)</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>{</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>    <span class="keywordtype">double</span> AK,BK,PRAT,QRT;</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>    <span class="keywordflow">if</span>(P&lt;=PK)<span class="comment">//Rarefaction wave</span></div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>        {</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>            PRAT=P/PK;</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>            *F=2./(Gamma-1.)*CK*(pow(PRAT,(Gamma-1.)/(2.*Gamma))-1.);</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>            *FD=1./(DK*CK)*pow(PRAT,-(Gamma+1.)/(2.*Gamma));</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>        }</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>    <span class="keywordflow">else</span><span class="comment">//Shock wave</span></div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>        {</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>            AK=2./((Gamma+1.)*DK);</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>            BK=PK*(Gamma-1.)/(Gamma+1.);</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>            QRT=sqrt(AK/(BK+P));</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>            *F=(P-PK)*QRT;</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>            *FD=(1.-0.5*(P-PK)/(BK+P))*QRT;</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>        }</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>}</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span> </div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span> </div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno"><a class="line" href="../../df/ded/riemann__solver_8h.html#a9874cf3a84e2f4ba605b078faeb4b62a">  115</a></span><span class="keywordtype">double</span> <a class="code hl_function" href="../../d2/d49/riemann__solver__star_p_u_8c.html#a9874cf3a84e2f4ba605b078faeb4b62a">Riemann_solver_starPU</a>(<span class="keywordtype">double</span> * U_star, <span class="keywordtype">double</span> * P_star, <span class="keyword">const</span> <span class="keywordtype">double</span> GammaL, <span class="keyword">const</span> <span class="keywordtype">double</span> GammaR,</div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>        <span class="keyword">const</span> <span class="keywordtype">double</span> UL, <span class="keyword">const</span> <span class="keywordtype">double</span> UR, <span class="keyword">const</span> <span class="keywordtype">double</span> PL, <span class="keyword">const</span> <span class="keywordtype">double</span> PR,</div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>        <span class="keyword">const</span> <span class="keywordtype">double</span> CL, <span class="keyword">const</span> <span class="keywordtype">double</span> CR, _Bool * CRW,</div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>        <span class="keyword">const</span> <span class="keywordtype">double</span> eps, <span class="keyword">const</span> <span class="keywordtype">double</span> TOLPRE, <span class="keyword">const</span> <span class="keywordtype">int</span> NRITER)</div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>{</div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>    <span class="keywordflow">if</span>((2.0*CL/(GammaL-1.0)+2.0*CR/(GammaR-1.0)) &lt;= (UR-UL))</div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>        printf(<span class="stringliteral">&quot;Error: Vacuum is generated in Riemann solver!\n&quot;</span>);</div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span> </div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>    <span class="keywordtype">double</span> DL=GammaL*PL/CL/CL;</div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>    <span class="keywordtype">double</span> DR=GammaR*PR/CR/CR;</div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>    <span class="keywordtype">double</span> P=0.5*(PL+PR), U=0.5*(UL+UR);</div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>    <span class="keywordtype">double</span> change = 0.0,FL,FR,FLD,FRD,POLD,PSTART,UDIFF;</div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>    PSTART = <a class="code hl_function" href="../../d2/d49/riemann__solver__star_p_u_8c.html#a9e810193004adbabfe0e143efb93ff04">GuessP</a>(DL,DR,UL,UR,PL,PR,CL,CR,GammaL,GammaR,eps);</div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>    POLD=PSTART;</div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>    UDIFF=UR-UL;</div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span>    <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i=1;i&lt;=NRITER;i++)</div>
+<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span>        {</div>
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span>            <a class="code hl_function" href="../../d2/d49/riemann__solver__star_p_u_8c.html#a751e4af4442c32ecdfb4e82e2c50dbd3">PreFun</a>(&amp;FL,&amp;FLD,POLD,DL,PL,CL,GammaL);</div>
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span>            <a class="code hl_function" href="../../d2/d49/riemann__solver__star_p_u_8c.html#a751e4af4442c32ecdfb4e82e2c50dbd3">PreFun</a>(&amp;FR,&amp;FRD,POLD,DR,PR,CR,GammaR);</div>
+<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span>            P=POLD-(FL+FR+UDIFF)/(FLD+FRD);</div>
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span>            change=2.*fabs((P-POLD)/(P+POLD));</div>
+<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span>            <span class="keywordflow">if</span>(change&lt;=TOLPRE)<span class="comment">//compute velocity in star region</span></div>
+<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span>                {</div>
+<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span>                    U=0.5*(UL+UR+FR-FL);</div>
+<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span>                    <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span>                }</div>
+<div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span>            <span class="keywordflow">if</span>(P&lt;0)</div>
+<div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span>                P=TOLPRE;</div>
+<div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span>            POLD=P;</div>
+<div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span>        }</div>
+<div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span> </div>
+<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span>    <span class="keywordflow">if</span>(P&lt;=PL) <span class="comment">//Left rarefaction wave</span></div>
+<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span>        CRW[0]=<span class="keyword">true</span>;</div>
+<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span>    <span class="keywordflow">else</span> <span class="comment">//Left shock wave</span></div>
+<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span>        CRW[0]=<span class="keyword">false</span>;</div>
+<div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span>    <span class="keywordflow">if</span>(P&lt;=PR) <span class="comment">//Right rarefaction wave</span></div>
+<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span>        CRW[1]=<span class="keyword">true</span>;</div>
+<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span>    <span class="keywordflow">else</span> <span class="comment">//Right shock wave</span></div>
+<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span>        CRW[1]=<span class="keyword">false</span>;</div>
+<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span> </div>
+<div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span>    * U_star = U;</div>
+<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span>    * P_star = P;</div>
+<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span> </div>
+<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span>    <span class="keywordflow">return</span> change;</div>
+<div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span>} </div>
+<div class="ttc" id="ariemann__solver__star_p_u_8c_html_a751e4af4442c32ecdfb4e82e2c50dbd3"><div class="ttname"><a href="../../d2/d49/riemann__solver__star_p_u_8c.html#a751e4af4442c32ecdfb4e82e2c50dbd3">PreFun</a></div><div class="ttdeci">static void PreFun(double *F, double *FD, const double P, const double DK, const double PK, const double CK, const double Gamma)</div><div class="ttdoc">Evaluate the pressure functions FL and FR in exact Riemann solver.</div><div class="ttdef"><b>Definition:</b> <a href="../../d2/d49/riemann__solver__star_p_u_8c_source.html#l00071">riemann_solver_starPU.c:71</a></div></div>
+<div class="ttc" id="ariemann__solver__star_p_u_8c_html_a9874cf3a84e2f4ba605b078faeb4b62a"><div class="ttname"><a href="../../d2/d49/riemann__solver__star_p_u_8c.html#a9874cf3a84e2f4ba605b078faeb4b62a">Riemann_solver_starPU</a></div><div class="ttdeci">double Riemann_solver_starPU(double *U_star, double *P_star, const double GammaL, const double GammaR, const double UL, const double UR, const double PL, const double PR, const double CL, const double CR, _Bool *CRW, const double eps, const double TOLPRE, const int NRITER)</div><div class="ttdoc">EXACT RIEMANN SOLVER FOR Two-Component γ-Law Gas</div><div class="ttdef"><b>Definition:</b> <a href="../../d2/d49/riemann__solver__star_p_u_8c_source.html#l00115">riemann_solver_starPU.c:115</a></div></div>
+<div class="ttc" id="ariemann__solver__star_p_u_8c_html_a9e810193004adbabfe0e143efb93ff04"><div class="ttname"><a href="../../d2/d49/riemann__solver__star_p_u_8c.html#a9e810193004adbabfe0e143efb93ff04">GuessP</a></div><div class="ttdeci">static double GuessP(const double DL, const double DR, const double UL, const double UR, const double PL, const double PR, const double CL, const double CR, const double GammaL, const double GammaR, const double eps)</div><div class="ttdoc">Provide a guess value for pressure PM in the Star Region.</div><div class="ttdef"><b>Definition:</b> <a href="../../d2/d49/riemann__solver__star_p_u_8c_source.html#l00020">riemann_solver_starPU.c:20</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="../../dir_6771aafbf413a5638c4e561417caddb9.html">src~</a></li><li class="navelem"><a class="el" href="../../dir_bf60a11fb9e16029752bcd5632b70b71.html">riemann_solver</a></li><li class="navelem"><a class="el" href="../../d2/d49/riemann__solver__star_p_u_8c.html">riemann_solver_starPU.c</a></li>
+    <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
+  </ul>
+</div>
+</body>
+</html>

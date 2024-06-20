@@ -1,0 +1,6 @@
+<map id="example_io" name="example_io">
+<area shape="rect" id="node1" title="This function produces folder path for data input or output." alt="" coords="271,31,369,57"/>
+<area shape="rect" id="node2" href="$db/db6/__1_d__file__out_8c.html#a7659fc899bf51ebd9d29facdc992bad6" title="This function write the solution into output files." alt="" coords="108,5,223,32"/>
+<area shape="rect" id="node4" href="$dd/d92/__1_d__file__in_8c.html#a1f8819303b1d8d11879aed890bc0f29e" title="This function reads the 1D initial data file of velocity/pressure/density." alt="" coords="110,56,221,83"/>
+<area shape="rect" id="node3" href="$d2/d24/hydrocode_8c.html#a0ddf1224851353fc92bfbff6f499fa97" title="This is the main function which constructs the main structure of the Lagrangian/Eulerian hydrocode." alt="" coords="5,31,60,57"/>
+</map>
