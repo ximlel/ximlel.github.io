@@ -26,7 +26,7 @@ Lei Xin, an associate professor and advisor for postgraduate students at the Sch
 
 * Teach Undergraduate Courses: Mathematical and Physical Equations, Probability and Mathematical Statistics, Linear Algebra, Data Modeling
 * Teach Postgraduate Courses: Numerical Solution of Partial Differential Equations, Applied Time Series Analysis, Topic Selection and Writing of Scientific and Technological Papers (Professional English)
-* Postgraduate Enrollment: Computational Fluid Dynamics, Computational Astrophysics, Astrostatistics, Game Physics Engine.
+* Postgraduate Enrollment: Hyperbolic PDE, Computational Fluid Dynamics, High-energy Astrophysics, Astrostatistics, Game Physics Engine.
 
 ## Fund Projects/Topics:
 
