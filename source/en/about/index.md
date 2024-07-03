@@ -20,7 +20,9 @@ Lei Xin, an associate professor and advisor for postgraduate students at the Sch
 
 ## Work Experience:
 
-* 2019-07 to Now, China University of Geosciences, Beijing, School of Science
+* 2019-07 to 2023-12, China University of Geosciences, Beijing, School of Science, Mathematics Teaching and Research Group, Lecturer
+* 2024-01 to Now, China University of Geosciences, Beijing, School of Science, Mathematics Teaching and Research Group, Associate Professor
+* 2024-07 to 2025-01, University of Bath, England, Department of Physics, Astrophysics Group, Academic Visitor
 
 ## Teaching Situation:
 
