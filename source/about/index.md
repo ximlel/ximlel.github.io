@@ -97,6 +97,10 @@ tags:
 * 2018-08  北京计算数学学会优秀青年论文奖（二等奖）
 -->
 
+## 学术报告：
+
+[Conservative Numerical Methods for Suppressing Non-physical Oscillation at interfaces of Compressible Multi-fluids.ppsx](/about/Conservative_Numerical_Methods_for_Suppressing_Non-physical_Oscillation_at_interfaces_of_Compressible_Multi-fluids.ppsx)
+
 ## 教研室介绍：
 
 中国地质大学（北京）数理学院数学学科由公共数学教学部、应用数学系、数据科学系组成，拥有数学与应用数学、数据计算及应用两个本科专业。数学与应用数学专业设立于2000年，并于2020年获批“国家一流本科专业建设点”；数据计算及应用专业为我校新增本科专业，于2021年开始招生。2000年获批“应用数学”二级学科硕士授权点，2006年获批“计算数学”二级学科硕士点，2011年获“数学”一级学科硕士点，2018年获批“应用统计”专业学位硕士点。2019年自设二级博士点“现代数学与控制理论”。
