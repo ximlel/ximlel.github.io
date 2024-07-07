@@ -60,6 +60,10 @@ Lei Xin, an associate professor and advisor for postgraduate students at the Sch
 
 * 2018-08  Outstanding Youth Paper Award from Beijing Society of Computational Mathematics (Second Prize)
 
+## Presentation Slides:
+
+[Conservative Numerical Methods for Suppressing Non-physical Oscillation at interfaces of Compressible Multi-fluids](/about/Conservative_Numerical_Methods_for_Suppressing_Non-physical_Oscillation_at_interfaces_of_Compressible_Multi-fluids.ppsx) (<https://365.kdocs.cn/l/cklAk4PPQ9aK>)
+
 ### Contact Information:
 
 Office Location: Room 321, 3rd Teaching Building, China University of Geosciences, Beijing

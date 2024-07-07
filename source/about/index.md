@@ -97,9 +97,9 @@ tags:
 * 2018-08  北京计算数学学会优秀青年论文奖（二等奖）
 -->
 
-## 学术报告：
+## 报告幻灯片：
 
-[Conservative Numerical Methods for Suppressing Non-physical Oscillation at interfaces of Compressible Multi-fluids.ppsx](/about/Conservative_Numerical_Methods_for_Suppressing_Non-physical_Oscillation_at_interfaces_of_Compressible_Multi-fluids.ppsx)
+[Conservative Numerical Methods for Suppressing Non-physical Oscillation at interfaces of Compressible Multi-fluids](/about/Conservative_Numerical_Methods_for_Suppressing_Non-physical_Oscillation_at_interfaces_of_Compressible_Multi-fluids.ppsx) (<https://365.kdocs.cn/l/cklAk4PPQ9aK>)
 
 ## 教研室介绍：
 
